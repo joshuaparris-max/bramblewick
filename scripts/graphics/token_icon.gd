@@ -47,6 +47,11 @@ func _draw() -> void:
 	_portrait(r, base_color.lightened(0.22), bg.darkened(0.4))
 	draw_arc(Vector2.ZERO, r, 0, TAU, 48, Color(0, 0, 0, 0.5), 1.2, true)
 
+func pulse() -> void:
+	var tween := create_tween()
+	tween.tween_property(self, "scale", Vector2(1.16, 1.16), 0.08)
+	tween.tween_property(self, "scale", Vector2.ONE, 0.14).set_trans(Tween.TRANS_BACK)
+
 # ---------- portraits ----------
 func _portrait(r: float, pc: Color, dark: Color) -> void:
 	match kind:
