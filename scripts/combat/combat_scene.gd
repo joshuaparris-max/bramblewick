@@ -62,12 +62,15 @@ func _attack() -> void:
 		if r["crit"]:
 			dmg += Rules.roll_dice(GameState.weapon().get("damage", "1d2"))
 			_say("[color=#7fa05a]CRITICAL! d20(20) - %d damage![/color]" % dmg)
+			AudioManager.play_sfx("crit")
 		else:
 			_say("[color=#7fa05a]d20(%d)%+d = %d vs AC %d - hit for %d.[/color]"
 				% [r["raw"], GameState.attack_bonus(), r["total"], int(m["ac"]), dmg])
 		m_hp -= dmg
+		if not r["crit"]: AudioManager.play_sfx("hit")
 		_impact(_foe_token, Color("c4553d"))
 	else:
+		AudioManager.play_sfx("miss")
 		_say("[color=#c4553d]d20(%d)%+d = %d vs AC %d - miss.[/color]"
 			% [r["raw"], GameState.attack_bonus(), r["total"], int(m["ac"])])
 	_after_player()
@@ -78,6 +81,7 @@ func _use_ability(key: String) -> void:
 			_ability_used = true
 			var h: int = Rules.roll_dice("1d10") + GameState.player["level"]
 			GameState.change_hp(h)
+			AudioManager.play_sfx("heal")
 			_say("[color=#7fa05a]Second Wind - +%d HP.[/color]" % h)
 		"sneak_attack":
 			_ability_used = true
@@ -93,6 +97,7 @@ func _use_ability(key: String) -> void:
 			GameState.player["slots"] -= 1
 			var h2: int = Rules.roll_dice("1d8+3")
 			GameState.change_hp(h2)
+			AudioManager.play_sfx("heal")
 			_say("[color=#7fa05a]Cure Wounds - +%d HP.[/color]" % h2)
 	_after_player()
 
@@ -130,6 +135,7 @@ func _enemy_turn() -> void:
 		var poison_damage := Rules.roll_dice("1d4")
 		GameState.change_hp(-poison_damage)
 		_poison_turns -= 1
+		AudioManager.play_sfx("poison")
 		_say("[color=#9aad68]Poison burns for %d damage.[/color]" % poison_damage)
 		_impact(_hero_token, Color("9aad68"))
 	if GameState.player["hp"] <= 0:
@@ -178,6 +184,7 @@ func _finish_enemy_turn() -> void:
 
 func _victory() -> void:
 	_say("[color=#7fa05a]%s is defeated![/color]" % m["name"])
+	AudioManager.play_sfx("victory")
 	EventBus.monster_killed.emit(m["id"])
 	GameState.add_xp(int(m.get("xp", 0)))
 	if m.has("gold"):
