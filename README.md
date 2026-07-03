@@ -7,6 +7,16 @@ A modular, data-driven D&D-5e-flavoured RPG vertical slice.
 2. Open Godot -> Import -> select this folder's `project.godot`.
 3. Press F5 (Play).
 
+## Share a browser build
+
+Open the repository's **Actions** tab, choose **Publish playable web build**, and
+click **Run workflow**. The resulting GitHub Pages URL is the permanent
+playtest link. Publishing also runs automatically whenever `main` changes.
+
+For itch.io, right-click `publish-web.ps1` and choose **Run with PowerShell**.
+It creates `build/bramblewick-web.zip`, opens the itch.io upload page, and
+selects the ZIP in Explorer. Godot's matching export templates must be installed.
+
 ## Controls
 - Move: WASD / arrows / left stick / d-pad
 - Interact: E / Space / gamepad A
