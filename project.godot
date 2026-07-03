@@ -1,0 +1,35 @@
+; Shadow Over Bramblewick - Godot 4 modular RPG foundation
+; Engine: Godot 4.2+ (tested structure for 4.2/4.3/4.4)
+
+config_version=5
+
+[application]
+
+config/name="Shadow Over Bramblewick"
+run/main_scene="res://scenes/main/main.tscn"
+config/features=PackedStringArray("4.2")
+
+[autoload]
+
+EventBus="*res://scripts/core/event_bus.gd"
+Db="*res://scripts/core/db.gd"
+Rules="*res://scripts/rules/rules.gd"
+GameState="*res://scripts/core/game_state.gd"
+Inventory="*res://scripts/inventory/inventory.gd"
+QuestManager="*res://scripts/quests/quest_manager.gd"
+SaveManager="*res://scripts/save/save_manager.gd"
+AudioManager="*res://scripts/audio/audio_manager.gd"
+InputBootstrap="*res://scripts/input/input_bootstrap.gd"
+SceneRouter="*res://scripts/core/scene_router.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.078, 0.063, 0.055, 1)

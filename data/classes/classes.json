@@ -1,0 +1,38 @@
+[
+  {
+    "id": "fighter", "name": "Fighter",
+    "blurb": "Chain, shield and a longsword. Second Wind keeps you standing.",
+    "armour_note": "heavy (AC 18 w/ shield)",
+    "stats": {"STR": 16, "DEX": 12, "CON": 15, "INT": 8, "WIS": 10, "CHA": 10},
+    "base_hp": 12, "hit_die": 10,
+    "skill_profs": ["athletics", "intimidation"],
+    "abilities": ["second_wind"],
+    "starting_equipment": {"weapon": "longsword", "armour": "chain_mail", "shield": "shield"},
+    "starting_items": {"potion_healing": 2},
+    "gold": 15, "start_pos": [3, 5]
+  },
+  {
+    "id": "rogue", "name": "Rogue",
+    "blurb": "Leather, a rapier, and a talent for finding the blind side.",
+    "armour_note": "light (AC 14)",
+    "stats": {"STR": 10, "DEX": 16, "CON": 12, "INT": 12, "WIS": 10, "CHA": 14},
+    "base_hp": 10, "hit_die": 8,
+    "skill_profs": ["stealth", "persuasion", "investigation"],
+    "abilities": ["sneak_attack"],
+    "starting_equipment": {"weapon": "rapier", "armour": "leather_armour"},
+    "starting_items": {"potion_healing": 2},
+    "gold": 20, "start_pos": [3, 5]
+  },
+  {
+    "id": "cleric", "name": "Cleric",
+    "blurb": "Mail and a mace, and Cure Wounds when the night gets long.",
+    "armour_note": "medium (AC 16 w/ shield)",
+    "stats": {"STR": 14, "DEX": 10, "CON": 13, "INT": 10, "WIS": 16, "CHA": 12},
+    "base_hp": 10, "hit_die": 8,
+    "skill_profs": ["religion", "insight", "persuasion"],
+    "abilities": ["cure_wounds"], "slots": 3,
+    "starting_equipment": {"weapon": "mace", "armour": "scale_mail", "shield": "shield"},
+    "starting_items": {"potion_healing": 1},
+    "gold": 15, "start_pos": [3, 5]
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "id": "hermit",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "text": "Hm. Boots. Village boots. You'll be about the mine, then. I trade with travellers who don't waste my morning.",
+      "choices": [
+        {"label": "Buy: Healing Potion (7 gold)",
+         "events": [{"type": "buy", "item": "potion_healing", "cost": 7}],
+         "next": "start"},
+        {"label": "Buy: Greater Healing Potion (18 gold)",
+         "events": [{"type": "buy", "item": "potion_greater", "cost": 18}],
+         "next": "start"},
+        {"label": "What do you hear through the ground?", "next": "lore"},
+        {"label": "(Persuasion) You've been down there yourself, haven't you?",
+         "condition": {"not_flag": "hermit_hint"},
+         "check": {"skill": "persuasion", "dc": 13}, "ok": "hint", "fail": "no_hint"},
+        {"label": "The black door under the mine is open. What sleeps behind it?",
+         "condition": {"flag": "barrow_opened", "not_flag": "hermit_warden_lore"},
+         "next": "warden_lore"},
+        {"label": "I'm hurt. Can you help?",
+         "condition": {"not_flag": "hermit_healed"},
+         "next": "heal"},
+        {"label": "(Leave)", "next": null}
+      ]
+    },
+    "lore": {
+      "text": ["Some nights the ground hums like a struck bell. It isn't roaring, whatever it is. It's waiting.",
+               "The mine was a barrow before it was a mine. Old dead, old promises. Miners dig into such places at a price.",
+               "The fen-water's been shivering in rings, Sal says. Rings point at their stone, like ripples run backwards. Everything old in this valley is listening to the same thing."],
+      "choices": [{"label": "(Leave)", "next": null}]
+    },
+    "hint": {
+      "text": "...Once. Long ago. The thing in the deep gallery is a brood-mother, pale as bone. Her hide turns blades that come in swinging wild - but she is slow to start. Strike FIRST and strike smart, and carry more potions than pride.",
+      "choices": [{"label": "That's worth knowing. Thank you.",
+        "events": [{"type": "set_flag", "flag": "hermit_hint"},
+                   {"type": "quest_event", "event": "learned_matron_lore"}],
+        "next": "start"}]
+    },
+    "no_hint": {
+      "text": "I've been exactly where I choose to be, which is here, minding a stew. Buy something or admire the trees.",
+      "choices": [{"label": "(Leave)", "next": null}]
+    },
+    "warden_lore": {
+      "text": "She is quiet for a long time. \"Sleeps. There's a hopeful word.\" She stirs the stew without looking at it. \"He was a king here before the valley had a name, and he would not stay dead, so they built the hill over him and set a warden-spell of black stone. The spider was his doorkeeper - her line kept the seal fed. You've killed the doorkeeper.\" She looks up. \"So now the door needs shutting from the inside. Take silvered steel if the smith will sell it. Strike before he rises from that throne - and whatever he offers you in that gallery, and he WILL offer, the answer is no.\"",
+      "choices": [{"label": "The answer is no. I'll remember.",
+        "events": [{"type": "set_flag", "flag": "hermit_warden_lore"}],
+        "next": "start"}]
+    },
+    "heal": {
+      "text": "Sit. Drink this. Don't ask what's in it. ...There. Once only - I'm a hermit, not a hospital.",
+      "choices": [{"label": "(Rest a while)",
+        "events": [{"type": "set_flag", "flag": "hermit_healed"},
+                   {"type": "heal_full"}],
+        "next": "start"}]
+    }
+  }
+}

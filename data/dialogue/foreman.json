@@ -1,0 +1,49 @@
+{
+  "id": "foreman",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "text": "A grey figure stands in the gallery, counting on fingers that are not entirely there. \"Twelve... thirteen... no. No, that's short. Who's missing? SOUND OFF.\"",
+      "choices": [
+        {"label": "Who are you?", "next": "who"},
+        {"label": "Tommen is alive. He got free. He's keeping your count.",
+         "condition": {"flag": "tommen_freed", "not_flag": "foreman_told"},
+         "events": [{"type": "set_flag", "flag": "foreman_told"}],
+         "next": "told"},
+        {"label": "The village remembers you. Let me carry your story home.",
+         "condition": {"quest_state": {"id": "q_the_fourteen", "is": "inactive"}},
+         "events": [{"type": "start_quest", "quest": "q_the_fourteen"}],
+         "next": "task"},
+        {"label": "It's over. The Matron is dead and Bramblewick knows your names. Stand down, foreman.",
+         "condition": {"quest_state": {"id": "q_the_fourteen", "is": "active"}, "not_flag": "foreman_rested"},
+         "events": [{"type": "set_flag", "flag": "foreman_rested"},
+                    {"type": "quest_event", "event": "gave_rest"}],
+         "next": "rest"},
+        {"label": "(Leave)", "next": null}
+      ]
+    },
+    "who": {
+      "text": "\"Foreman. Third shift. I signed fourteen names into the book that morning and I will sign fourteen out, do you hear me. The pale thing took us down and the cold thing... kept us.\" He looks at his hands. \"I don't remember signing myself out.\"",
+      "choices": [
+        {"label": "Where is the book? The ledger?", "next": "ledger"},
+        {"label": "(Say nothing)", "next": null}
+      ]
+    },
+    "ledger": {
+      "text": "\"Dropped it. By the old cistern, south chamber, when they took us. Names matter, stranger. A man isn't lost while his name's in the book.\"",
+      "choices": [{"label": "(Leave him to his counting)", "next": null}]
+    },
+    "task": {
+      "text": "\"Home.\" The word stops his counting. \"Then take the book - by the cistern, south chamber - and speak to the Light's woman, the one who rings the bell. And when you've done that... come back and tell me the count is settled. I can't stop till the count is settled.\"",
+      "choices": [{"label": "I'll settle it. All of it.", "next": null}]
+    },
+    "told": {
+      "text": "For a moment the counting stops. \"Tommen. Third from the end, always late, good hands.\" The shade almost smiles. \"One signed out, then. One.\"",
+      "choices": [{"label": "(Leave)", "next": null}]
+    },
+    "rest": {
+      "text": "\"Dead. The doorkeeper's dead, and the names are spoken in daylight.\" He straightens like a man coming off a long shift. \"Then the count is thirteen below and one come home, all present, all... accounted.\" The grey figure lifts a hand to his brow - and the gallery is empty.",
+      "choices": [{"label": "(Stand a while in the quiet)", "next": null}]
+    }
+  }
+}

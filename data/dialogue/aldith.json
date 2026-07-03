@@ -1,0 +1,62 @@
+{
+  "id": "aldith",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "text": "A young sister in grey keeps a small shrine swept and a candle lit. \"The Light keep you, traveller. It has work for busy hands, if you have them - and rest, if you need it.\"",
+      "choices": [
+        {"label": "Donate 10 gold and rest at the shrine. (Full heal)",
+         "condition": {"gold_at_least": 10},
+         "events": [{"type": "take_gold", "amount": 10}, {"type": "heal_full"}],
+         "next": "healed"},
+        {"label": "What work needs doing?",
+         "condition": {"quest_state": {"id": "q_quiet_light", "is": "inactive"}},
+         "next": "chapel"},
+        {"label": "The Grave Warden is at rest. Its censer, as asked.",
+         "condition": {"quest_state": {"id": "q_quiet_light", "is": "ready"}},
+         "events": [{"type": "turn_in_quest", "quest": "q_quiet_light"},
+                    {"type": "reputation", "faction": "village", "amount": 5}],
+         "next": "chapel_done"},
+        {"label": "There's a door under the mine older than your Light. And dead miners behind it.",
+         "condition": {"flag": "barrow_opened", "quest_state": {"id": "q_the_fourteen", "is": "inactive"}},
+         "next": "fourteen"},
+        {"label": "It's done. The ledger, the shade, all of it. The fourteen are accounted for.",
+         "condition": {"quest_state": {"id": "q_the_fourteen", "is": "ready"}},
+         "events": [{"type": "turn_in_quest", "quest": "q_the_fourteen"},
+                    {"type": "reputation", "faction": "village", "amount": 10}],
+         "next": "fourteen_done"},
+        {"label": "(Leave)", "next": null}
+      ]
+    },
+    "healed": {
+      "text": "She banks the brazier and stands watch while you sleep an hour that feels like eight. \"The Light keeps what it is given. Go carefully.\"",
+      "choices": [{"label": "(Rise, rested)", "next": "start"}]
+    },
+    "chapel": {
+      "text": "\"Across the fen stands the old chapel - abandoned since before my order came. Its warden was buried at his post, as was the custom. Last month the chapel bell rang. Nobody has hung a bell there in eighty years.\" She holds out her hand. \"Something wears him, traveller. Lay it down, and bring me the censer it carries, so I may cleanse it.\"",
+      "choices": [
+        {"label": "I'll give your warden his rest. (Accept quest)",
+         "events": [{"type": "start_quest", "quest": "q_quiet_light"}],
+         "next": "start"},
+        {"label": "I don't trouble the dead.", "next": "start"}
+      ]
+    },
+    "chapel_done": {
+      "text": "She takes the censer in both hands and breathes out slowly. \"Eighty years at his post, even past death. May his watch be counted kindly.\" She presses potions into your hands. \"Brewed for the order. You'll need them more than we do.\"",
+      "choices": [{"label": "(Take them)", "next": "start"}]
+    },
+    "fourteen": {
+      "text": "Her candle-steady calm cracks, just slightly. \"Fourteen names and no graves. I have said the rites over empty coffins, and empty rites help no one.\" She grips your arm. \"If you are going down there - find their story. A record, a witness, anything. The dead rest when the living remember them RIGHT.\"",
+      "choices": [
+        {"label": "I'll bring their story home. (Accept quest)",
+         "events": [{"type": "start_quest", "quest": "q_the_fourteen"}],
+         "next": "start"},
+        {"label": "Some stories are better lost.", "next": "start"}
+      ]
+    },
+    "fourteen_done": {
+      "text": "She reads the ledger by candlelight, lips moving, and copies each of the fourteen names onto the shrine's stone in careful chalk. \"Thirteen below, one come home, all accounted.\" She looks up. \"You settle counts the Light itself couldn't. Bramblewick won't forget it.\"",
+      "choices": [{"label": "(Leave her to the names)", "next": null}]
+    }
+  }
+}

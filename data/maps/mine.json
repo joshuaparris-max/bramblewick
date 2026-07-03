@@ -1,0 +1,83 @@
+{
+  "id": "mine",
+  "name": "Old Bramble Mine",
+  "tint": "b8c4d8",
+  "grid": [
+    "WWWWWWWWWWWWWWWWWWWWWW",
+    "W====W=========W=====W",
+    "W====W==WWW====W==^==W",
+    "W==^=====WW==========W",
+    "W========WW====WWW===W",
+    "WWWW==W=======WWWW===W",
+    "W=====W==^===========W",
+    "W==WWWWWWWW==WWWW====W",
+    "W==W======W==W==W==^=W",
+    "W==W==^===W==W==W====W",
+    "W============W=======W",
+    "WWWWWWWWWWWWWWWWWWWWWW"
+  ],
+  "portals": [
+    {
+      "pos": [
+        1,
+        1
+      ],
+      "to_map": "wilderness",
+      "to_pos": [
+        19,
+        9
+      ],
+      "label": "Daylight"
+    },
+    {
+      "pos": [
+        20,
+        10
+      ],
+      "to_map": "barrow",
+      "to_pos": [
+        2,
+        2
+      ],
+      "label": "The Black Door",
+      "requires_flag": "barrow_opened",
+      "locked_text": "A door of black stone, cold to the touch and older than any pick that ever swung here. It does not move."
+    }
+  ],
+  "chests": [
+    {
+      "pos": [
+        19,
+        2
+      ],
+      "items": {
+        "potion_healing": 2
+      },
+      "gold": 15
+    }
+  ],
+  "npcs": ["tommen"],
+  "monsters": [
+    {
+      "id": "skeleton",
+      "pos": [
+        8,
+        3
+      ]
+    },
+    {
+      "id": "skeleton",
+      "pos": [
+        5,
+        8
+      ]
+    },
+    {
+      "id": "spider_matron",
+      "pos": [
+        17,
+        10
+      ]
+    }
+  ]
+}

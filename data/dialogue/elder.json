@@ -1,0 +1,86 @@
+{
+  "id": "elder",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "text": "You came. I'd begun to think my letter was lost like everything else. Nine days ago the mine went silent - fourteen miners. We sent two men down; only their lanterns came back.",
+      "choices": [
+        {"label": "What happened down there?",
+         "condition": {"quest_state": {"id": "q_silent_mine", "is": "inactive"}},
+         "next": "info"},
+        {"label": "(Insight) Read what she isn't saying.",
+         "condition": {"quest_state": {"id": "q_silent_mine", "is": "inactive"}},
+         "check": {"skill": "insight", "dc": 12}, "ok": "insight", "fail": "info"},
+        {"label": "Any advice before I go down?",
+         "condition": {"quest_state": {"id": "q_silent_mine", "is": "active"}},
+         "next": "advice"},
+        {"label": "The mine is silent no more. It's done.",
+         "condition": {"quest_state": {"id": "q_silent_mine", "is": "ready"}},
+         "events": [{"type": "turn_in_quest", "quest": "q_silent_mine"},
+                    {"type": "reputation", "faction": "village", "amount": 10}],
+         "next": "thanks"},
+        {"label": "Tommen is alive. I cut him from the webs myself.",
+         "condition": {"flag": "tommen_freed", "not_flag": "elder_thanked"},
+         "events": [{"type": "set_flag", "flag": "elder_thanked"},
+                    {"type": "give_gold", "amount": 25},
+                    {"type": "reputation", "faction": "village", "amount": 10}],
+         "next": "tommen_alive"},
+        {"label": "About the black door under the mine. I mean to go through it.",
+         "condition": {"quest_state": {"id": "q_warden_below", "is": "active"}},
+         "next": "warden_counsel"},
+        {"label": "The Warden Below is destroyed. Here is its crown.",
+         "condition": {"quest_state": {"id": "q_warden_below", "is": "ready"}},
+         "events": [{"type": "turn_in_quest", "quest": "q_warden_below"},
+                    {"type": "reputation", "faction": "village", "amount": 20}],
+         "next": "warden_done"},
+        {"label": "(Leave)", "next": null}
+      ]
+    },
+    "info": {
+      "text": "The week before it happened, the miners broke into a sealed gallery - older workings, older than Bramblewick. Since then: cold air rising from the shaft, and at night a sound like something breathing.",
+      "choices": [
+        {"label": "I'll go down and end it. (Accept quest)",
+         "events": [{"type": "start_quest", "quest": "q_silent_mine"}],
+         "next": "accepted"},
+        {"label": "I need to prepare first.", "next": null}
+      ]
+    },
+    "insight": {
+      "text": "You watch her hands - she keeps touching a miner's token on a cord at her neck. \"...My son Tommen is one of the fourteen. There. Now you know why an old woman begs strangers.\"",
+      "choices": [
+        {"label": "I'll bring him home. (Accept quest)",
+         "events": [{"type": "start_quest", "quest": "q_silent_mine"},
+                    {"type": "set_flag", "flag": "knows_about_tommen"}],
+         "next": "accepted"},
+        {"label": "Tell me everything first.", "next": "info"}
+      ]
+    },
+    "accepted": {
+      "text": "Then the Light walk with you. The mine lies east, past the Darkwood. Speak to Borin before you go - steel matters down there. And buy potions. Heroes forget potions.",
+      "choices": [{"label": "(Take your leave)", "next": null}]
+    },
+    "advice": {
+      "text": ["East through the Darkwood, then east again to the mine mouth. Mind the wolves on the way.",
+               "Wren the hermit lives in the Darkwood. Strange, but she hears things through the ground. It may be worth your time.",
+               "If your purse is light, there's work in Bramblewick besides mine. Ivo lost his caravan on the North Road, and Sister Aldith frets over the old chapel past the fen.",
+               "Old Sal ferries the Fenwater, west of the village. Sharp tongue, fair prices, and she knows every safe step in that marsh."],
+      "choices": [{"label": "(Leave)", "next": null}]
+    },
+    "thanks": {
+      "text": "Fourteen souls owed to you, and one of them my own blood. Bramblewick will tell this story for a hundred years. Take the village's thanks - and its gold.",
+      "choices": [{"label": "(Leave)", "next": null}]
+    },
+    "tommen_alive": {
+      "text": "She does not weep. She stands very still for a long moment, one hand on the miner's token at her neck, and when she speaks her voice is a village elder's again. \"The stew will be on when he walks up that road. Take this - no. Take it. Some debts an old woman pays in coin because the true amount would beggar her.\"",
+      "choices": [{"label": "(Take it quietly)", "next": null}]
+    },
+    "warden_counsel": {
+      "text": "Then hear an old woman's counsel and not her fear. Buy the best steel Borin will part with - silvered, if he'll make it. Ask Wren what the ground has told her; she'll know more of that door than any of us. And carry more potions than pride. The barrow was raised to HOLD that thing. You go to do what a hill of stone could not.",
+      "choices": [{"label": "(Take your leave)", "next": null}]
+    },
+    "warden_done": {
+      "text": "She takes the black iron crown as if it weighs a hundred years, and perhaps it does. \"The breathing has stopped. All of Bramblewick heard it stop.\" She sets the crown on the shrine stone, for Aldith to deal with as the Light demands. \"The mine gave us our living, took our fourteen, and owes us nothing now. Neither do you - though I hope you'll stay a while anyway. Heroes are rare. Neighbours are rarer.\"",
+      "choices": [{"label": "(Stay a while)", "next": null}]
+    }
+  }
+}

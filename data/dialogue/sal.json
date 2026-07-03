@@ -1,0 +1,42 @@
+{
+  "id": "sal",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "text": "An old woman in waxed leathers mends an eel-trap outside a stilt-hut. \"Mind where you put your boots, dryfoot. The fen's been eating better than usual lately.\"",
+      "choices": [
+        {"label": "What do you mean, eating better?",
+         "condition": {"quest_state": {"id": "q_marsh_lights", "is": "inactive"}},
+         "next": "lights"},
+        {"label": "Three lights snuffed. Cold as coins, these motes.",
+         "condition": {"quest_state": {"id": "q_marsh_lights", "is": "ready"}},
+         "events": [{"type": "turn_in_quest", "quest": "q_marsh_lights"}],
+         "next": "lights_done"},
+        {"label": "Buy: Healing Potion, fen-brewed (6 gold)",
+         "events": [{"type": "buy", "item": "potion_healing", "cost": 6}],
+         "next": "start"},
+        {"label": "What's out past the fen?", "next": "lore"},
+        {"label": "(Leave)", "next": null}
+      ]
+    },
+    "lights": {
+      "text": "\"Lights. Pale blue, bobbing sweet as a lantern on a friend's arm - out where there's no path and no friend. Tinker followed one Tuesday last. Found his hat.\" She ties off a knot. \"Snuff three of them and bring me the cold that's left behind. I'll pay. The fen and I have an arrangement, and they're spoiling it.\"",
+      "choices": [
+        {"label": "Three lights, snuffed. Done. (Accept quest)",
+         "events": [{"type": "start_quest", "quest": "q_marsh_lights"}],
+         "next": "start"},
+        {"label": "Chase your own lights, ferrywoman.", "next": "start"}
+      ]
+    },
+    "lights_done": {
+      "text": "She weighs the motes in her palm like a fishmonger. \"Cold and honest. The causeway'll be safe for a season, maybe two.\" She counts coins out of a tin that smells of eels. \"The fen thanks you, in its way. You'll know its way when your boots stay dry.\"",
+      "choices": [{"label": "(Take the coin)", "next": "start"}]
+    },
+    "lore": {
+      "text": ["\"Chapel, west and north. Quiet Light folk built it, back when. Bell's been ringing with no hand on the rope, and I don't ferry that way anymore.\"",
+               "\"The shamblers? Peat and old drowned things. Slow as debt. Don't let them corner you against the water - they don't tire and you do.\"",
+               "\"Bramblewick's mine went quiet, I heard. The ground here heard it too. Some nights the fen-water shivers in rings, all pointing east.\""],
+      "choices": [{"label": "(Leave)", "next": null}]
+    }
+  }
+}

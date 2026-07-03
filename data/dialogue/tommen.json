@@ -1,0 +1,61 @@
+{
+  "id": "tommen",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "text": "A man-shaped bundle hangs at the gallery mouth, wound to the chin in grey silk. It is breathing.",
+      "choices": [
+        {"label": "(Cut him free - the webs hang slack, their weaver dead.)",
+         "condition": {"has_item": "miners_locket", "not_flag": "tommen_freed"},
+         "events": [{"type": "set_flag", "flag": "tommen_freed"}],
+         "next": "freed"},
+        {"label": "Tommen. How are you holding?",
+         "condition": {"flag": "tommen_freed"},
+         "next": "after"},
+        {"label": "(The webs are taut as bowstrings. You'd need their weaver dead to cut them.)", "next": null}
+      ]
+    },
+    "freed": {
+      "text": "The silk parts like old rope and he comes out of it coughing. \"The Matron - dead? DEAD?\" He laughs until it turns into something else. \"Nine days. I counted the shifts in my head. Thirteen of us she took below, and I heard them go quiet one at a time.\"",
+      "choices": [
+        {"label": "Your mother sent me. I think this is yours. (Give the locket)",
+         "condition": {"has_item": "miners_locket"},
+         "events": [{"type": "take_item", "item": "miners_locket"},
+                    {"type": "reputation", "faction": "village", "amount": 5}],
+         "next": "locket"},
+        {"label": "Where did she take them?", "next": "door"}
+      ]
+    },
+    "locket": {
+      "text": "He holds the locket like it might break. \"She saved a year for this. I told her lockets don't stop rockfalls.\" He closes his fist around it. \"Turns out they bring people back instead.\"",
+      "choices": [
+        {"label": "Where did the Matron take the others?", "next": "door"}
+      ]
+    },
+    "door": {
+      "text": "\"Below. Past the gallery the old crews sealed - there's a DOOR down there. Black stone, and it's open now. The cold that comes off it puts out lanterns. The Matron wasn't the master here - she was the doorkeeper. It's still down there, and it knows the way is open.\"",
+      "choices": [
+        {"label": "Then I'll go down and shut it for good. (He tells you the way to the Black Door)",
+         "condition": {"not_flag": "barrow_opened"},
+         "events": [{"type": "set_flag", "flag": "barrow_opened"},
+                    {"type": "start_quest", "quest": "q_warden_below"}],
+         "next": "after"},
+        {"label": "(Leave)", "next": null}
+      ]
+    },
+    "after": {
+      "text": "\"I'm not leaving. Not till that door is shut and the others come up, or don't. Someone has to keep the count.\" He sits with his back to the gallery wall, eyes on the dark.",
+      "choices": [
+        {"label": "Your mother sent me. This is yours. (Give the locket)",
+         "condition": {"has_item": "miners_locket"},
+         "events": [{"type": "take_item", "item": "miners_locket"},
+                    {"type": "reputation", "faction": "village", "amount": 5}],
+         "next": "locket"},
+        {"label": "Tell me about the black door again.",
+         "condition": {"not_flag": "barrow_opened"},
+         "next": "door"},
+        {"label": "(Leave)", "next": null}
+      ]
+    }
+  }
+}
