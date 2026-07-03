@@ -20,14 +20,20 @@ jobs:
     container:
       image: barichello/godot-ci:4.4
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      - name: Install Godot Web export templates
+        run: |
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/4.4.stable"
+          mkdir -p "$TEMPLATE_DIR"
+          cp -R /root/.local/share/godot/export_templates/4.4.stable/. "$TEMPLATE_DIR/"
+          test -f "$TEMPLATE_DIR/web_nothreads_release.zip"
       - name: Import project
         run: godot --headless --editor --quit --path .
       - name: Export Web build
         run: |
           mkdir -p build/web
           godot --headless --path . --export-release Web build/web/index.html
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: build/web
 
