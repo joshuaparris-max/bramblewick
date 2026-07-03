@@ -30,11 +30,8 @@ static func build(map_data: Dictionary, parent: Node2D) -> void:
 		for x in row.length():
 			var ch := row[x]
 			var def: Dictionary = TILE_DEFS.get(ch, TILE_DEFS["."])
-			var rect := ColorRect.new()
-			rect.color = Color(def["color"])
-			rect.size = Vector2(TILE, TILE)
-			rect.position = Vector2(x * TILE, y * TILE)
-			parent.add_child(rect)
+			var tile := WorldTile.create(ch, Color(def["color"]), Vector2i(x, y))
+			parent.add_child(tile)
 			if def["solid"]:
 				var body := StaticBody2D.new()
 				var shape := CollisionShape2D.new()
@@ -42,7 +39,7 @@ static func build(map_data: Dictionary, parent: Node2D) -> void:
 				rs.size = Vector2(TILE, TILE)
 				shape.shape = rs
 				body.add_child(shape)
-				body.position = rect.position + Vector2(TILE / 2.0, TILE / 2.0)
+				body.position = tile.position + Vector2(TILE / 2.0, TILE / 2.0)
 				parent.add_child(body)
 	for p in map_data.get("portals", []):
 		var portal: Area2D = load("res://scripts/maps/portal.gd").new()
