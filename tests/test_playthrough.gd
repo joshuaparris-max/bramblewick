@@ -73,14 +73,14 @@ func _run_test():
 	portal._on_body_entered(p)
 	await wait_seconds(1.0)
 	scene = get_tree().current_scene
-	require(scene.name == "Exploration" and GameState.current_map == dest and GameState.current_map != prev_map, 7, "Player can transition maps via portal collision")
+	require(scene.name == "Exploration" and GameState.current_map == dest and GameState.current_map != prev_map, 7, "PORTAL COLLISION-HANDLER INTEGRATION TEST - Map transitions on portal trigger")
 	
 	# 8-9. Dialogue
 	await wait_seconds(0.5)
 	var npcs = get_tree().get_nodes_in_group("npc")
 	require(npcs.size() > 0, 8, "NPC exists to interact with")
 	var npc = npcs[0]
-	npc.add_to_group("interactable") # ensure it's interactable
+
 	
 	p = get_tree().get_nodes_in_group("player")[0]
 	p.position = npc.position
@@ -97,11 +97,11 @@ func _run_test():
 	
 	# 10. Quest
 	QuestManager.start_quest("q_silent_mine")
-	require(QuestManager.state_of("q_silent_mine") == "active", 10, "Quest accepted")
+	require(QuestManager.state_of("q_silent_mine") == "active", 10, "QUEST-STATE INTEGRATION TESTS - Quest accepted")
 	
 	# 11. Quest objective
 	EventBus.monster_killed.emit("spider_matron")
-	require(QuestManager.state_of("q_silent_mine") == "ready", 11, "Quest objective progressed to turn in")
+	require(QuestManager.state_of("q_silent_mine") == "ready", 11, "QUEST-STATE INTEGRATION TESTS - Quest objective progressed to ready")
 	
 	# 12. Combat
 	GameState.pending_encounter = {"monster_id": "wolf", "spawn_key": ""}
@@ -118,7 +118,7 @@ func _run_test():
 			scene._attack()
 		await wait_seconds(1.0)
 		hit_safety -= 1
-	require(scene.m_hp < initial_enemy_hp, 13, "Player turn functions (enemy HP reduced)")
+	require(scene.m_hp < initial_enemy_hp, 13, "COMBAT-LOGIC INTEGRATION TESTS - Enemy HP reduced")
 	
 	await wait_seconds(2.0)
 	require(scene._round > 1 or scene.m_hp == 0, 14, "Enemy turn/Damage states function")
@@ -138,7 +138,7 @@ func _run_test():
 	
 	QuestManager.turn_in("q_silent_mine")
 	require(QuestManager.state_of("q_silent_mine") == "done", 16, "Quest completed successfully")
-	require(true, 17, "Game provides clear completion state")
+	require(Inventory.gold >= 50, 17, "Vertical slice completion reward is granted (50 gold)")
 	
 	GameState.player.name = "SaveTest"
 	GameState.current_map = "village"

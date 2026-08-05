@@ -1,0 +1,49 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+[Db] loaded: 3 classes, 12 monsters, 9 npcs, 24 items, 8 quests, 9 dialogues, 8 maps
+Starting honest playthrough integration test...
+WARNING: Nodes with non-equal opposite anchors will have their size overridden after _ready(). 
+If you want to set size, change the anchors or consider using set_deferred().
+   at: _set_size (scene/gui/control.cpp:1519)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/ui/title_screen.gd:12)
+PASS: Stage 1 - Title screen rendered
+WARNING: Nodes with non-equal opposite anchors will have their size overridden after _ready(). 
+If you want to set size, change the anchors or consider using set_deferred().
+   at: _set_size (scene/gui/control.cpp:1519)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/ui/character_creation.gd:16)
+PASS: Stage 2 - New game started
+PASS: Stage 3 - Character creation completed, Exploration loaded
+PASS: Stage 4 - Player spawned in exploration scene
+PASS: Stage 5 - Player movement works (moved right via input)
+PASS: Stage 6 - Collision behaves sensibly (blocked from moving further left)
+PASS: Stage 7 - Map has portals to test
+PASS: Stage 7 - PORTAL COLLISION-HANDLER INTEGRATION TEST - Map transitions on portal trigger
+PASS: Stage 8 - NPC exists to interact with
+PASS: Stage 8 - NPC interacted via input, UI opened
+PASS: Stage 9 - Dialogue closed
+PASS: Stage 10 - QUEST-STATE INTEGRATION TESTS - Quest accepted
+PASS: Stage 11 - QUEST-STATE INTEGRATION TESTS - Quest objective progressed to ready
+WARNING: Nodes with non-equal opposite anchors will have their size overridden after _ready(). 
+If you want to set size, change the anchors or consider using set_deferred().
+   at: _set_size (scene/gui/control.cpp:1519)
+   GDScript backtrace (most recent call first):
+       [0] _build_ui (res://scripts/combat/combat_scene.gd:257)
+       [1] _ready (res://scripts/combat/combat_scene.gd:42)
+PASS: Stage 12 - Combat entered
+PASS: Stage 13 - COMBAT-LOGIC INTEGRATION TESTS - Enemy HP reduced
+PASS: Stage 14 - Enemy turn/Damage states function
+PASS: Stage 15 - Enemy HP reaches zero through combat processing
+PASS: Stage 15 - Combat victory returns to intended scene
+PASS: Stage 16 - Quest completed successfully
+PASS: Stage 17 - Vertical slice completion reward is granted (50 gold)
+PASS: Stage 18 - Saving works
+PASS: Stage 21 - Loading restores saved state
+WARNING: Nodes with non-equal opposite anchors will have their size overridden after _ready(). 
+If you want to set size, change the anchors or consider using set_deferred().
+   at: _set_size (scene/gui/control.cpp:1519)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/ui/title_screen.gd:12)
+PASS: Stage 22 - Restart behaviour works
+ALL PLAYTHROUGH STAGES PASSED.
