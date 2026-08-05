@@ -73,7 +73,7 @@
       "to_map": "village_outskirts",
       "to_pos": [
         4,
-        2
+        3
       ],
       "label": "Town Outskirts"
     },
@@ -85,7 +85,7 @@
       "to_map": "b_inn",
       "to_pos": [
         5,
-        9
+        8
       ],
       "label": "The Bramble Inn"
     },
@@ -97,7 +97,7 @@
       "to_map": "b_general_store",
       "to_pos": [
         5,
-        9
+        8
       ],
       "label": "General Store"
     },
