@@ -5,8 +5,8 @@
       "text": "The fish aren't biting today. Too much noise from the mill.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

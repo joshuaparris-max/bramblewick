@@ -5,8 +5,8 @@
       "text": "Master Borin is tough, but he knows his steel.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

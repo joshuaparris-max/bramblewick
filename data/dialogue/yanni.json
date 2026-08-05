@@ -5,8 +5,8 @@
       "text": "Good wood is hard to find since the wolves got bold.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

@@ -5,8 +5,8 @@
       "text": "Ah, to be young and foolish again. Keep your shield up, friend.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

@@ -5,8 +5,8 @@
       "text": "The Darkwood is no place for a stroll. Be careful out there.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

@@ -5,8 +5,8 @@
       "text": "My horses are spooked. Something out in the woods has 'em riled.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

@@ -326,7 +326,7 @@
     "map": "village_outskirts",
     "pos": [
       10,
-      3
+      5
     ],
     "dialogue": "fenn",
     "faction": "village",
@@ -539,7 +539,7 @@
     "map": "village_river",
     "pos": [
       16,
-      7
+      6
     ],
     "dialogue": "",
     "ambient": true,
@@ -552,7 +552,7 @@
     "map": "village_river",
     "pos": [
       10,
-      8
+      7
     ],
     "dialogue": "",
     "ambient": true,

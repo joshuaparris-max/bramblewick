@@ -5,7 +5,6 @@
       "text": "There are noises coming from the abandoned house next door. It's unsettling.",
       "options": [
         {
-          "text": "I'll check it out.",
           "condition": {
             "not_quest_started": "q_empty_house"
           },
@@ -15,10 +14,10 @@
               "type": "start_quest",
               "quest": "q_empty_house"
             }
-          ]
+          ],
+          "label": "I'll check it out."
         },
         {
-          "text": "The abandoned house is occupied by a harmless traveler.",
           "condition": {
             "quest_ready": "q_empty_house"
           },
@@ -28,11 +27,12 @@
               "type": "turn_in_quest",
               "quest": "q_empty_house"
             }
-          ]
+          ],
+          "label": "The abandoned house is occupied by a harmless traveler."
         },
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     },
@@ -40,8 +40,8 @@
       "text": "Oh, just a traveler? That's a relief. Thank you for checking.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

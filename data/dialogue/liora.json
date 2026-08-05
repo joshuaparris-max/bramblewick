@@ -5,8 +5,8 @@
       "text": "Fresh bread! Just out of the oven!",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

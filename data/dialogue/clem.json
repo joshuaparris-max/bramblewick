@@ -5,8 +5,8 @@
       "text": "Crops need rain, but not too much. It's a delicate balance.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }

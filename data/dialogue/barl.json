@@ -5,8 +5,8 @@
       "text": "I heard the marsh is glowing again at night.",
       "options": [
         {
-          "text": "Goodbye.",
-          "jump": "leave"
+          "jump": "leave",
+          "label": "Goodbye."
         }
       ]
     }
