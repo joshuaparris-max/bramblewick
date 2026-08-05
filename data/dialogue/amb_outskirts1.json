@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "I wouldn't wander too far past the town borders if I were you.",
-                "The Darkwood has been restless lately.",
-                "We're the first line if anything comes out of the forest.",
-                "The wind always howls through these fences.",
-                "You an adventurer? We get a lot of your kind passing through.",
-                "Keep your sword loose in its scabbard out here."
+                "Did you hear that? From the trees?",
+                "I don't go near the Darkwood. Not since last winter.",
+                "We should build the fences higher. Much higher.",
+                "Sometimes at night, I hear voices calling from the tree line."
             ],
             "choices": [
                 {

@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "The water's calm today. Good for fishing.",
-                "Old Sal hasn't taken the ferry out yet.",
-                "I swear I saw something moving in the reeds yesterday.",
-                "The breeze off the water is freezing at night.",
-                "Careful near the bank, the mud is slippery.",
-                "Nothing like the sound of the river to clear your head."
+                "Look how the light catches the ripples...",
+                "There's something deeply poetic about the river's endless journey.",
+                "I come here to think. It's so peaceful.",
+                "I wrote a sonnet about that duck over there."
             ],
             "choices": [
                 {

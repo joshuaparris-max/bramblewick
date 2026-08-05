@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "These old stones have seen better days...",
-                "The village elder looks more tired every day.",
-                "This part of town used to be the main square, long ago.",
-                "Shadows get long here in the afternoon.",
-                "Quiet around here, isn't it? Just how I like it.",
-                "Watch the cobbles, some of them are loose."
+                "The stones are watching us. I can feel it.",
+                "There's old blood beneath these cobbles. Very old blood.",
+                "Have you seen the shadows move when the sun stands still?",
+                "Don't step on the cracks. It wakes them up."
             ],
             "choices": [
                 {

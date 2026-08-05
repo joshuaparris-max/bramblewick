@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "Watch your step, lots of sharp tools around here.",
-                "The ringing of the anvils gives me a headache by noon.",
-                "Borin does good work, if you can afford his silver.",
-                "The wood here is still green. Takes forever to dry.",
-                "Smells like pine and hot iron.",
-                "Mind the sparks!"
+                "EH? SPEAK UP! THE HAMMERS RUINED MY EARS!",
+                "WHAT? YOU WANT A BUCKET?",
+                "I SAID PINE, NOT OAK!",
+                "CAN'T HEAR A THING YOU'RE SAYING, STRANGER!"
             ],
             "choices": [
                 {

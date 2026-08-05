@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "Beautiful day for a bargain, isn't it?",
-                "I've been looking for fresh apples all morning.",
-                "Keep a hand on your coin purse. Lots of strangers about.",
-                "The prices here just keep going up!",
-                "Did you see the latest shipment from the south?",
-                "If you're buying, make sure to haggle. They expect it."
+                "Oh! Do you know if anyone here sells cardamom?",
+                "I just love market day! The colors, the smells, the crowds!",
+                "I heard Silas is buying up all the fresh eggs.",
+                "It's so hard to find good silk this far north."
             ],
             "choices": [
                 {

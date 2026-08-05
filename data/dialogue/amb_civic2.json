@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "Keep your nose clean, the guards are watching.",
-                "I need to pay my taxes before the week is out.",
-                "The mayor hasn't made a speech in a month.",
-                "This square is usually busier on weekends.",
-                "Don't loiter too long near the town hall.",
-                "Have you checked the notice board recently?"
+                "The mayor's taxes are steep... but a small donation to the guards might speed up your paperwork.",
+                "Justice is blind, but occasionally she peeks if the coin is shiny enough.",
+                "It's a tough job. A man's gotta eat, right?",
+                "If you want access to the archives, it's going to cost you a 'processing fee'."
             ],
             "choices": [
                 {

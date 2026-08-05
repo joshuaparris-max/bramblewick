@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "These old stones have seen better days...",
-                "The village elder looks more tired every day.",
-                "This part of town used to be the main square, long ago.",
-                "Shadows get long here in the afternoon.",
-                "Quiet around here, isn't it? Just how I like it.",
-                "Watch the cobbles, some of them are loose."
+                "Before the mine closed, this square was paved with silver...",
+                "The youth today have no respect for the old ways.",
+                "I remember when Bramblewick was just three huts and a pig.",
+                "They don't build houses like they used to."
             ],
             "choices": [
                 {

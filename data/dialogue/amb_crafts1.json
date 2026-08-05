@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "Watch your step, lots of sharp tools around here.",
-                "The ringing of the anvils gives me a headache by noon.",
-                "Borin does good work, if you can afford his silver.",
-                "The wood here is still green. Takes forever to dry.",
-                "Smells like pine and hot iron.",
-                "Mind the sparks!"
+                "Borin's work is sloppy. Someday I'll have my own forge and show them all.",
+                "I could forge a better blade blindfolded.",
+                "They make me sweep the soot while true talent goes to waste.",
+                "Don't buy the ironwork here. Wait until I set up shop."
             ],
             "choices": [
                 {

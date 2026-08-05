@@ -3,12 +3,10 @@
     "nodes": {
         "start": {
             "text": [
-                "Keep your nose clean, the guards are watching.",
-                "I need to pay my taxes before the week is out.",
-                "The mayor hasn't made a speech in a month.",
-                "This square is usually busier on weekends.",
-                "Don't loiter too long near the town hall.",
-                "Have you checked the notice board recently?"
+                "State your business, traveler. We don't like trouble.",
+                "Keep your weapons sheathed, or I'll sheathe them for you.",
+                "I've got my eye on you.",
+                "No loitering. Move along."
             ],
             "choices": [
                 {
