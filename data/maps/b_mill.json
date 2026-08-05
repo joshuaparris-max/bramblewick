@@ -42,7 +42,29 @@
   ],
   "chests": [],
   "npcs": [],
-  "monsters": [],
+  "monsters": [
+    {
+      "id": "spider",
+      "pos": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "spider",
+      "pos": [
+        7,
+        3
+      ]
+    },
+    {
+      "id": "spider",
+      "pos": [
+        3,
+        7
+      ]
+    }
+  ],
   "decorations": [
     {
       "type": "table",

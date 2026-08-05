@@ -40,7 +40,16 @@
       "label": "Exit"
     }
   ],
-  "chests": [],
+  "chests": [
+    {
+      "pos": [
+        8,
+        2
+      ],
+      "item": "kael_package",
+      "count": 1
+    }
+  ],
   "npcs": [],
   "monsters": [],
   "decorations": [
