@@ -1,4 +1,4 @@
-﻿extends Node
+extends Node
 
 func _init() -> void:
 	print("Running headless test...")
@@ -62,6 +62,12 @@ func _run_tests() -> void:
 					push_error("NPC %s in %s placed on solid tile '%s' at (%d, %d)" % [npc_id, map_id, tc, nx, ny])
 					has_error = true
 			
+			# Ensure NPC is not duplicated in multiple maps
+			for other_map_id in Db.maps:
+				if other_map_id != map_id and npc_id in Db.maps[other_map_id].get("npcs", []):
+					push_error("NPC %s is duplicated in maps %s and %s" % [npc_id, map_id, other_map_id])
+					has_error = true
+		
 		# Validate Monsters
 		for m in map_data.get("monsters", []):
 			if not Db.get_monster(m["id"]):
@@ -73,6 +79,34 @@ func _run_tests() -> void:
 			if c.has("item") and not Db.get_item(c["item"]):
 				push_error("Map %s chest contains missing item: %s" % [map_id, c["item"]])
 				has_error = true
+					
+	# Validate required NPCs are in their intended maps
+	var required_npcs = {
+		"elder": "b_elders_hall",
+		"vane": "b_elders_hall",
+		"smith": "b_blacksmith",
+		"garret": "b_blacksmith",
+		"nyssa": "b_apothecary",
+		"yanni": "b_carpenter",
+		"olen": "b_old_house",
+		"vorn": "b_abandoned_house",
+		"hobb": "b_mill",
+		"kade": "b_guardhouse",
+		"tor": "b_stable",
+		"kael": "b_general_store",
+		"liora": "b_bakery",
+		"silas_inn": "b_inn",
+		"elara": "b_inn"
+	}
+	
+	for req_npc_id in required_npcs:
+		var expected_map = required_npcs[req_npc_id]
+		var npc_def = Db.get_npc(req_npc_id)
+		
+		# Expected map contains that NPC ID
+		if not req_npc_id in Db.maps.get(expected_map, {}).get("npcs", []):
+			push_error("Required NPC %s is missing from expected map %s" % [req_npc_id, expected_map])
+			has_error = true
 				
 	# Reachability (BFS from Market Square)
 	var visited = {"village_market": true}

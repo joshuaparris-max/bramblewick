@@ -29,7 +29,7 @@ func load_game() -> bool:
 	if not (data is Dictionary):
 		push_error("[Save] corrupt save file")
 		return false
-	data = _migrate(data)
+	data = migrate_data(data)
 	GameState.import_state(data.get("game_state", {}))
 	Inventory.import_state(data.get("inventory", {}))
 	QuestManager.import_state(data.get("quests", {}))
@@ -40,7 +40,7 @@ func delete_save() -> void:
 	if has_save():
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(SAVE_PATH))
 
-func _migrate(data: Dictionary) -> Dictionary:
+func migrate_data(data: Dictionary) -> Dictionary:
 	var v = data.get("version", 1)
 	if v < 2:
 		if data.has("game_state"):

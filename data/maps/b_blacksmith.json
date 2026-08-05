@@ -41,7 +41,10 @@
     }
   ],
   "chests": [],
-  "npcs": [],
+  "npcs": [
+    "smith",
+    "garret"
+  ],
   "monsters": [],
   "decorations": [
     {

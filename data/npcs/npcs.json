@@ -5,8 +5,8 @@
     "icon": "bust_bun",
     "map": "village_market",
     "pos": [
-      14,
-      2
+      3,
+      3
     ],
     "dialogue": "elder",
     "faction": "village",
@@ -22,8 +22,8 @@
     "icon": "bust",
     "map": "village_crafts",
     "pos": [
-      4,
-      4
+      3,
+      3
     ],
     "dialogue": "smith",
     "faction": "village",
@@ -75,8 +75,8 @@
     "icon": "bust_cap",
     "map": "village_river",
     "pos": [
-      14,
-      4
+      3,
+      3
     ],
     "dialogue": "hobb",
     "faction": "village",
@@ -171,8 +171,8 @@
     "icon": "bust",
     "map": "village_crafts",
     "pos": [
-      6,
-      4
+      3,
+      3
     ],
     "dialogue": "garret",
     "faction": "village",
@@ -186,8 +186,8 @@
     "icon": "bust_hood",
     "map": "village_crafts",
     "pos": [
-      14,
-      4
+      3,
+      3
     ],
     "dialogue": "nyssa",
     "faction": "village",
@@ -203,8 +203,8 @@
     "icon": "bust_cap",
     "map": "village_crafts",
     "pos": [
-      10,
-      6
+      3,
+      3
     ],
     "dialogue": "yanni",
     "faction": "village",
@@ -218,8 +218,8 @@
     "icon": "bust",
     "map": "village_old",
     "pos": [
-      5,
-      5
+      3,
+      3
     ],
     "dialogue": "olen",
     "faction": "village",
@@ -250,8 +250,8 @@
     "icon": "bust_hood",
     "map": "village_old",
     "pos": [
-      15,
-      2
+      3,
+      3
     ],
     "dialogue": "vorn",
     "faction": "none",
@@ -295,8 +295,8 @@
     "icon": "bust",
     "map": "village_civic",
     "pos": [
-      15,
-      4
+      3,
+      3
     ],
     "dialogue": "vane",
     "faction": "village",
@@ -340,8 +340,8 @@
     "icon": "bust_cap",
     "map": "village_outskirts",
     "pos": [
-      4,
-      4
+      3,
+      3
     ],
     "dialogue": "tor",
     "faction": "village",
@@ -370,8 +370,8 @@
     "icon": "knight",
     "map": "village_outskirts",
     "pos": [
-      14,
-      4
+      3,
+      3
     ],
     "dialogue": "kade",
     "faction": "village",
@@ -385,8 +385,8 @@
     "icon": "bust",
     "map": "b_inn",
     "pos": [
-      4,
-      4
+      3,
+      3
     ],
     "dialogue": "silas_inn",
     "faction": "village",
@@ -400,8 +400,8 @@
     "icon": "bust",
     "map": "b_inn",
     "pos": [
-      6,
-      5
+      3,
+      3
     ],
     "dialogue": "elara",
     "faction": "village",
@@ -415,8 +415,8 @@
     "icon": "bust_cap",
     "map": "b_general_store",
     "pos": [
-      5,
-      4
+      3,
+      3
     ],
     "dialogue": "kael",
     "faction": "village",
@@ -432,8 +432,8 @@
     "icon": "bust",
     "map": "b_bakery",
     "pos": [
-      4,
-      4
+      3,
+      3
     ],
     "dialogue": "liora",
     "faction": "village",

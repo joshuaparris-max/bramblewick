@@ -41,7 +41,10 @@
     }
   ],
   "chests": [],
-  "npcs": [],
+  "npcs": [
+    "elder",
+    "vane"
+  ],
   "monsters": [],
   "decorations": [
     {
