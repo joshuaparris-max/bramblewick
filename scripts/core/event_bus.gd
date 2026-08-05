@@ -1,4 +1,4 @@
-﻿extends Node
+extends Node
 ## MODULE: EventBus (core)
 ## PURPOSE: The single message board every module talks through.
 ##   Modules NEVER call deep into each other; they emit/listen here.
@@ -44,7 +44,7 @@ signal monster_killed(monster_id: String)
 signal combat_ended(victory: bool, spawn_key: String)
 
 # --- system ---
+signal time_changed(time_of_day: float)
 signal game_saved
 signal game_loaded
 signal toast(message: String)                   # small HUD notifications
-

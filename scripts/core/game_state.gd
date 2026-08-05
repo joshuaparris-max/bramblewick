@@ -24,6 +24,23 @@ var player_pos: Vector2i = Vector2i(2, 2)
 var cleared_spawns: Dictionary = {}
 var pending_encounter: Dictionary = {}   # {"monster_id":..,"spawn_key":..} set before combat
 
+var time_of_day: float = 8.0  # 0 to 24 hours
+var _time_timer: Timer
+
+func _ready() -> void:
+	_time_timer = Timer.new()
+	_time_timer.wait_time = 1.0  # 1 real second = some in-game minutes
+	_time_timer.autostart = true
+	_time_timer.timeout.connect(_on_time_tick)
+	add_child(_time_timer)
+
+func _on_time_tick() -> void:
+	if pending_encounter.is_empty(): # rough heuristic for 'not in combat'
+		time_of_day += 0.05 # 20 seconds real-time = 1 in-game hour. 1 day = 8 minutes.
+		if time_of_day >= 24.0:
+			time_of_day -= 24.0
+		EventBus.time_changed.emit(time_of_day)
+
 func new_game(class_id: String, pname: String) -> void:
 	var c := Db.get_class_def(class_id)
 	flags = {}; reputation = {}; cleared_spawns = {}; pending_encounter = {}
@@ -43,7 +60,9 @@ func new_game(class_id: String, pname: String) -> void:
 	player["hp"] = player["hp_max"]
 	current_map = "village_market"
 	player_pos = Vector2i(c.get("start_pos", [3, 5])[0], c.get("start_pos", [3, 5])[1])
+	time_of_day = 8.0 # Start at 8 AM
 	EventBus.state_changed.emit()
+	EventBus.time_changed.emit(time_of_day)
 
 func recalc_derived() -> void:
 	# AC and attack come from class base + equipped items. UI never computes rules.
@@ -129,6 +148,7 @@ func export_state() -> Dictionary:
 		"reputation": reputation.duplicate(true),
 		"current_map": current_map, "player_pos": [player_pos.x, player_pos.y],
 		"cleared_spawns": cleared_spawns.duplicate(true),
+		"time_of_day": time_of_day
 	}
 
 func import_state(data: Dictionary) -> void:
@@ -139,4 +159,6 @@ func import_state(data: Dictionary) -> void:
 	var p: Array = data.get("player_pos", [2, 2])
 	player_pos = Vector2i(int(p[0]), int(p[1]))
 	cleared_spawns = data.get("cleared_spawns", {})
+	time_of_day = data.get("time_of_day", 8.0)
 	EventBus.state_changed.emit()
+	EventBus.time_changed.emit(time_of_day)
