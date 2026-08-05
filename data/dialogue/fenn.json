@@ -1,14 +1,14 @@
 {
-  "id": "fenn",
-  "nodes": {
-    "root": {
-      "text": "The Darkwood is no place for a stroll. Be careful out there.",
-      "options": [
-        {
-          "jump": "leave",
-          "label": "Goodbye."
+    "id": "fenn",
+    "nodes": {
+        "start": {
+            "text": "The Darkwood is no place for a stroll. Be careful out there.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

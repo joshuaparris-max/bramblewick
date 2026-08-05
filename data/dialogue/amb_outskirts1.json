@@ -1,12 +1,12 @@
 {
     "id": "amb_outskirts1",
     "nodes": {
-        "root": {
+        "start": {
             "text": "I wouldn't wander too far past the town borders if I were you.",
-            "options": [
+            "choices": [
                 {
                     "label": "Goodbye.",
-                    "jump": "leave"
+                    "next": null
                 }
             ]
         }

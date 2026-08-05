@@ -1,14 +1,14 @@
 {
-  "id": "kade",
-  "nodes": {
-    "root": {
-      "text": "We keep Bramblewick safe, but the wilds are your own problem.",
-      "options": [
-        {
-          "jump": "leave",
-          "label": "Goodbye."
+    "id": "kade",
+    "nodes": {
+        "start": {
+            "text": "We keep Bramblewick safe, but the wilds are your own problem.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

@@ -1,33 +1,33 @@
 {
-  "id": "silas_inn",
-  "nodes": {
-    "root": {
-      "text": "Welcome to the Bramble Inn. Fire's warm, ale's cold.",
-      "options": [
-        {
-          "label": "Rest and recover (5g)",
-          "events": [
-            {
-              "type": "open_shop",
-              "shop": "silas_inn"
-            }
-          ],
-          "jump": "leave"
+    "id": "silas_inn",
+    "nodes": {
+        "rested": {
+            "text": "You look better already.",
+            "choices": [
+                {
+                    "label": "Thanks.",
+                    "next": "root"
+                }
+            ]
         },
-        {
-          "label": "Goodbye.",
-          "jump": "leave"
+        "start": {
+            "text": "Welcome to the Bramble Inn. Fire's warm, ale's cold.",
+            "choices": [
+                {
+                    "label": "Rest and recover (5g)",
+                    "events": [
+                        {
+                            "type": "open_shop",
+                            "shop": "silas_inn"
+                        }
+                    ],
+                    "next": null
+                },
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
-    },
-    "rested": {
-      "text": "You look better already.",
-      "options": [
-        {
-          "label": "Thanks.",
-          "jump": "root"
-        }
-      ]
     }
-  }
 }

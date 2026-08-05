@@ -1,14 +1,14 @@
 {
-  "id": "tor",
-  "nodes": {
-    "root": {
-      "text": "My horses are spooked. Something out in the woods has 'em riled.",
-      "options": [
-        {
-          "jump": "leave",
-          "label": "Goodbye."
+    "id": "tor",
+    "nodes": {
+        "start": {
+            "text": "My horses are spooked. Something out in the woods has 'em riled.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

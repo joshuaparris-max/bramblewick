@@ -1,12 +1,12 @@
 {
     "id": "amb_market3",
     "nodes": {
-        "root": {
+        "start": {
             "text": "Beautiful day for a bargain, isn't it?",
-            "options": [
+            "choices": [
                 {
                     "label": "Goodbye.",
-                    "jump": "leave"
+                    "next": null
                 }
             ]
         }

@@ -1,12 +1,12 @@
 {
     "id": "amb_river2",
     "nodes": {
-        "root": {
+        "start": {
             "text": "The water's calm today. Good for fishing.",
-            "options": [
+            "choices": [
                 {
                     "label": "Goodbye.",
-                    "jump": "leave"
+                    "next": null
                 }
             ]
         }

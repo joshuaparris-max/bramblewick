@@ -1,14 +1,14 @@
 {
-  "id": "rurik",
-  "nodes": {
-    "root": {
-      "text": "Keep the peace, and we'll have no trouble.",
-      "options": [
-        {
-          "jump": "leave",
-          "label": "Goodbye."
+    "id": "rurik",
+    "nodes": {
+        "start": {
+            "text": "Keep the peace, and we'll have no trouble.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

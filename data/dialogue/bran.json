@@ -1,14 +1,14 @@
 {
-  "id": "bran",
-  "nodes": {
-    "root": {
-      "text": "The fish aren't biting today. Too much noise from the mill.",
-      "options": [
-        {
-          "jump": "leave",
-          "label": "Goodbye."
+    "id": "bran",
+    "nodes": {
+        "start": {
+            "text": "The fish aren't biting today. Too much noise from the mill.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
     }
-  }
 }

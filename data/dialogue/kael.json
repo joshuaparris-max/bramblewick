@@ -1,72 +1,72 @@
 {
-  "id": "kael",
-  "nodes": {
-    "root": {
-      "text": "Welcome to the General Store. We've got most things, though lately shipments are light.",
-      "options": [
-        {
-          "label": "What do you have for sale?",
-          "jump": "leave",
-          "events": [
-            {
-              "type": "open_shop",
-              "shop": "kael_general_store"
-            }
-          ]
+    "id": "kael",
+    "nodes": {
+        "q_delivery_offer": {
+            "text": "Aye, one of my crates was left at the Riverside warehouse by a terrified carter. Too scared to go back for it. If you can fetch it, I'll pay.",
+            "choices": [
+                {
+                    "label": "I'll get it.",
+                    "events": [
+                        {
+                            "type": "start_quest",
+                            "quest": "q_lost_delivery"
+                        }
+                    ],
+                    "next": null
+                },
+                {
+                    "label": "Not right now.",
+                    "next": "root"
+                }
+            ]
         },
-        {
-          "label": "Shipments are light?",
-          "condition": {
-            "not_quest_started": "q_lost_delivery"
-          },
-          "jump": "q_delivery_offer"
+        "q_delivery_done": {
+            "text": "Ha! Good work. Here's your coin as promised.",
+            "choices": [
+                {
+                    "label": "Thanks.",
+                    "next": "root"
+                }
+            ]
         },
-        {
-          "label": "I found your package in the warehouse.",
-          "condition": {
-            "quest_ready": "q_lost_delivery"
-          },
-          "jump": "q_delivery_done",
-          "events": [
-            {
-              "type": "turn_in_quest",
-              "quest": "q_lost_delivery"
-            }
-          ]
-        },
-        {
-          "label": "Goodbye.",
-          "jump": "leave"
+        "start": {
+            "text": "Welcome to the General Store. We've got most things, though lately shipments are light.",
+            "choices": [
+                {
+                    "label": "What do you have for sale?",
+                    "events": [
+                        {
+                            "type": "open_shop",
+                            "shop": "kael_general_store"
+                        }
+                    ],
+                    "next": null
+                },
+                {
+                    "label": "Shipments are light?",
+                    "condition": {
+                        "not_quest_started": "q_lost_delivery"
+                    },
+                    "next": "q_delivery_offer"
+                },
+                {
+                    "label": "I found your package in the warehouse.",
+                    "condition": {
+                        "quest_ready": "q_lost_delivery"
+                    },
+                    "events": [
+                        {
+                            "type": "turn_in_quest",
+                            "quest": "q_lost_delivery"
+                        }
+                    ],
+                    "next": "q_delivery_done"
+                },
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
-    },
-    "q_delivery_offer": {
-      "text": "Aye, one of my crates was left at the Riverside warehouse by a terrified carter. Too scared to go back for it. If you can fetch it, I'll pay.",
-      "options": [
-        {
-          "label": "I'll get it.",
-          "jump": "leave",
-          "events": [
-            {
-              "type": "start_quest",
-              "quest": "q_lost_delivery"
-            }
-          ]
-        },
-        {
-          "label": "Not right now.",
-          "jump": "root"
-        }
-      ]
-    },
-    "q_delivery_done": {
-      "text": "Ha! Good work. Here's your coin as promised.",
-      "options": [
-        {
-          "label": "Thanks.",
-          "jump": "root"
-        }
-      ]
     }
-  }
 }

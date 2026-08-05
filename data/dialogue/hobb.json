@@ -1,69 +1,69 @@
 {
-  "id": "hobb",
-  "start": "start",
-  "nodes": {
-    "start": {
-      "text": [
-        "\"Peddler Ivo's sat in the square with an empty cart and a face like a wet Tuesday. Ambushed on the North Road, they say. Redmaw's crew.\"",
-        "\"Old Sal, out on Fenwater? Pays coin for dead lights, I hear. Don't ask me how you kill a light. Don't ask her either, she'll tell you.\"",
-        "\"Sister Aldith's been at her candles all week. Chapel bell across the fen rang itself, and the Light's folk don't care for bells with opinions.\"",
-        "\"There's a howl out of the deep Darkwood some nights that ain't off any wolf Borin bought a pelt from. Bigger. Older. My dog won't sleep outside now.\"",
-        "\"Flour's milled by noon, gossip's fresh all day. That's the miller's trade, friend - grain and news, and only one of them's ever stale.\""
-      ],
-      "choices": [
-        {
-          "label": "Any other news?",
-          "next": "start"
+    "id": "hobb",
+    "start": "start",
+    "nodes": {
+        "start": {
+            "text": [
+                "\"Peddler Ivo's sat in the square with an empty cart and a face like a wet Tuesday. Ambushed on the North Road, they say. Redmaw's crew.\"",
+                "\"Old Sal, out on Fenwater? Pays coin for dead lights, I hear. Don't ask me how you kill a light. Don't ask her either, she'll tell you.\"",
+                "\"Sister Aldith's been at her candles all week. Chapel bell across the fen rang itself, and the Light's folk don't care for bells with opinions.\"",
+                "\"There's a howl out of the deep Darkwood some nights that ain't off any wolf Borin bought a pelt from. Bigger. Older. My dog won't sleep outside now.\"",
+                "\"Flour's milled by noon, gossip's fresh all day. That's the miller's trade, friend - grain and news, and only one of them's ever stale.\""
+            ],
+            "choices": [
+                {
+                    "label": "Any other news?",
+                    "next": "start"
+                },
+                {
+                    "label": "(Leave)",
+                    "next": null
+                }
+            ]
         },
-        {
-          "label": "(Leave)",
-          "next": null
-        }
-      ]
-    },
-    "root": {
-      "text": "The mill has seen better days. Damn spiders.",
-      "options": [
-        {
-          "label": "I can clear them out.",
-          "events": [
-            {
-              "type": "start_quest",
-              "quest": "q_mill_trouble"
-            }
-          ],
-          "condition": {
-            "not_quest_started": "q_mill_trouble"
-          },
-          "jump": "leave"
+        "root": {
+            "text": "The mill has seen better days. Damn spiders.",
+            "choices": [
+                {
+                    "label": "I can clear them out.",
+                    "events": [
+                        {
+                            "type": "start_quest",
+                            "quest": "q_mill_trouble"
+                        }
+                    ],
+                    "condition": {
+                        "not_quest_started": "q_mill_trouble"
+                    },
+                    "next": null
+                },
+                {
+                    "label": "I killed the spiders.",
+                    "events": [
+                        {
+                            "type": "turn_in_quest",
+                            "quest": "q_mill_trouble"
+                        }
+                    ],
+                    "condition": {
+                        "quest_ready": "q_mill_trouble"
+                    },
+                    "next": "thanks"
+                },
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         },
-        {
-          "label": "I killed the spiders.",
-          "events": [
-            {
-              "type": "turn_in_quest",
-              "quest": "q_mill_trouble"
-            }
-          ],
-          "condition": {
-            "quest_ready": "q_mill_trouble"
-          },
-          "jump": "thanks"
-        },
-        {
-          "label": "Goodbye.",
-          "jump": "leave"
+        "thanks": {
+            "text": "Much obliged. Now I can finally get back to grinding.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
         }
-      ]
-    },
-    "thanks": {
-      "text": "Much obliged. Now I can finally get back to grinding.",
-      "options": [
-        {
-          "label": "Goodbye.",
-          "jump": "leave"
-        }
-      ]
     }
-  }
 }
