@@ -1,0 +1,14 @@
+{
+  "id": "pip",
+  "nodes": {
+    "root": {
+      "text": "I'm going to be an adventurer! Just you wait!",
+      "options": [
+        {
+          "text": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    }
+  }
+}

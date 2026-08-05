@@ -19,7 +19,7 @@ extends Node
 var player: Dictionary = {}
 var flags: Dictionary = {}
 var reputation: Dictionary = {}
-var current_map: String = "village"
+var current_map: String = "village_market"
 var player_pos: Vector2i = Vector2i(2, 2)
 var cleared_spawns: Dictionary = {}
 var pending_encounter: Dictionary = {}   # {"monster_id":..,"spawn_key":..} set before combat
@@ -41,7 +41,7 @@ func new_game(class_id: String, pname: String) -> void:
 	recalc_derived()
 	player["hp_max"] = c["base_hp"] + Rules.ability_mod(player["stats"]["CON"])
 	player["hp"] = player["hp_max"]
-	current_map = "village"
+	current_map = "village_market"
 	player_pos = Vector2i(c.get("start_pos", [3, 5])[0], c.get("start_pos", [3, 5])[1])
 	EventBus.state_changed.emit()
 
@@ -135,7 +135,7 @@ func import_state(data: Dictionary) -> void:
 	player = data.get("player", {})
 	flags = data.get("flags", {})
 	reputation = data.get("reputation", {})
-	current_map = data.get("current_map", "village")
+	current_map = data.get("current_map", "village_market")
 	var p: Array = data.get("player_pos", [2, 2])
 	player_pos = Vector2i(int(p[0]), int(p[1]))
 	cleared_spawns = data.get("cleared_spawns", {})

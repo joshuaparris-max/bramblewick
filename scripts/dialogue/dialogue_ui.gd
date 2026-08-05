@@ -134,5 +134,10 @@ func _build_ui() -> void:
 	_text_lbl.fit_content = true
 	_text_lbl.custom_minimum_size = Vector2(0, 90)
 	v.add_child(_text_lbl)
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size = Vector2(0, 100)
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	v.add_child(scroll)
 	_choices_box = VBoxContainer.new()
-	v.add_child(_choices_box)
+	_choices_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(_choices_box)

@@ -1,4 +1,4 @@
-extends Node
+﻿extends Node
 
 func _ready():
 	print("Starting honest playthrough integration test...")
@@ -143,14 +143,14 @@ func _run_test():
 	require(Inventory.gold >= 50, 17, "Vertical slice completion reward is granted (50 gold)")
 	
 	GameState.player.name = "SaveTest"
-	GameState.current_map = "village"
+	GameState.current_map = "village_market"
 	SaveManager.save_game()
 	require(FileAccess.file_exists("user://save.json"), 18, "Saving works")
 	
 	GameState.player.name = "Empty"
 	GameState.current_map = "none"
 	SaveManager.load_game()
-	require(GameState.player.name == "SaveTest" and GameState.current_map == "village", 21, "Loading restores saved state")
+	require(GameState.player.name == "SaveTest" and GameState.current_map == "village_market", 21, "Loading restores saved state")
 	
 	SceneRouter.goto("title")
 	await wait_seconds(0.5)
@@ -159,4 +159,5 @@ func _run_test():
 	
 	print("ALL PLAYTHROUGH STAGES PASSED.")
 	get_tree().quit(0)
+
 

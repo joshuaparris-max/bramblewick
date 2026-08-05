@@ -17,18 +17,81 @@
     "######################"
   ],
   "portals": [
-    {"pos": [20, 7], "to_map": "village", "to_pos": [2, 10], "label": "Bramblewick"},
-    {"pos": [1, 10], "to_map": "chapel", "to_pos": [11, 8], "label": "The Old Chapel"}
+    {
+      "pos": [
+        20,
+        7
+      ],
+      "to_map": "village_outskirts",
+      "to_pos": [
+        2,
+        10
+      ],
+      "label": "Bramblewick"
+    },
+    {
+      "pos": [
+        1,
+        10
+      ],
+      "to_map": "chapel",
+      "to_pos": [
+        11,
+        8
+      ],
+      "label": "The Old Chapel"
+    }
   ],
   "chests": [
-    {"pos": [18, 1], "items": {"potion_greater": 1}, "gold": 12}
+    {
+      "pos": [
+        18,
+        1
+      ],
+      "items": {
+        "potion_greater": 1
+      },
+      "gold": 12
+    }
   ],
-  "npcs": ["sal"],
+  "npcs": [
+    "sal"
+  ],
   "monsters": [
-    {"id": "marsh_wisp", "pos": [10, 1]},
-    {"id": "marsh_wisp", "pos": [18, 3]},
-    {"id": "marsh_wisp", "pos": [3, 8]},
-    {"id": "bog_shambler", "pos": [13, 6]},
-    {"id": "bog_shambler", "pos": [17, 9]}
+    {
+      "id": "marsh_wisp",
+      "pos": [
+        10,
+        1
+      ]
+    },
+    {
+      "id": "marsh_wisp",
+      "pos": [
+        18,
+        3
+      ]
+    },
+    {
+      "id": "marsh_wisp",
+      "pos": [
+        3,
+        8
+      ]
+    },
+    {
+      "id": "bog_shambler",
+      "pos": [
+        13,
+        6
+      ]
+    },
+    {
+      "id": "bog_shambler",
+      "pos": [
+        17,
+        9
+      ]
+    }
   ]
 }

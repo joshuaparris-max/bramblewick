@@ -1,0 +1,97 @@
+{
+  "id": "kael",
+  "nodes": {
+    "root": {
+      "text": "Welcome to the General Store. We've got most things, though lately shipments are light.",
+      "options": [
+        {
+          "label": "What do you have for sale?",
+          "jump": "shop"
+        },
+        {
+          "label": "Shipments are light?",
+          "condition": {
+            "not_quest_started": "q_lost_delivery"
+          },
+          "jump": "q_delivery_offer"
+        },
+        {
+          "label": "I found your package in the warehouse.",
+          "condition": {
+            "quest_ready": "q_lost_delivery"
+          },
+          "jump": "q_delivery_done",
+          "events": [
+            {
+              "type": "turn_in_quest",
+              "quest": "q_lost_delivery"
+            }
+          ]
+        },
+        {
+          "label": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    },
+    "shop": {
+      "text": "Take your time.",
+      "options": [
+        {
+          "label": "Buy Leather Armour (10g)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "leather_armour",
+              "cost": 10
+            }
+          ],
+          "jump": "shop"
+        },
+        {
+          "label": "Buy Healing Potion (8g)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "potion_healing",
+              "cost": 8
+            }
+          ],
+          "jump": "shop"
+        },
+        {
+          "label": "Never mind.",
+          "jump": "root"
+        }
+      ]
+    },
+    "q_delivery_offer": {
+      "text": "Aye, one of my crates was left at the Riverside warehouse by a terrified carter. Too scared to go back for it. If you can fetch it, I'll pay.",
+      "options": [
+        {
+          "label": "I'll get it.",
+          "jump": "leave",
+          "events": [
+            {
+              "type": "start_quest",
+              "quest": "q_lost_delivery"
+            }
+          ]
+        },
+        {
+          "label": "Not right now.",
+          "jump": "root"
+        }
+      ]
+    },
+    "q_delivery_done": {
+      "text": "Ha! Good work. Here's your coin as promised.",
+      "options": [
+        {
+          "label": "Thanks.",
+          "jump": "root"
+        }
+      ]
+    }
+  }
+}

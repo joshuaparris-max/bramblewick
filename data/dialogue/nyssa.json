@@ -1,0 +1,97 @@
+{
+  "id": "nyssa",
+  "nodes": {
+    "root": {
+      "text": "Herbs, tinctures, remedies. Don't touch the glass bottles.",
+      "options": [
+        {
+          "label": "What do you have for sale?",
+          "jump": "shop"
+        },
+        {
+          "label": "Are you low on anything?",
+          "condition": {
+            "not_quest_started": "q_marsh_roots"
+          },
+          "jump": "q_roots_offer"
+        },
+        {
+          "label": "I have the 3 Marsh Roots you asked for.",
+          "condition": {
+            "quest_ready": "q_marsh_roots"
+          },
+          "jump": "q_roots_done",
+          "events": [
+            {
+              "type": "turn_in_quest",
+              "quest": "q_marsh_roots"
+            }
+          ]
+        },
+        {
+          "label": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    },
+    "shop": {
+      "text": "I can part with these.",
+      "options": [
+        {
+          "label": "Buy Healing Potion (8g)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "potion_healing",
+              "cost": 8
+            }
+          ],
+          "jump": "shop"
+        },
+        {
+          "label": "Buy Greater Healing Potion (20g)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "potion_greater",
+              "cost": 20
+            }
+          ],
+          "jump": "shop"
+        },
+        {
+          "label": "Never mind.",
+          "jump": "root"
+        }
+      ]
+    },
+    "q_roots_offer": {
+      "text": "I'm out of Marsh Roots. The fen is too dangerous for me these days. Bring me three and I'll reward you with potions.",
+      "options": [
+        {
+          "label": "I'll fetch them.",
+          "jump": "leave",
+          "events": [
+            {
+              "type": "start_quest",
+              "quest": "q_marsh_roots"
+            }
+          ]
+        },
+        {
+          "label": "Too busy.",
+          "jump": "root"
+        }
+      ]
+    },
+    "q_roots_done": {
+      "text": "Excellent quality. These will brew nicely. Here are your potions.",
+      "options": [
+        {
+          "label": "Thanks.",
+          "jump": "root"
+        }
+      ]
+    }
+  }
+}

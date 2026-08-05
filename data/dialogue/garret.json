@@ -1,0 +1,14 @@
+{
+  "id": "garret",
+  "nodes": {
+    "root": {
+      "text": "Master Borin is tough, but he knows his steel.",
+      "options": [
+        {
+          "text": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    }
+  }
+}

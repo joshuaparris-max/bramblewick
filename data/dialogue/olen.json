@@ -1,0 +1,49 @@
+{
+  "id": "olen",
+  "nodes": {
+    "root": {
+      "text": "There are noises coming from the abandoned house next door. It's unsettling.",
+      "options": [
+        {
+          "text": "I'll check it out.",
+          "condition": {
+            "not_quest_started": "q_empty_house"
+          },
+          "jump": "leave",
+          "events": [
+            {
+              "type": "start_quest",
+              "quest": "q_empty_house"
+            }
+          ]
+        },
+        {
+          "text": "The abandoned house is occupied by a harmless traveler.",
+          "condition": {
+            "quest_ready": "q_empty_house"
+          },
+          "jump": "done",
+          "events": [
+            {
+              "type": "turn_in_quest",
+              "quest": "q_empty_house"
+            }
+          ]
+        },
+        {
+          "text": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    },
+    "done": {
+      "text": "Oh, just a traveler? That's a relief. Thank you for checking.",
+      "options": [
+        {
+          "text": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    }
+  }
+}

@@ -17,16 +17,60 @@
     "####################"
   ],
   "portals": [
-    {"pos": [1, 1], "to_map": "wilderness", "to_pos": [11, 9], "label": "Darkwood Edge"}
+    {
+      "pos": [
+        1,
+        1
+      ],
+      "to_map": "wilderness",
+      "to_pos": [
+        11,
+        9
+      ],
+      "label": "Darkwood Edge"
+    }
   ],
   "chests": [
-    {"pos": [17, 10], "gold": 30, "items": {"potion_healing": 1}}
+    {
+      "pos": [
+        17,
+        10
+      ],
+      "gold": 30,
+      "items": {
+        "potion_healing": 1
+      }
+    }
   ],
   "npcs": [],
   "monsters": [
-    {"id": "wolf", "pos": [14, 2]},
-    {"id": "wolf", "pos": [10, 4]},
-    {"id": "wolf", "pos": [4, 7]},
-    {"id": "dire_alpha", "pos": [15, 9]}
+    {
+      "id": "wolf",
+      "pos": [
+        14,
+        2
+      ]
+    },
+    {
+      "id": "wolf",
+      "pos": [
+        10,
+        4
+      ]
+    },
+    {
+      "id": "wolf",
+      "pos": [
+        4,
+        7
+      ]
+    },
+    {
+      "id": "dire_alpha",
+      "pos": [
+        15,
+        9
+      ]
+    }
   ]
 }

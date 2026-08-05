@@ -1,0 +1,37 @@
+{
+  "id": "silas_inn",
+  "nodes": {
+    "root": {
+      "text": "Welcome to the Bramble Inn. Fire's warm, ale's cold.",
+      "options": [
+        {
+          "label": "Rest and recover (5g)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "rest_token",
+              "cost": 5
+            },
+            {
+              "type": "heal_full"
+            }
+          ],
+          "jump": "rested"
+        },
+        {
+          "label": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    },
+    "rested": {
+      "text": "You look better already.",
+      "options": [
+        {
+          "label": "Thanks.",
+          "jump": "root"
+        }
+      ]
+    }
+  }
+}

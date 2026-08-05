@@ -1,0 +1,14 @@
+{
+  "id": "silas_adv",
+  "nodes": {
+    "root": {
+      "text": "Ah, to be young and foolish again. Keep your shield up, friend.",
+      "options": [
+        {
+          "text": "Goodbye.",
+          "jump": "leave"
+        }
+      ]
+    }
+  }
+}

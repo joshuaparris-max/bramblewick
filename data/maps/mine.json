@@ -56,7 +56,9 @@
       "gold": 15
     }
   ],
-  "npcs": ["tommen"],
+  "npcs": [
+    "tommen"
+  ],
   "monsters": [
     {
       "id": "skeleton",
