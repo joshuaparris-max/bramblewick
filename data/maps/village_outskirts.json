@@ -81,7 +81,11 @@
   "chests": [],
   "npcs": [
     "fenn",
-    "clem"
+    "tor",
+    "clem",
+    "kade",
+    "amb_outskirts1",
+    "amb_outskirts2"
   ],
   "monsters": []
 }

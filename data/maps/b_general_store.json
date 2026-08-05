@@ -41,7 +41,9 @@
     }
   ],
   "chests": [],
-  "npcs": [],
+  "npcs": [
+    "kael"
+  ],
   "monsters": [],
   "decorations": [
     {

@@ -69,7 +69,10 @@
   "chests": [],
   "npcs": [
     "aldith",
-    "rurik"
+    "vane",
+    "rurik",
+    "amb_civic1",
+    "amb_civic2"
   ],
   "monsters": []
 }

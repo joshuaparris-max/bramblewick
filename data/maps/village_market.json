@@ -116,8 +116,12 @@
   ],
   "chests": [],
   "npcs": [
+    "elder",
     "ivo",
-    "pip"
+    "pip",
+    "amb_market1",
+    "amb_market2",
+    "amb_market3"
   ],
   "monsters": []
 }

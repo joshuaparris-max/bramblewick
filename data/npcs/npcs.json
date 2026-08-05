@@ -440,5 +440,191 @@
     "schedule": "static",
     "color": "d8cbb3",
     "quest_hooks": []
+  },
+  {
+    "id": "amb_market1",
+    "name": "Shopper",
+    "icon": "bust",
+    "map": "village_market",
+    "pos": [
+      7,
+      4
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 3
+  },
+  {
+    "id": "amb_market2",
+    "name": "Merchant",
+    "icon": "bust_cap",
+    "map": "village_market",
+    "pos": [
+      14,
+      5
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 2
+  },
+  {
+    "id": "amb_market3",
+    "name": "Child",
+    "icon": "bust",
+    "map": "village_market",
+    "pos": [
+      18,
+      3
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 4
+  },
+  {
+    "id": "amb_crafts1",
+    "name": "Laborer",
+    "icon": "bust",
+    "map": "village_crafts",
+    "pos": [
+      8,
+      5
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 3
+  },
+  {
+    "id": "amb_crafts2",
+    "name": "Apprentice",
+    "icon": "bust",
+    "map": "village_crafts",
+    "pos": [
+      12,
+      4
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 2
+  },
+  {
+    "id": "amb_old1",
+    "name": "Pilgrim",
+    "icon": "bust_hood",
+    "map": "village_old",
+    "pos": [
+      7,
+      7
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 3
+  },
+  {
+    "id": "amb_old2",
+    "name": "Beggar",
+    "icon": "bust",
+    "map": "village_old",
+    "pos": [
+      14,
+      6
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 1
+  },
+  {
+    "id": "amb_river1",
+    "name": "Fisher",
+    "icon": "bust_cap",
+    "map": "village_river",
+    "pos": [
+      16,
+      7
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 2
+  },
+  {
+    "id": "amb_river2",
+    "name": "Docker",
+    "icon": "bust",
+    "map": "village_river",
+    "pos": [
+      10,
+      8
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 4
+  },
+  {
+    "id": "amb_civic1",
+    "name": "Patrol",
+    "icon": "knight",
+    "map": "village_civic",
+    "pos": [
+      10,
+      4
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "patrol": [
+      [
+        10,
+        4
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        14,
+        8
+      ],
+      [
+        10,
+        8
+      ]
+    ]
+  },
+  {
+    "id": "amb_civic2",
+    "name": "Acolyte",
+    "icon": "bust_hood",
+    "map": "village_civic",
+    "pos": [
+      5,
+      4
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 2
+  },
+  {
+    "id": "amb_outskirts1",
+    "name": "Farmer",
+    "icon": "bust_cap",
+    "map": "village_outskirts",
+    "pos": [
+      6,
+      7
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 3
+  },
+  {
+    "id": "amb_outskirts2",
+    "name": "Traveler",
+    "icon": "bust",
+    "map": "village_outskirts",
+    "pos": [
+      15,
+      6
+    ],
+    "dialogue": "",
+    "ambient": true,
+    "wander_radius": 4
   }
 ]

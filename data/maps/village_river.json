@@ -56,8 +56,11 @@
   ],
   "chests": [],
   "npcs": [
+    "hobb",
     "bran",
-    "barl"
+    "barl",
+    "amb_river1",
+    "amb_river2"
   ],
   "monsters": []
 }

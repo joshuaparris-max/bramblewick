@@ -41,7 +41,10 @@
     }
   ],
   "chests": [],
-  "npcs": [],
+  "npcs": [
+    "silas_inn",
+    "elara"
+  ],
   "monsters": [],
   "decorations": [
     {

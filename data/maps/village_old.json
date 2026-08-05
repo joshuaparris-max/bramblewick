@@ -56,7 +56,11 @@
   ],
   "chests": [],
   "npcs": [
-    "silas_adv"
+    "olen",
+    "silas_adv",
+    "vorn",
+    "amb_old1",
+    "amb_old2"
   ],
   "monsters": []
 }

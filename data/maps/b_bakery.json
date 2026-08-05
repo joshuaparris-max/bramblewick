@@ -41,7 +41,9 @@
     }
   ],
   "chests": [],
-  "npcs": [],
+  "npcs": [
+    "liora"
+  ],
   "monsters": [],
   "decorations": [
     {
