@@ -62,5 +62,15 @@
     "amb_river1",
     "amb_river2"
   ],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "sign",
+      "pos": [
+        8,
+        5
+      ],
+      "solid": true
+    }
+  ]
 }

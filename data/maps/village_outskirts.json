@@ -87,5 +87,15 @@
     "amb_outskirts1",
     "amb_outskirts2"
   ],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "sign",
+      "pos": [
+        9,
+        8
+      ],
+      "solid": true
+    }
+  ]
 }

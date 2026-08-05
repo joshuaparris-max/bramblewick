@@ -25,4 +25,6 @@ func _ready() -> void:
 	add_child(load("res://scenes/ui/debug_panel.tscn").instantiate())
 	AudioManager.play_music(GameState.current_map)
 	EventBus.map_loaded.emit(GameState.current_map)
+	EventBus.toast.emit(map_data.get("name", GameState.current_map))
+
 

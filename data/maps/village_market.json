@@ -123,5 +123,23 @@
     "amb_market2",
     "amb_market3"
   ],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "sign",
+      "pos": [
+        8,
+        12
+      ],
+      "solid": true
+    },
+    {
+      "type": "sign",
+      "pos": [
+        3,
+        3
+      ],
+      "solid": true
+    }
+  ]
 }

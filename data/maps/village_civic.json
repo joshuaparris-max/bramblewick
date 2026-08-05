@@ -74,5 +74,15 @@
     "amb_civic1",
     "amb_civic2"
   ],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "sign",
+      "pos": [
+        8,
+        12
+      ],
+      "solid": true
+    }
+  ]
 }

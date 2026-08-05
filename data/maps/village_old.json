@@ -62,5 +62,15 @@
     "amb_old1",
     "amb_old2"
   ],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "sign",
+      "pos": [
+        10,
+        5
+      ],
+      "solid": true
+    }
+  ]
 }

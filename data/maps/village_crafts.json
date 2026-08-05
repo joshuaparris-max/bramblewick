@@ -75,5 +75,15 @@
     "amb_crafts1",
     "amb_crafts2"
   ],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "sign",
+      "pos": [
+        5,
+        6
+      ],
+      "solid": true
+    }
+  ]
 }
