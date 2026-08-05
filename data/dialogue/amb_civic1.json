@@ -2,7 +2,14 @@
     "id": "amb_civic1",
     "nodes": {
         "start": {
-            "text": "Keep your nose clean, the guards are watching.",
+            "text": [
+                "Keep your nose clean, the guards are watching.",
+                "I need to pay my taxes before the week is out.",
+                "The mayor hasn't made a speech in a month.",
+                "This square is usually busier on weekends.",
+                "Don't loiter too long near the town hall.",
+                "Have you checked the notice board recently?"
+            ],
             "choices": [
                 {
                     "label": "Goodbye.",

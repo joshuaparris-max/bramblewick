@@ -2,7 +2,14 @@
     "id": "amb_river2",
     "nodes": {
         "start": {
-            "text": "The water's calm today. Good for fishing.",
+            "text": [
+                "The water's calm today. Good for fishing.",
+                "Old Sal hasn't taken the ferry out yet.",
+                "I swear I saw something moving in the reeds yesterday.",
+                "The breeze off the water is freezing at night.",
+                "Careful near the bank, the mud is slippery.",
+                "Nothing like the sound of the river to clear your head."
+            ],
             "choices": [
                 {
                     "label": "Goodbye.",

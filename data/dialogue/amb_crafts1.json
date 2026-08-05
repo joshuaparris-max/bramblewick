@@ -2,7 +2,14 @@
     "id": "amb_crafts1",
     "nodes": {
         "start": {
-            "text": "Watch your step, lots of sharp tools around here.",
+            "text": [
+                "Watch your step, lots of sharp tools around here.",
+                "The ringing of the anvils gives me a headache by noon.",
+                "Borin does good work, if you can afford his silver.",
+                "The wood here is still green. Takes forever to dry.",
+                "Smells like pine and hot iron.",
+                "Mind the sparks!"
+            ],
             "choices": [
                 {
                     "label": "Goodbye.",
