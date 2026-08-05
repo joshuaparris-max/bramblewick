@@ -1,0 +1,14 @@
+{
+    "id": "amb_civic1",
+    "nodes": {
+        "root": {
+            "text": "Keep your nose clean, the guards are watching.",
+            "options": [
+                {
+                    "label": "Goodbye.",
+                    "jump": "leave"
+                }
+            ]
+        }
+    }
+}

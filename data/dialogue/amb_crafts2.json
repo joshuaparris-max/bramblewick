@@ -1,0 +1,14 @@
+{
+    "id": "amb_crafts2",
+    "nodes": {
+        "root": {
+            "text": "Watch your step, lots of sharp tools around here.",
+            "options": [
+                {
+                    "label": "Goodbye.",
+                    "jump": "leave"
+                }
+            ]
+        }
+    }
+}

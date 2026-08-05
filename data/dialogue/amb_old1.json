@@ -1,0 +1,14 @@
+{
+    "id": "amb_old1",
+    "nodes": {
+        "root": {
+            "text": "These old stones have seen better days...",
+            "options": [
+                {
+                    "label": "Goodbye.",
+                    "jump": "leave"
+                }
+            ]
+        }
+    }
+}
