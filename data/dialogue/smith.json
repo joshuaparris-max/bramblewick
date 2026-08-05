@@ -6,6 +6,16 @@
       "text": "Steel or business, stranger? I've both.",
       "choices": [
         {
+          "label": "Show me what you have for sale.",
+          "events": [
+            {
+              "type": "open_shop",
+              "shop": "borin_blacksmith"
+            }
+          ],
+          "next": "start"
+        },
+        {
           "label": "Buy: Healing Potion (8 gold)",
           "events": [
             {

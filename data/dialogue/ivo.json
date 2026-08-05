@@ -41,6 +41,16 @@
           "next": "restored"
         },
         {
+          "label": "Show me your basic wares.",
+          "events": [
+            {
+              "type": "open_shop",
+              "shop": "ivo_peddler"
+            }
+          ],
+          "next": "start"
+        },
+        {
           "label": "Buy: Dagger (3 gold)",
           "events": [
             {

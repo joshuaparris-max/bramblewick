@@ -28,8 +28,9 @@ func _ready() -> void:
 	quests = _load_keyed("res://data/quests/quests.json")
 	dialogues = _load_dir("res://data/dialogue")
 	maps = _load_dir("res://data/maps")
-	print("[Db] loaded: %d classes, %d monsters, %d npcs, %d items, %d quests, %d dialogues, %d maps"
-		% [classes.size(), monsters.size(), npcs.size(), items.size(), quests.size(), dialogues.size(), maps.size()])
+	shops = _load_keyed("res://data/shops/shops.json")
+	print("[Db] loaded: %d classes, %d monsters, %d npcs, %d items, %d quests, %d dialogues, %d maps, %d shops"
+		% [classes.size(), monsters.size(), npcs.size(), items.size(), quests.size(), dialogues.size(), maps.size(), shops.size()])
 
 func _load_json(path: String) -> Variant:
 	var f := FileAccess.open(path, FileAccess.READ)
@@ -70,4 +71,6 @@ func get_map(id: String) -> Dictionary: return maps.get(id, {})
 func get_dialogue(id: String) -> Dictionary: return dialogues.get(id, {})
 func get_class_def(id: String) -> Dictionary: return classes.get(id, {})
 func get_quest(id: String) -> Dictionary: return quests.get(id, {})
+
+
 
