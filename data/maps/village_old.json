@@ -56,9 +56,7 @@
   ],
   "chests": [],
   "npcs": [
-    "olen",
-    "silas_adv",
-    "vorn"
+    "silas_adv"
   ],
   "monsters": []
 }

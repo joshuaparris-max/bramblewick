@@ -67,11 +67,6 @@
     }
   ],
   "chests": [],
-  "npcs": [
-    "smith",
-    "garret",
-    "nyssa",
-    "yanni"
-  ],
+  "npcs": [],
   "monsters": []
 }

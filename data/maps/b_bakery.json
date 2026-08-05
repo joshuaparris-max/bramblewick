@@ -26,11 +26,47 @@
         9
       ],
       "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_market",
+      "to_pos": [
+        8,
+        9
+      ],
+      "label": "Exit"
     }
   ],
   "chests": [],
-  "npcs": [
-    "liora"
-  ],
-  "monsters": []
+  "npcs": [],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "counter",
+      "pos": [
+        4,
+        3
+      ],
+      "solid": true
+    },
+    {
+      "type": "counter",
+      "pos": [
+        5,
+        3
+      ],
+      "solid": true
+    },
+    {
+      "type": "forge",
+      "pos": [
+        4,
+        1
+      ],
+      "solid": true
+    }
+  ]
 }

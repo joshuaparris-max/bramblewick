@@ -26,12 +26,71 @@
         3
       ],
       "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_market",
+      "to_pos": [
+        4,
+        3
+      ],
+      "label": "Exit"
     }
   ],
   "chests": [],
-  "npcs": [
-    "silas_inn",
-    "elara"
-  ],
-  "monsters": []
+  "npcs": [],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "counter",
+      "pos": [
+        3,
+        2
+      ],
+      "solid": true
+    },
+    {
+      "type": "counter",
+      "pos": [
+        4,
+        2
+      ],
+      "solid": true
+    },
+    {
+      "type": "counter",
+      "pos": [
+        5,
+        2
+      ],
+      "solid": true
+    },
+    {
+      "type": "table",
+      "pos": [
+        2,
+        5
+      ],
+      "solid": true
+    },
+    {
+      "type": "table",
+      "pos": [
+        7,
+        5
+      ],
+      "solid": true
+    },
+    {
+      "type": "barrel",
+      "pos": [
+        8,
+        1
+      ],
+      "solid": true
+    }
+  ]
 }

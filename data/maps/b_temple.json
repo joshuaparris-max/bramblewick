@@ -23,12 +23,58 @@
       "to_map": "village_civic",
       "to_pos": [
         5,
-        3
+        8
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_civic",
+      "to_pos": [
+        5,
+        8
       ],
       "label": "Exit"
     }
   ],
   "chests": [],
   "npcs": [],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "shrine",
+      "pos": [
+        4,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "shrine",
+      "pos": [
+        5,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "pillar",
+      "pos": [
+        2,
+        4
+      ],
+      "solid": true
+    },
+    {
+      "type": "pillar",
+      "pos": [
+        7,
+        4
+      ],
+      "solid": true
+    }
+  ]
 }

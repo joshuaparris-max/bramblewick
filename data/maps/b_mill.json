@@ -26,9 +26,39 @@
         3
       ],
       "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_river",
+      "to_pos": [
+        14,
+        3
+      ],
+      "label": "Exit"
     }
   ],
   "chests": [],
   "npcs": [],
-  "monsters": []
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "table",
+      "pos": [
+        4,
+        4
+      ],
+      "solid": true
+    },
+    {
+      "type": "barrel",
+      "pos": [
+        8,
+        1
+      ],
+      "solid": true
+    }
+  ]
 }
