@@ -13,8 +13,6 @@ var _cards: Dictionary = {}
 
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
-	size = get_viewport_rect().size
-	get_viewport().size_changed.connect(func(): size = get_viewport_rect().size)
 	var center := CenterContainer.new()
 	center.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(center)

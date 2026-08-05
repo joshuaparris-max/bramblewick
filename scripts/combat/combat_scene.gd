@@ -254,8 +254,6 @@ func _say(bbcode: String) -> void:
 
 func _build_ui() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
-	size = get_viewport_rect().size
-	get_viewport().size_changed.connect(func(): size = get_viewport_rect().size)
 	var bg := ColorRect.new()
 	bg.color = Color("0d0b0c")
 	bg.set_anchors_preset(Control.PRESET_FULL_RECT)

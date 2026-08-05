@@ -9,8 +9,6 @@ func _ready() -> void:
 	# Root controls under the Window don't inherit its size automatically -
 	# fit to the viewport explicitly or every child lays out against (0,0).
 	set_anchors_preset(Control.PRESET_FULL_RECT)
-	size = get_viewport_rect().size
-	get_viewport().size_changed.connect(func(): size = get_viewport_rect().size)
 	_build_background()
 	_build_menu()
 

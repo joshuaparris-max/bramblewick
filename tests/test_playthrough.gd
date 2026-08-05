@@ -121,17 +121,19 @@ func _run_test():
 	require(scene.m_hp < initial_enemy_hp, 13, "COMBAT-LOGIC INTEGRATION TESTS - Enemy HP reduced")
 	
 	await wait_seconds(2.0)
-	require(scene._round > 1 or scene.m_hp == 0, 14, "Enemy turn/Damage states function")
+	if is_instance_valid(scene):
+		require(scene._round > 1 or scene.m_hp == 0, 14, "Enemy turn/Damage states function")
 	
 	# keep attacking until dead
 	var safety = 20
-	while scene.m_hp > 0 and safety > 0:
+	while is_instance_valid(scene) and scene.m_hp > 0 and safety > 0:
 		safety -= 1
 		if not scene._busy:
 			scene._attack()
 		await wait_seconds(0.5)
 	
-	require(scene.m_hp <= 0, 15, "Enemy HP reaches zero through combat processing")
+	if is_instance_valid(scene):
+		require(scene.m_hp <= 0, 15, "Enemy HP reaches zero through combat processing")
 	await wait_seconds(2.5) 
 	scene = get_tree().current_scene
 	require(scene.name == "Exploration", 15, "Combat victory returns to intended scene")

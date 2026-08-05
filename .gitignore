@@ -5,3 +5,4 @@ export.cfg
 build/
 
 dist/
+*_output.txt
