@@ -1,4 +1,4 @@
-extends Node
+﻿extends Node
 ## MODULE: Db (core / data)
 ## PURPOSE: Loads ALL game content from res://data/*.json into dictionaries.
 ##   Content lives in data files, never hardcoded in scripts.
@@ -18,6 +18,7 @@ var items: Dictionary = {}
 var quests: Dictionary = {}
 var dialogues: Dictionary = {}
 var maps: Dictionary = {}
+var shops: Dictionary = {}
 
 func _ready() -> void:
 	classes = _load_keyed("res://data/classes/classes.json")
@@ -69,3 +70,4 @@ func get_map(id: String) -> Dictionary: return maps.get(id, {})
 func get_dialogue(id: String) -> Dictionary: return dialogues.get(id, {})
 func get_class_def(id: String) -> Dictionary: return classes.get(id, {})
 func get_quest(id: String) -> Dictionary: return quests.get(id, {})
+

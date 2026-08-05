@@ -1,4 +1,4 @@
-extends Node
+﻿extends Node
 ## MODULE: EventBus (core)
 ## PURPOSE: The single message board every module talks through.
 ##   Modules NEVER call deep into each other; they emit/listen here.
@@ -19,6 +19,7 @@ signal chest_opened(chest_key: String)
 
 # --- dialogue ---
 signal dialogue_requested(dialogue_id: String, npc_id: String)
+signal shop_requested(shop_id: String)
 signal dialogue_started(npc_id: String)
 signal dialogue_finished(npc_id: String)
 signal dialogue_event(event_name: String)      # generic hook quests can listen to
@@ -46,3 +47,4 @@ signal combat_ended(victory: bool, spawn_key: String)
 signal game_saved
 signal game_loaded
 signal toast(message: String)                   # small HUD notifications
+

@@ -8,15 +8,11 @@
           "label": "Rest and recover (5g)",
           "events": [
             {
-              "type": "buy",
-              "item": "rest_token",
-              "cost": 5
-            },
-            {
-              "type": "heal_full"
+              "type": "open_shop",
+              "shop": "silas_inn"
             }
           ],
-          "jump": "rested"
+          "jump": "leave"
         },
         {
           "label": "Goodbye.",

@@ -6,7 +6,13 @@
       "options": [
         {
           "label": "What do you have for sale?",
-          "jump": "shop"
+          "jump": "leave",
+          "events": [
+            {
+              "type": "open_shop",
+              "shop": "kael_general_store"
+            }
+          ]
         },
         {
           "label": "Shipments are light?",
@@ -31,37 +37,6 @@
         {
           "label": "Goodbye.",
           "jump": "leave"
-        }
-      ]
-    },
-    "shop": {
-      "text": "Take your time.",
-      "options": [
-        {
-          "label": "Buy Leather Armour (10g)",
-          "events": [
-            {
-              "type": "buy",
-              "item": "leather_armour",
-              "cost": 10
-            }
-          ],
-          "jump": "shop"
-        },
-        {
-          "label": "Buy Healing Potion (8g)",
-          "events": [
-            {
-              "type": "buy",
-              "item": "potion_healing",
-              "cost": 8
-            }
-          ],
-          "jump": "shop"
-        },
-        {
-          "label": "Never mind.",
-          "jump": "root"
         }
       ]
     },

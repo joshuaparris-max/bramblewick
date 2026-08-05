@@ -1,4 +1,4 @@
-extends Node2D
+﻿extends Node2D
 ## MODULE: Map & Exploration (scene glue)
 ## PURPOSE: Loads the current map (from GameState.current_map), asks MapBuilder
 ##   to construct it, spawns the player, and attaches the UI layers (HUD,
@@ -20,7 +20,9 @@ func _ready() -> void:
 	add_child(player)
 	add_child(load("res://scenes/ui/hud.tscn").instantiate())
 	add_child(load("res://scenes/dialogue/dialogue_ui.tscn").instantiate())
+	add_child(load("res://scenes/ui/shop_ui.tscn").instantiate())
 	add_child(load("res://scenes/ui/touch_controls.tscn").instantiate())
 	add_child(load("res://scenes/ui/debug_panel.tscn").instantiate())
 	AudioManager.play_music(GameState.current_map)
 	EventBus.map_loaded.emit(GameState.current_map)
+

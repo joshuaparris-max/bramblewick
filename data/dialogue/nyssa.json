@@ -6,7 +6,13 @@
       "options": [
         {
           "label": "What do you have for sale?",
-          "jump": "shop"
+          "jump": "leave",
+          "events": [
+            {
+              "type": "open_shop",
+              "shop": "nyssa_apothecary"
+            }
+          ]
         },
         {
           "label": "Are you low on anything?",
@@ -31,37 +37,6 @@
         {
           "label": "Goodbye.",
           "jump": "leave"
-        }
-      ]
-    },
-    "shop": {
-      "text": "I can part with these.",
-      "options": [
-        {
-          "label": "Buy Healing Potion (8g)",
-          "events": [
-            {
-              "type": "buy",
-              "item": "potion_healing",
-              "cost": 8
-            }
-          ],
-          "jump": "shop"
-        },
-        {
-          "label": "Buy Greater Healing Potion (20g)",
-          "events": [
-            {
-              "type": "buy",
-              "item": "potion_greater",
-              "cost": 20
-            }
-          ],
-          "jump": "shop"
-        },
-        {
-          "label": "Never mind.",
-          "jump": "root"
         }
       ]
     },

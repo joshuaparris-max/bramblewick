@@ -5,86 +5,241 @@
     "start": {
       "text": "Steel or business, stranger? I've both.",
       "choices": [
-        {"label": "Buy: Healing Potion (8 gold)",
-         "events": [{"type": "buy", "item": "potion_healing", "cost": 8}],
-         "next": "start"},
-        {"label": "Buy: Fine Longsword, +1 to hit and damage (60 gold)",
-         "condition": {"gold_at_least": 60},
-         "events": [{"type": "buy", "item": "fine_longsword", "cost": 60}],
-         "next": "sold"},
-        {"label": "Buy: Silvered Longsword, +2 to hit and damage (140 gold)",
-         "condition": {"quest_state": {"id": "q_greymaw", "is": "done"}, "gold_at_least": 140},
-         "events": [{"type": "buy", "item": "silvered_blade", "cost": 140}],
-         "next": "sold_silver"},
-        {"label": "Work? What kind of work?",
-         "condition": {"quest_state": {"id": "q_wolf_pelts", "is": "inactive"}},
-         "next": "peltq"},
-        {"label": "Three pelts, as promised.",
-         "condition": {"quest_state": {"id": "q_wolf_pelts", "is": "ready"}},
-         "events": [{"type": "turn_in_quest", "quest": "q_wolf_pelts"},
-                    {"type": "set_flag", "flag": "pelts_done"},
-                    {"type": "reputation", "faction": "village", "amount": 5}],
-         "next": "peltdone"},
-        {"label": "The wolves are back already?",
-         "condition": {"flag": "pelts_done", "quest_state": {"id": "q_greymaw", "is": "inactive"}},
-         "next": "alphaq"},
-        {"label": "Greymaw's pelt. It barely fit through your door.",
-         "condition": {"quest_state": {"id": "q_greymaw", "is": "ready"}},
-         "events": [{"type": "turn_in_quest", "quest": "q_greymaw"},
-                    {"type": "reputation", "faction": "village", "amount": 10}],
-         "next": "alphadone"},
-        {"label": "(Intimidation) Those prices are robbery, Borin.",
-         "condition": {"not_flag": "smith_haggled"},
-         "check": {"skill": "intimidation", "dc": 13}, "ok": "haggle_ok", "fail": "haggle_fail"},
-        {"label": "(Leave)", "next": null}
+        {
+          "label": "Buy: Healing Potion (8 gold)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "potion_healing",
+              "cost": 8
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Buy: Fine Longsword, +1 to hit and damage (60 gold)",
+          "condition": {
+            "gold_at_least": 60
+          },
+          "events": [
+            {
+              "type": "buy",
+              "item": "fine_longsword",
+              "cost": 60
+            }
+          ],
+          "next": "sold"
+        },
+        {
+          "label": "Buy: Silvered Longsword, +2 to hit and damage (140 gold)",
+          "condition": {
+            "quest_state": {
+              "id": "q_greymaw",
+              "is": "done"
+            },
+            "gold_at_least": 140
+          },
+          "events": [
+            {
+              "type": "buy",
+              "item": "silvered_blade",
+              "cost": 140
+            }
+          ],
+          "next": "sold_silver"
+        },
+        {
+          "label": "Work? What kind of work?",
+          "condition": {
+            "quest_state": {
+              "id": "q_wolf_pelts",
+              "is": "inactive"
+            }
+          },
+          "next": "peltq"
+        },
+        {
+          "label": "Three pelts, as promised.",
+          "condition": {
+            "quest_state": {
+              "id": "q_wolf_pelts",
+              "is": "ready"
+            }
+          },
+          "events": [
+            {
+              "type": "turn_in_quest",
+              "quest": "q_wolf_pelts"
+            },
+            {
+              "type": "set_flag",
+              "flag": "pelts_done"
+            },
+            {
+              "type": "reputation",
+              "faction": "village",
+              "amount": 5
+            }
+          ],
+          "next": "peltdone"
+        },
+        {
+          "label": "The wolves are back already?",
+          "condition": {
+            "flag": "pelts_done",
+            "quest_state": {
+              "id": "q_greymaw",
+              "is": "inactive"
+            }
+          },
+          "next": "alphaq"
+        },
+        {
+          "label": "Greymaw's pelt. It barely fit through your door.",
+          "condition": {
+            "quest_state": {
+              "id": "q_greymaw",
+              "is": "ready"
+            }
+          },
+          "events": [
+            {
+              "type": "turn_in_quest",
+              "quest": "q_greymaw"
+            },
+            {
+              "type": "reputation",
+              "faction": "village",
+              "amount": 10
+            }
+          ],
+          "next": "alphadone"
+        },
+        {
+          "label": "(Intimidation) Those prices are robbery, Borin.",
+          "condition": {
+            "not_flag": "smith_haggled"
+          },
+          "check": {
+            "skill": "intimidation",
+            "dc": 13
+          },
+          "ok": "haggle_ok",
+          "fail": "haggle_fail"
+        },
+        {
+          "label": "(Leave)",
+          "next": null
+        }
       ]
     },
     "sold": {
       "text": "Balanced it myself. Whatever's down that mine - make it regret waking.",
-      "choices": [{"label": "(Leave)", "next": null}]
+      "choices": [
+        {
+          "label": "(Leave)",
+          "next": null
+        }
+      ]
     },
     "sold_silver": {
       "text": "Silver through the whole edge, not just a wash over iron. It cost me a month and most of my patience. Things that laugh at steel don't laugh at this.",
-      "choices": [{"label": "(Leave)", "next": null}]
+      "choices": [
+        {
+          "label": "(Leave)",
+          "next": null
+        }
+      ]
     },
     "peltq": {
       "text": "Wolves out of the Darkwood took two goats and nearly took the miller. Three pelts - thirty gold, and my respect, which costs me nothing and is worth more.",
       "choices": [
-        {"label": "Consider it done. (Accept quest)",
-         "events": [{"type": "start_quest", "quest": "q_wolf_pelts"}],
-         "next": "start"},
-        {"label": "Not my trade.", "next": "start"}
+        {
+          "label": "Consider it done. (Accept quest)",
+          "events": [
+            {
+              "type": "start_quest",
+              "quest": "q_wolf_pelts"
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Not my trade.",
+          "next": "start"
+        }
       ]
     },
     "peltdone": {
       "text": "Good clean skins. The miller can walk to work without a spear again. Your coin, as agreed.",
-      "choices": [{"label": "(Leave)", "next": null}]
+      "choices": [
+        {
+          "label": "(Leave)",
+          "next": null
+        }
+      ]
     },
     "alphaq": {
       "text": "Not back. Never left. Those three were scouts, and now the thing that sent them is howling of a night. Hobb's dog won't leave the house and neither will Hobb. They call it Greymaw - old as the deep woods and twice the wolf of anything I've bought a pelt from. Bring me that hide and I'll pay sixty gold, then forge you something worthy of the story.",
       "choices": [
-        {"label": "One king-sized pelt, coming up. (Accept quest)",
-         "events": [{"type": "start_quest", "quest": "q_greymaw"}],
-         "next": "start"},
-        {"label": "I don't hunt legends.", "next": "start"}
+        {
+          "label": "One king-sized pelt, coming up. (Accept quest)",
+          "events": [
+            {
+              "type": "start_quest",
+              "quest": "q_greymaw"
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "I don't hunt legends.",
+          "next": "start"
+        }
       ]
     },
     "alphadone": {
       "text": "He spreads the great grey hide across the anvil and whistles low. \"Look at the SIZE of it. Winter coats for half the village out of one beast.\" He counts out your gold, then jerks a thumb at the forge. \"And now I've a reason to finish the silverwork. Come back with heavy coin - the good blade's on the rack.\"",
-      "choices": [{"label": "(Leave)", "next": null}]
+      "choices": [
+        {
+          "label": "(Leave)",
+          "next": null
+        }
+      ]
     },
     "haggle_ok": {
       "text": "...Hah! You've got a blacksmith's bark on you. Fine - here's a potion for the cheek, and we never speak of this again.",
-      "choices": [{"label": "(Take it)",
-        "events": [{"type": "set_flag", "flag": "smith_haggled"},
-                   {"type": "give_item", "item": "potion_healing"}],
-        "next": "start"}]
+      "choices": [
+        {
+          "label": "(Take it)",
+          "events": [
+            {
+              "type": "set_flag",
+              "flag": "smith_haggled"
+            },
+            {
+              "type": "give_item",
+              "item": "potion_healing"
+            }
+          ],
+          "next": "start"
+        }
+      ]
     },
     "haggle_fail": {
       "text": "The prices are the prices, and the door is the door. Pick one.",
-      "choices": [{"label": "(Cough) The prices are fine.",
-        "events": [{"type": "set_flag", "flag": "smith_haggled"}],
-        "next": "start"}]
+      "choices": [
+        {
+          "label": "(Cough) The prices are fine.",
+          "events": [
+            {
+              "type": "set_flag",
+              "flag": "smith_haggled"
+            }
+          ],
+          "next": "start"
+        }
+      ]
     }
   }
 }
