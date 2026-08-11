@@ -1,0 +1,141 @@
+CLASSES
+- fighter: stats={'STR': 16, 'DEX': 12, 'CON': 15, 'INT': 8, 'WIS': 10, 'CHA': 10}, start_eq=None, start_items=None, ability=['second_wind'], slots=None
+- rogue: stats={'STR': 10, 'DEX': 16, 'CON': 12, 'INT': 12, 'WIS': 10, 'CHA': 14}, start_eq=None, start_items=None, ability=['sneak_attack'], slots=None
+- cleric: stats={'STR': 14, 'DEX': 10, 'CON': 13, 'INT': 10, 'WIS': 16, 'CHA': 12}, start_eq=None, start_items=None, ability=['cure_wounds'], slots=3
+
+ITEMS
+- dagger: weapon
+- longsword: weapon
+- rapier: weapon
+- mace: weapon
+- greataxe: weapon
+- fine_longsword: weapon
+- silvered_blade: weapon
+- warden_blade: weapon
+- leather_armour: armour
+- studded_leather: armour
+- scale_mail: armour
+- half_plate: armour
+- chain_mail: armour
+- shield: armour
+- potion_healing: consumable
+- potion_greater: consumable
+- wolf_pelt: quest
+- alpha_pelt: quest
+- miners_locket: quest
+- trade_goods: quest
+- wisp_mote: quest
+- tarnished_censer: quest
+- miners_ledger: quest
+- wardens_crown: quest
+- kael_package: quest
+- marsh_root: quest
+- rest_token: quest
+
+MONSTERS
+- wolf: HP=11 AC=13 DMG=2d4 TRAITS=['pack'] LOOT=[{'item': 'wolf_pelt', 'chance': 1.0}]
+- dire_alpha: HP=38 AC=14 DMG=2d6+2 TRAITS=['pack', 'alpha'] LOOT=[{'item': 'alpha_pelt', 'chance': 1.0}, {'item': 'wolf_pelt', 'chance': 1.0}]
+- skeleton: HP=13 AC=13 DMG=1d6+2 TRAITS=['undead'] LOOT=[]
+- spider_matron: HP=32 AC=14 DMG=1d8+2 TRAITS=['boss', 'poison'] LOOT=[{'item': 'miners_locket', 'chance': 1.0}]
+- bandit: HP=12 AC=12 DMG=1d6+1 TRAITS=['human'] LOOT=[]
+- bandit_captain: HP=24 AC=14 DMG=1d8+2 TRAITS=['human', 'leader'] LOOT=[{'item': 'trade_goods', 'chance': 1.0}, {'item': 'rapier', 'chance': 0.5}]
+- marsh_wisp: HP=9 AC=15 DMG=2d4 TRAITS=['fey', 'flicker'] LOOT=[{'item': 'wisp_mote', 'chance': 1.0}]
+- bog_shambler: HP=26 AC=11 DMG=1d10+2 TRAITS=['plant', 'slow'] LOOT=[]
+- grave_warden: HP=30 AC=15 DMG=1d8+3 TRAITS=['undead', 'armoured'] LOOT=[{'item': 'tarnished_censer', 'chance': 1.0}]
+- deep_crawler: HP=10 AC=13 DMG=1d6+1 TRAITS=['spider', 'swarm'] LOOT=[]
+- barrow_wight: HP=18 AC=14 DMG=1d8+2 TRAITS=['undead', 'cold'] LOOT=[]
+- barrow_king: HP=55 AC=16 DMG=2d6+3 TRAITS=['boss', 'undead', 'ancient'] LOOT=[{'item': 'warden_blade', 'chance': 1.0}, {'item': 'wardens_crown', 'chance': 1.0}]
+- spider: HP=5 AC=11 DMG=1d4 TRAITS=['spider'] LOOT=[]
+
+NPCS
+- elder: MAP=village_market POS=[4, 1] DIA=elder SHOP=None WANDER=None
+- smith: MAP=village_crafts POS=[4, 2] DIA=smith SHOP=None WANDER=None
+- ivo: MAP=village_market POS=[2, 2] DIA=ivo SHOP=None WANDER=None
+- aldith: MAP=village_civic POS=[2, 2] DIA=aldith SHOP=None WANDER=None
+- hobb: MAP=village_river POS=[2, 2] DIA=hobb SHOP=None WANDER=None
+- hermit: MAP=wilderness POS=[2, 2] DIA=hermit SHOP=None WANDER=None
+- sal: MAP=marsh POS=[2, 2] DIA=sal SHOP=None WANDER=None
+- tommen: MAP=mine POS=[2, 2] DIA=tommen SHOP=None WANDER=None
+- foreman: MAP=barrow POS=[2, 2] DIA=foreman SHOP=None WANDER=None
+- pip: MAP=village_market POS=[3, 2] DIA=pip SHOP=None WANDER=None
+- garret: MAP=village_crafts POS=[2, 7] DIA=garret SHOP=None WANDER=None
+- nyssa: MAP=village_crafts POS=[4, 2] DIA=nyssa SHOP=None WANDER=None
+- yanni: MAP=village_crafts POS=[2, 2] DIA=yanni SHOP=None WANDER=None
+- olen: MAP=village_old POS=[2, 2] DIA=olen SHOP=None WANDER=None
+- silas_adv: MAP=village_old POS=[2, 2] DIA=silas_adv SHOP=None WANDER=None
+- vorn: MAP=village_old POS=[3, 2] DIA=vorn SHOP=None WANDER=None
+- bran: MAP=village_river POS=[2, 2] DIA=bran SHOP=None WANDER=None
+- barl: MAP=village_river POS=[3, 2] DIA=barl SHOP=None WANDER=None
+- vane: MAP=village_civic POS=[7, 3] DIA=vane SHOP=None WANDER=None
+- rurik: MAP=village_civic POS=[3, 2] DIA=rurik SHOP=None WANDER=None
+- fenn: MAP=village_outskirts POS=[2, 2] DIA=fenn SHOP=None WANDER=None
+- tor: MAP=village_outskirts POS=[2, 2] DIA=tor SHOP=None WANDER=None
+- clem: MAP=village_outskirts POS=[3, 2] DIA=clem SHOP=None WANDER=None
+- kade: MAP=village_outskirts POS=[2, 2] DIA=kade SHOP=None WANDER=None
+- silas_inn: MAP=b_inn POS=[2, 2] DIA=silas_inn SHOP=None WANDER=None
+- elara: MAP=b_inn POS=[6, 2] DIA=elara SHOP=None WANDER=None
+- kael: MAP=b_general_store POS=[3, 2] DIA=kael SHOP=None WANDER=None
+- liora: MAP=b_bakery POS=[2, 2] DIA=liora SHOP=None WANDER=None
+- amb_market1: MAP=village_market POS=[5, 2] DIA=amb_market1 SHOP=None WANDER=None
+- amb_market2: MAP=village_market POS=[6, 2] DIA=amb_market2 SHOP=None WANDER=None
+- amb_market3: MAP=village_market POS=[7, 2] DIA=amb_market3 SHOP=None WANDER=None
+- amb_crafts1: MAP=village_crafts POS=[2, 2] DIA=amb_crafts1 SHOP=None WANDER=None
+- amb_crafts2: MAP=village_crafts POS=[3, 2] DIA=amb_crafts2 SHOP=None WANDER=None
+- amb_old1: MAP=village_old POS=[3, 2] DIA=amb_old1 SHOP=None WANDER=None
+- amb_old2: MAP=village_old POS=[5, 2] DIA=amb_old2 SHOP=None WANDER=None
+- amb_river1: MAP=village_river POS=[4, 2] DIA=amb_river1 SHOP=None WANDER=None
+- amb_river2: MAP=village_river POS=[5, 2] DIA=amb_river2 SHOP=None WANDER=None
+- amb_civic1: MAP=village_civic POS=[4, 2] DIA=amb_civic1 SHOP=None WANDER=None
+- amb_civic2: MAP=village_civic POS=[6, 2] DIA=amb_civic2 SHOP=None WANDER=None
+- amb_outskirts1: MAP=village_outskirts POS=[5, 2] DIA=amb_outskirts1 SHOP=None WANDER=None
+- amb_outskirts2: MAP=village_outskirts POS=[6, 2] DIA=amb_outskirts2 SHOP=None WANDER=None
+
+QUESTS
+- q_silent_mine: OBJ=None REQ=None
+- q_wolf_pelts: OBJ=None REQ=None
+- q_greymaw: OBJ=None REQ=None
+- q_lost_caravan: OBJ=None REQ=None
+- q_marsh_lights: OBJ=None REQ=None
+- q_quiet_light: OBJ=None REQ=None
+- q_the_fourteen: OBJ=None REQ=None
+- q_warden_below: OBJ=None REQ=None
+- q_lost_delivery: OBJ=None REQ=None
+- q_marsh_roots: OBJ=None REQ=None
+- q_mill_trouble: OBJ=None REQ=None
+- q_empty_house: OBJ=None REQ=None
+
+SHOPS
+- borin_blacksmith: STOCK=[{'item': 'dagger', 'cost': 2}, {'item': 'mace', 'cost': 5}, {'item': 'longsword', 'cost': 15}, {'item': 'shield', 'cost': 10}, {'item': 'studded_leather', 'cost': 30}]
+- kael_general_store: STOCK=[{'item': 'leather_armour', 'cost': 10}, {'item': 'potion_healing', 'cost': 8}]
+- nyssa_apothecary: STOCK=[{'item': 'potion_healing', 'cost': 8}, {'item': 'potion_greater', 'cost': 20}]
+- silas_inn: STOCK=None
+- ivo_peddler: STOCK=[{'item': 'dagger', 'cost': 2}]
+
+MAPS
+- barrow: CAT=None PORTALS=1
+- b_abandoned_house: CAT=None PORTALS=2
+- b_apothecary: CAT=None PORTALS=2
+- b_bakery: CAT=None PORTALS=2
+- b_blacksmith: CAT=None PORTALS=2
+- b_carpenter: CAT=None PORTALS=2
+- b_elders_hall: CAT=None PORTALS=2
+- b_general_store: CAT=None PORTALS=2
+- b_guardhouse: CAT=None PORTALS=2
+- b_inn: CAT=None PORTALS=2
+- b_mill: CAT=None PORTALS=2
+- b_old_house: CAT=None PORTALS=2
+- b_stable: CAT=None PORTALS=2
+- b_temple: CAT=None PORTALS=2
+- b_warehouse: CAT=None PORTALS=2
+- chapel: CAT=None PORTALS=1
+- darkwood_deep: CAT=None PORTALS=1
+- marsh: CAT=None PORTALS=2
+- mine: CAT=None PORTALS=2
+- north_road: CAT=None PORTALS=1
+- village_civic: CAT=None PORTALS=4
+- village_crafts: CAT=None PORTALS=4
+- village_market: CAT=None PORTALS=8
+- village_old: CAT=None PORTALS=3
+- village_outskirts: CAT=None PORTALS=5
+- village_river: CAT=None PORTALS=3
+- wilderness: CAT=None PORTALS=3
