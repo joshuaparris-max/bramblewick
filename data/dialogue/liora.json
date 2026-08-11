@@ -1,0 +1,14 @@
+{
+    "id": "liora",
+    "nodes": {
+        "start": {
+            "text": "Fresh bread! Just out of the oven!",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

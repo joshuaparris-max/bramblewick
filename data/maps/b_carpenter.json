@@ -1,0 +1,74 @@
+{
+  "id": "b_carpenter",
+  "name": "Carpenter",
+  "tint": "d8cba8",
+  "grid": [
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "####..####"
+  ],
+  "portals": [
+    {
+      "pos": [
+        4,
+        9
+      ],
+      "to_map": "village_crafts",
+      "to_pos": [
+        10,
+        10
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_crafts",
+      "to_pos": [
+        10,
+        10
+      ],
+      "label": "Exit"
+    }
+  ],
+  "chests": [],
+  "npcs": [
+    "yanni"
+  ],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "table",
+      "pos": [
+        4,
+        4
+      ],
+      "solid": true
+    },
+    {
+      "type": "table",
+      "pos": [
+        5,
+        4
+      ],
+      "solid": true
+    },
+    {
+      "type": "crate",
+      "pos": [
+        1,
+        1
+      ],
+      "solid": true
+    }
+  ]
+}

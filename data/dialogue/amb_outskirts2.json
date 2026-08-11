@@ -1,0 +1,19 @@
+{
+    "id": "amb_outskirts2",
+    "nodes": {
+        "start": {
+            "text": [
+                "Enjoy the quiet while it lasts. Adventure always finds you eventually.",
+                "I used to carry a sword like that. Took an arrow to the knee, though.",
+                "The smell of the wild... reminds me of my younger days.",
+                "If I were ten years younger, I'd go into the woods with you."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

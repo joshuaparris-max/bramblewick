@@ -1,0 +1,14 @@
+{
+    "id": "vane",
+    "nodes": {
+        "start": {
+            "text": "The town records are in a dreadful state. I have years of archiving left.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

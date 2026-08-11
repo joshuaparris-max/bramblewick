@@ -1,0 +1,19 @@
+{
+    "id": "amb_market2",
+    "nodes": {
+        "start": {
+            "text": [
+                "Oh! Do you know if anyone here sells cardamom?",
+                "I just love market day! The colors, the smells, the crowds!",
+                "I heard Silas is buying up all the fresh eggs.",
+                "It's so hard to find good silk this far north."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

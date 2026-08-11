@@ -1,0 +1,144 @@
+{
+    "id": "village_market",
+    "name": "Bramblewick Market Square",
+    "tint": "fff4e0",
+    "grid": [
+        "######################",
+        "#........##..........#",
+        "#..,,,,..##..,,,,....#",
+        "#..,..,..##..,..,....#",
+        "#..,..,,,,,,,,..,....#",
+        "#..,.....~~.....,....#",
+        "#..,.....~~.....,....#",
+        "#..,,,,,,,,,,,,,,....#",
+        "#........##..........#",
+        "#........##..........#",
+        "#....................#",
+        "######################"
+    ],
+    "portals": [
+        {
+            "pos": [
+                1,
+                5
+            ],
+            "to_map": "village_crafts",
+            "to_pos": [
+                17,
+                5
+            ],
+            "label": "Craftsmen's Row"
+        },
+        {
+            "pos": [
+                8,
+                1
+            ],
+            "to_map": "village_old",
+            "to_pos": [
+                8,
+                9
+            ],
+            "label": "Old Ward"
+        },
+        {
+            "pos": [
+                20,
+                5
+            ],
+            "to_map": "village_river",
+            "to_pos": [
+                2,
+                5
+            ],
+            "label": "Riverside"
+        },
+        {
+            "pos": [
+                20,
+                1
+            ],
+            "to_map": "village_civic",
+            "to_pos": [
+                2,
+                9
+            ],
+            "label": "Civic Quarter"
+        },
+        {
+            "pos": [
+                10,
+                10
+            ],
+            "to_map": "village_outskirts",
+            "to_pos": [
+                4,
+                3
+            ],
+            "label": "Town Outskirts"
+        },
+        {
+            "pos": [
+                4,
+                2
+            ],
+            "to_map": "b_inn",
+            "to_pos": [
+                5,
+                8
+            ],
+            "label": "The Bramble Inn"
+        },
+        {
+            "pos": [
+                16,
+                2
+            ],
+            "to_map": "b_general_store",
+            "to_pos": [
+                5,
+                8
+            ],
+            "label": "General Store"
+        },
+        {
+            "pos": [
+                8,
+                8
+            ],
+            "to_map": "b_bakery",
+            "to_pos": [
+                4,
+                7
+            ],
+            "label": "Bakery"
+        }
+    ],
+    "chests": [],
+    "npcs": [
+        "ivo",
+        "pip",
+        "amb_market1",
+        "amb_market2",
+        "amb_market3"
+    ],
+    "monsters": [],
+    "decorations": [
+        {
+            "type": "sign",
+            "pos": [
+                8,
+                12
+            ],
+            "solid": true
+        },
+        {
+            "type": "sign",
+            "pos": [
+                3,
+                3
+            ],
+            "solid": true
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "id": "amb_civic1",
+    "nodes": {
+        "start": {
+            "text": [
+                "State your business, traveler. We don't like trouble.",
+                "Keep your weapons sheathed, or I'll sheathe them for you.",
+                "I've got my eye on you.",
+                "No loitering. Move along."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

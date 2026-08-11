@@ -1,0 +1,19 @@
+{
+    "id": "amb_crafts2",
+    "nodes": {
+        "start": {
+            "text": [
+                "EH? SPEAK UP! THE HAMMERS RUINED MY EARS!",
+                "WHAT? YOU WANT A BUCKET?",
+                "I SAID PINE, NOT OAK!",
+                "CAN'T HEAR A THING YOU'RE SAYING, STRANGER!"
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

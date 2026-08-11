@@ -1,4 +1,4 @@
-extends CanvasLayer
+﻿extends CanvasLayer
 ## MODULE: Debug/Test tools (F1)
 ## PURPOSE: Dev cheats to test any module without playing through: teleport,
 ##   give items/gold, heal, start combat, fire quest events, roll dice,
@@ -23,7 +23,7 @@ func _ready() -> void:
 	t.text = "DEBUG (F1)"
 	t.add_theme_color_override("font_color", Color("c4553d"))
 	v.add_child(t)
-	_mk(v, "Teleport: village", func(): _teleport("village", Vector2i(3, 5)))
+	_mk(v, "Teleport: village", func(): _teleport("village_market", Vector2i(3, 5)))
 	_mk(v, "Teleport: wilderness", func(): _teleport("wilderness", Vector2i(2, 2)))
 	_mk(v, "Teleport: mine", func(): _teleport("mine", Vector2i(2, 2)))
 	_mk(v, "+50 gold", func(): Inventory.add_gold(50))
@@ -61,3 +61,4 @@ func _mk(parent: Node, text: String, fn: Callable) -> void:
 func _print(t: String) -> void:
 	_out.text = t
 	print("[Debug] ", t)
+

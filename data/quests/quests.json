@@ -1,67 +1,258 @@
 [
-  {"id": "q_silent_mine", "name": "The Silent Mine", "giver": "elder", "turn_in": "elder",
-   "desc": "Nine days ago the Old Bramble Mine went silent. Elder Maren has asked you to go down and end whatever did it.",
-   "objectives": [
-     {"id": "boss", "type": "kill", "monster": "spider_matron", "count": 1,
-      "desc": "Destroy what silenced the mine"}
-   ],
-   "rewards": {"gold": 50, "xp": 150}},
-
-  {"id": "q_wolf_pelts", "name": "Wolf Season", "giver": "smith", "turn_in": "smith",
-   "desc": "Wolves out of the Darkwood have been taking livestock. Borin will pay for three pelts.",
-   "objectives": [
-     {"id": "pelts", "type": "collect", "item": "wolf_pelt", "count": 3,
-      "desc": "Collect wolf pelts"}
-   ],
-   "rewards": {"gold": 30, "xp": 100}},
-
-  {"id": "q_greymaw", "name": "The Grey Terror", "giver": "smith", "turn_in": "smith",
-   "desc": "The pelts bought a quiet week, but the pack has a king. Borin wants Greymaw's hide off the heart of the Darkwood before winter.",
-   "objectives": [
-     {"id": "alpha", "type": "collect", "item": "alpha_pelt", "count": 1,
-      "desc": "Take Greymaw's pelt in the deep Darkwood"}
-   ],
-   "rewards": {"gold": 60, "xp": 200}},
-
-  {"id": "q_lost_caravan", "name": "The Lost Caravan", "giver": "ivo", "turn_in": "ivo",
-   "desc": "Peddler Ivo's caravan was ambushed on the Old North Road. Recover his three sealed trade crates and his livelihood with them.",
-   "objectives": [
-     {"id": "crates", "type": "collect", "item": "trade_goods", "count": 3,
-      "desc": "Recover the sealed trade crates"}
-   ],
-   "rewards": {"gold": 40, "xp": 120}},
-
-  {"id": "q_marsh_lights", "name": "Lights on the Fen", "giver": "sal", "turn_in": "sal",
-   "desc": "Pale lights have been leading travellers off the causeway and into the deep water. Old Sal wants three of them snuffed out, and proof of the snuffing.",
-   "objectives": [
-     {"id": "wisps", "type": "collect", "item": "wisp_mote", "count": 3,
-      "desc": "Snuff out marsh wisps and keep their cold motes"}
-   ],
-   "rewards": {"gold": 35, "xp": 150}},
-
-  {"id": "q_quiet_light", "name": "The Quiet Light", "giver": "aldith", "turn_in": "aldith",
-   "desc": "The ruined chapel beyond the fen has woken. Sister Aldith asks you to lay down the thing wearing the old warden's bones, and bring back its censer.",
-   "objectives": [
-     {"id": "censer", "type": "collect", "item": "tarnished_censer", "count": 1,
-      "desc": "Take the censer from the Grave Warden"}
-   ],
-   "rewards": {"gold": 40, "xp": 180, "items": {"potion_greater": 2}}},
-
-  {"id": "q_the_fourteen", "name": "The Fourteen", "giver": "aldith", "turn_in": "aldith",
-   "desc": "Fourteen names and no graves. Find what became of Bramblewick's miners in the dark under the mine, and bring their story home.",
-   "objectives": [
-     {"id": "ledger", "type": "collect", "item": "miners_ledger", "count": 1,
-      "desc": "Find the foreman's ledger in the Deep Barrow"},
-     {"id": "shade", "type": "event", "event": "gave_rest", "count": 1,
-      "desc": "Give the foreman's shade his rest"}
-   ],
-   "rewards": {"gold": 50, "xp": 200}},
-
-  {"id": "q_warden_below", "name": "The Warden Below", "giver": "tommen", "turn_in": "elder",
-   "desc": "Beneath the mine, behind a door of black stone, the thing the barrow was raised to hold is awake - and the Pale Matron was only its doorkeeper. End it, or Bramblewick ends.",
-   "objectives": [
-     {"id": "king", "type": "collect", "item": "wardens_crown", "count": 1,
-      "desc": "Destroy the Warden Below and take its crown"}
-   ],
-   "rewards": {"gold": 120, "xp": 500, "items": {"potion_greater": 1}}}
+  {
+    "id": "q_silent_mine",
+    "name": "The Silent Mine",
+    "giver": "elder",
+    "turn_in": "elder",
+    "desc": "Nine days ago the Old Bramble Mine went silent. Elder Maren has asked you to go down and end whatever did it.",
+    "objectives": [
+      {
+        "id": "boss",
+        "type": "kill",
+        "monster": "spider_matron",
+        "count": 1,
+        "desc": "Destroy what silenced the mine"
+      }
+    ],
+    "rewards": {
+      "gold": 50,
+      "xp": 150
+    }
+  },
+  {
+    "id": "q_wolf_pelts",
+    "name": "Wolf Season",
+    "giver": "smith",
+    "turn_in": "smith",
+    "desc": "Wolves out of the Darkwood have been taking livestock. Borin will pay for three pelts.",
+    "objectives": [
+      {
+        "id": "pelts",
+        "type": "collect",
+        "item": "wolf_pelt",
+        "count": 3,
+        "desc": "Collect wolf pelts"
+      }
+    ],
+    "rewards": {
+      "gold": 30,
+      "xp": 100
+    }
+  },
+  {
+    "id": "q_greymaw",
+    "name": "The Grey Terror",
+    "giver": "smith",
+    "turn_in": "smith",
+    "desc": "The pelts bought a quiet week, but the pack has a king. Borin wants Greymaw's hide off the heart of the Darkwood before winter.",
+    "objectives": [
+      {
+        "id": "alpha",
+        "type": "collect",
+        "item": "alpha_pelt",
+        "count": 1,
+        "desc": "Take Greymaw's pelt in the deep Darkwood"
+      }
+    ],
+    "rewards": {
+      "gold": 60,
+      "xp": 200
+    }
+  },
+  {
+    "id": "q_lost_caravan",
+    "name": "The Lost Caravan",
+    "giver": "ivo",
+    "turn_in": "ivo",
+    "desc": "Peddler Ivo's caravan was ambushed on the Old North Road. Recover his three sealed trade crates and his livelihood with them.",
+    "objectives": [
+      {
+        "id": "crates",
+        "type": "collect",
+        "item": "trade_goods",
+        "count": 3,
+        "desc": "Recover the sealed trade crates"
+      }
+    ],
+    "rewards": {
+      "gold": 40,
+      "xp": 120
+    }
+  },
+  {
+    "id": "q_marsh_lights",
+    "name": "Lights on the Fen",
+    "giver": "sal",
+    "turn_in": "sal",
+    "desc": "Pale lights have been leading travellers off the causeway and into the deep water. Old Sal wants three of them snuffed out, and proof of the snuffing.",
+    "objectives": [
+      {
+        "id": "wisps",
+        "type": "collect",
+        "item": "wisp_mote",
+        "count": 3,
+        "desc": "Snuff out marsh wisps and keep their cold motes"
+      }
+    ],
+    "rewards": {
+      "gold": 35,
+      "xp": 150
+    }
+  },
+  {
+    "id": "q_quiet_light",
+    "name": "The Quiet Light",
+    "giver": "aldith",
+    "turn_in": "aldith",
+    "desc": "The ruined chapel beyond the fen has woken. Sister Aldith asks you to lay down the thing wearing the old warden's bones, and bring back its censer.",
+    "objectives": [
+      {
+        "id": "censer",
+        "type": "collect",
+        "item": "tarnished_censer",
+        "count": 1,
+        "desc": "Take the censer from the Grave Warden"
+      }
+    ],
+    "rewards": {
+      "gold": 40,
+      "xp": 180,
+      "items": {
+        "potion_greater": 2
+      }
+    }
+  },
+  {
+    "id": "q_the_fourteen",
+    "name": "The Fourteen",
+    "giver": "aldith",
+    "turn_in": "aldith",
+    "desc": "Fourteen names and no graves. Find what became of Bramblewick's miners in the dark under the mine, and bring their story home.",
+    "objectives": [
+      {
+        "id": "ledger",
+        "type": "collect",
+        "item": "miners_ledger",
+        "count": 1,
+        "desc": "Find the foreman's ledger in the Deep Barrow"
+      },
+      {
+        "id": "shade",
+        "type": "event",
+        "event": "gave_rest",
+        "count": 1,
+        "desc": "Give the foreman's shade his rest"
+      }
+    ],
+    "rewards": {
+      "gold": 50,
+      "xp": 200
+    }
+  },
+  {
+    "id": "q_warden_below",
+    "name": "The Warden Below",
+    "giver": "tommen",
+    "turn_in": "elder",
+    "desc": "Beneath the mine, behind a door of black stone, the thing the barrow was raised to hold is awake - and the Pale Matron was only its doorkeeper. End it, or Bramblewick ends.",
+    "objectives": [
+      {
+        "id": "king",
+        "type": "collect",
+        "item": "wardens_crown",
+        "count": 1,
+        "desc": "Destroy the Warden Below and take its crown"
+      }
+    ],
+    "rewards": {
+      "gold": 120,
+      "xp": 500,
+      "items": {
+        "potion_greater": 1
+      }
+    }
+  },
+  {
+    "id": "q_lost_delivery",
+    "name": "The Lost Delivery",
+    "giver": "kael",
+    "turn_in": "kael",
+    "desc": "Kael's delivery was misplaced at the Riverside warehouse. He needs it back.",
+    "objectives": [
+      {
+        "id": "package",
+        "type": "collect",
+        "item": "kael_package",
+        "count": 1,
+        "desc": "Find Kael's package in the warehouse"
+      }
+    ],
+    "rewards": {
+      "gold": 40,
+      "xp": 100
+    }
+  },
+  {
+    "id": "q_marsh_roots",
+    "name": "Apothecary's Ingredients",
+    "giver": "nyssa",
+    "turn_in": "nyssa",
+    "desc": "Nyssa the apothecary needs marsh roots to restock her potions.",
+    "objectives": [
+      {
+        "id": "roots",
+        "type": "collect",
+        "item": "marsh_root",
+        "count": 3,
+        "desc": "Collect 3 Marsh Roots"
+      }
+    ],
+    "rewards": {
+      "gold": 30,
+      "xp": 80,
+      "items": {
+        "potion_healing": 2
+      }
+    }
+  },
+  {
+    "id": "q_mill_trouble",
+    "name": "Trouble at the Mill",
+    "giver": "hobb",
+    "turn_in": "hobb",
+    "desc": "Large spiders have nested in the mill. Hobb will pay you to clear them out.",
+    "objectives": [
+      {
+        "id": "spiders",
+        "type": "kill",
+        "monster": "spider",
+        "count": 3,
+        "desc": "Kill the spiders in the mill"
+      }
+    ],
+    "rewards": {
+      "gold": 50,
+      "xp": 120
+    }
+  },
+  {
+    "id": "q_empty_house",
+    "name": "The Empty House",
+    "giver": "olen",
+    "turn_in": "olen",
+    "desc": "Olen has heard noises coming from the abandoned house next door. Investigate the source.",
+    "objectives": [
+      {
+        "id": "investigate",
+        "type": "event",
+        "event": "found_vorn",
+        "count": 1,
+        "desc": "Investigate the abandoned house"
+      }
+    ],
+    "rewards": {
+      "gold": 30,
+      "xp": 100
+    }
+  }
 ]

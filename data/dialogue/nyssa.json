@@ -1,0 +1,72 @@
+{
+    "id": "nyssa",
+    "nodes": {
+        "q_roots_offer": {
+            "text": "I'm out of Marsh Roots. The fen is too dangerous for me these days. Bring me three and I'll reward you with potions.",
+            "choices": [
+                {
+                    "label": "I'll fetch them.",
+                    "events": [
+                        {
+                            "type": "start_quest",
+                            "quest": "q_marsh_roots"
+                        }
+                    ],
+                    "next": null
+                },
+                {
+                    "label": "Too busy.",
+                    "next": "root"
+                }
+            ]
+        },
+        "q_roots_done": {
+            "text": "Excellent quality. These will brew nicely. Here are your potions.",
+            "choices": [
+                {
+                    "label": "Thanks.",
+                    "next": "root"
+                }
+            ]
+        },
+        "start": {
+            "text": "Herbs, tinctures, remedies. Don't touch the glass bottles.",
+            "choices": [
+                {
+                    "label": "What do you have for sale?",
+                    "events": [
+                        {
+                            "type": "open_shop",
+                            "shop": "nyssa_apothecary"
+                        }
+                    ],
+                    "next": null
+                },
+                {
+                    "label": "Are you low on anything?",
+                    "condition": {
+                        "not_quest_started": "q_marsh_roots"
+                    },
+                    "next": "q_roots_offer"
+                },
+                {
+                    "label": "I have the 3 Marsh Roots you asked for.",
+                    "condition": {
+                        "quest_ready": "q_marsh_roots"
+                    },
+                    "events": [
+                        {
+                            "type": "turn_in_quest",
+                            "quest": "q_marsh_roots"
+                        }
+                    ],
+                    "next": "q_roots_done"
+                },
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

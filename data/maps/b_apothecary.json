@@ -1,0 +1,82 @@
+{
+  "id": "b_apothecary",
+  "name": "Apothecary",
+  "tint": "d8cba8",
+  "grid": [
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "####..####"
+  ],
+  "portals": [
+    {
+      "pos": [
+        4,
+        9
+      ],
+      "to_map": "village_crafts",
+      "to_pos": [
+        14,
+        3
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_crafts",
+      "to_pos": [
+        14,
+        3
+      ],
+      "label": "Exit"
+    }
+  ],
+  "chests": [],
+  "npcs": [
+    "nyssa"
+  ],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "counter",
+      "pos": [
+        3,
+        4
+      ],
+      "solid": true
+    },
+    {
+      "type": "counter",
+      "pos": [
+        4,
+        4
+      ],
+      "solid": true
+    },
+    {
+      "type": "shelf",
+      "pos": [
+        8,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "shelf",
+      "pos": [
+        8,
+        2
+      ],
+      "solid": true
+    }
+  ]
+}

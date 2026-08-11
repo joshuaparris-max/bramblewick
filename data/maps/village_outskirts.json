@@ -1,0 +1,99 @@
+{
+    "id": "village_outskirts",
+    "name": "Town Outskirts",
+    "tint": "e0efe6",
+    "grid": [
+        "####################",
+        "#........##........#",
+        "#..,,,,..##..,,,,..#",
+        "#..,..,..##..,..,..#",
+        "#..,..,,,,,,,,..,..#",
+        "#..................#",
+        "#..................#",
+        "#..,,,,,,,,,,,,,,..#",
+        "#........##.....,..#",
+        "#........##.....,..#",
+        "#...............,..#",
+        "####################"
+    ],
+    "portals": [
+        {
+            "pos": [
+                8,
+                1
+            ],
+            "to_map": "village_market",
+            "to_pos": [
+                8,
+                9
+            ],
+            "label": "Market Square"
+        },
+        {
+            "pos": [
+                14,
+                2
+            ],
+            "to_map": "b_guardhouse",
+            "to_pos": [
+                4,
+                7
+            ],
+            "label": "Guardhouse"
+        },
+        {
+            "pos": [
+                4,
+                2
+            ],
+            "to_map": "b_stable",
+            "to_pos": [
+                6,
+                7
+            ],
+            "label": "Stable"
+        },
+        {
+            "pos": [
+                10,
+                10
+            ],
+            "to_map": "wilderness",
+            "to_pos": [
+                2,
+                2
+            ],
+            "label": "Darkwood"
+        },
+        {
+            "pos": [
+                1,
+                10
+            ],
+            "to_map": "marsh",
+            "to_pos": [
+                19,
+                7
+            ],
+            "label": "Fenwater Marsh"
+        }
+    ],
+    "chests": [],
+    "npcs": [
+        "fenn",
+        "clem",
+        "amb_outskirts1",
+        "amb_outskirts2"
+    ],
+    "monsters": [],
+    "decorations": [
+        {
+            "type": "sign",
+            "pos": [
+                9,
+                8
+            ],
+            "solid": true
+        }
+    ]
+}

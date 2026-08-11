@@ -1,16 +1,7 @@
-extends Node
-## MODULE: Save/Load
-## PURPOSE: Serialises game state to user://save.json and restores it.
-##   It only calls export_state()/import_state() on each owning module -
-##   it never reaches inside them.
-## SAFE TO EDIT: add modules to the gather/restore lists; bump VERSION when
-##   the format changes and add a migration in _migrate().
-## DANGEROUS: removing VERSION checks; writing partial saves.
-## PUBLIC API: save_game(), load_game() -> bool, has_save(), delete_save()
-## FUTURE: multiple slots, autosave on map change, cloud sync, save screenshots.
+﻿extends Node
 
 const SAVE_PATH := "user://save.json"
-const VERSION := 1
+const VERSION := 2
 
 func save_game() -> void:
 	var data := {
@@ -38,7 +29,7 @@ func load_game() -> bool:
 	if not (data is Dictionary):
 		push_error("[Save] corrupt save file")
 		return false
-	data = _migrate(data)
+	data = migrate_data(data)
 	GameState.import_state(data.get("game_state", {}))
 	Inventory.import_state(data.get("inventory", {}))
 	QuestManager.import_state(data.get("quests", {}))
@@ -49,6 +40,13 @@ func delete_save() -> void:
 	if has_save():
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(SAVE_PATH))
 
-func _migrate(data: Dictionary) -> Dictionary:
-	# When VERSION bumps, upgrade old saves here instead of breaking them.
+func migrate_data(data: Dictionary) -> Dictionary:
+	var v = data.get("version", 1)
+	if v < 2:
+		if data.has("game_state"):
+			var gs = data["game_state"]
+			if gs.get("current_map") == "village":
+				gs["current_map"] = "village_market"
+				gs["player_pos"] = [4, 4] # Safe spawn
+		data["version"] = 2
 	return data

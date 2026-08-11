@@ -1,0 +1,19 @@
+{
+    "id": "amb_outskirts1",
+    "nodes": {
+        "start": {
+            "text": [
+                "Did you hear that? From the trees?",
+                "I don't go near the Darkwood. Not since last winter.",
+                "We should build the fences higher. Much higher.",
+                "Sometimes at night, I hear voices calling from the tree line."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

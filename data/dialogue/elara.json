@@ -1,0 +1,14 @@
+{
+    "id": "elara",
+    "nodes": {
+        "start": {
+            "text": "Can I get you something to drink?",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

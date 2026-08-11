@@ -1,4 +1,4 @@
-extends RefCounted
+﻿extends RefCounted
 class_name MapBuilder
 
 const TILE := 32
@@ -54,3 +54,7 @@ static func build(map_data: Dictionary, parent: Node2D) -> void:
 		spawn.add_to_group("monster_spawn")
 		parent.add_child(spawn)
 
+	for d in map_data.get("decorations", []):
+		var dec: Node2D = load("res://scripts/maps/decoration.gd").new()
+		dec.setup(d)
+		parent.add_child(dec)

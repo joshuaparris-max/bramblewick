@@ -1,0 +1,74 @@
+{
+  "id": "b_guardhouse",
+  "name": "Guardhouse",
+  "tint": "d8cba8",
+  "grid": [
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "####..####"
+  ],
+  "portals": [
+    {
+      "pos": [
+        4,
+        9
+      ],
+      "to_map": "village_outskirts",
+      "to_pos": [
+        14,
+        3
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_outskirts",
+      "to_pos": [
+        14,
+        3
+      ],
+      "label": "Exit"
+    }
+  ],
+  "chests": [],
+  "npcs": [
+    "kade"
+  ],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "table",
+      "pos": [
+        4,
+        4
+      ],
+      "solid": true
+    },
+    {
+      "type": "bed",
+      "pos": [
+        1,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "bed",
+      "pos": [
+        1,
+        2
+      ],
+      "solid": true
+    }
+  ]
+}

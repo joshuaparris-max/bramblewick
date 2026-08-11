@@ -13,13 +13,19 @@ var _status: Label
 var _toasts: VBoxContainer
 var _panel: PanelContainer
 var _panel_body: VBoxContainer
+var _quest_tracker: VBoxContainer
 
 func _ready() -> void:
 	layer = 5
 	_build_ui()
 	EventBus.state_changed.connect(_refresh)
 	EventBus.toast.connect(_toast)
+	EventBus.quest_started.connect(func(_id): _refresh_quests())
+	EventBus.quest_updated.connect(func(_id): _refresh_quests())
+	EventBus.quest_ready.connect(func(_id): _refresh_quests())
+	EventBus.quest_completed.connect(func(_id): _refresh_quests())
 	_refresh()
+	_refresh_quests()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_inventory"):
@@ -45,6 +51,39 @@ func _toast(msg: String) -> void:
 	tw.tween_interval(2.4)
 	tw.tween_property(l, "modulate:a", 0.0, 0.6)
 	tw.tween_callback(l.queue_free)
+
+func _refresh_quests() -> void:
+	for child in _quest_tracker.get_children():
+		child.queue_free()
+	
+	var header := Label.new()
+	header.text = "Active Quests"
+	header.add_theme_color_override("font_color", Color("e8b45a"))
+	_quest_tracker.add_child(header)
+	
+	var any := false
+	for quest_id in Db.quests:
+		var st := QuestManager.state_of(quest_id)
+		if st == "active" or st == "ready":
+			any = true
+			var q := Db.get_quest(quest_id)
+			var lbl := Label.new()
+			lbl.text = "• " + q.get("name", quest_id)
+			lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			if st == "ready":
+				lbl.add_theme_color_override("font_color", Color("7fa05a"))
+			_quest_tracker.add_child(lbl)
+			var obj := Label.new()
+			obj.text = "  " + QuestManager.objective_text(quest_id)
+			obj.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			obj.add_theme_color_override("font_color", Color("c9c4b4"))
+			obj.add_theme_font_size_override("font_size", 13)
+			_quest_tracker.add_child(obj)
+			
+	if not any:
+		_quest_tracker.hide()
+	else:
+		_quest_tracker.show()
 
 # ---------- panels ----------
 func _toggle_panel(filler: Callable) -> void:
@@ -144,6 +183,12 @@ func _build_ui() -> void:
 	_toasts.set_anchors_preset(Control.PRESET_CENTER_TOP)
 	_toasts.offset_top = 44.0
 	add_child(_toasts)
+	_quest_tracker = VBoxContainer.new()
+	_quest_tracker.set_anchors_preset(Control.PRESET_TOP_RIGHT)
+	_quest_tracker.offset_right = -16.0
+	_quest_tracker.offset_top = 44.0
+	_quest_tracker.custom_minimum_size.x = 240.0
+	add_child(_quest_tracker)
 	_panel = PanelContainer.new()
 	_panel.set_anchors_preset(Control.PRESET_CENTER)
 	_panel.custom_minimum_size = Vector2(560, 380)

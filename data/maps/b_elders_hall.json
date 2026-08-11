@@ -1,0 +1,83 @@
+{
+  "id": "b_elders_hall",
+  "name": "Elder's Hall",
+  "tint": "d8cba8",
+  "grid": [
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "####..####"
+  ],
+  "portals": [
+    {
+      "pos": [
+        4,
+        9
+      ],
+      "to_map": "village_civic",
+      "to_pos": [
+        5,
+        8
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_civic",
+      "to_pos": [
+        5,
+        8
+      ],
+      "label": "Exit"
+    }
+  ],
+  "chests": [],
+  "npcs": [
+    "elder",
+    "vane"
+  ],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "table",
+      "pos": [
+        4,
+        2
+      ],
+      "solid": true
+    },
+    {
+      "type": "table",
+      "pos": [
+        5,
+        2
+      ],
+      "solid": true
+    },
+    {
+      "type": "shelf",
+      "pos": [
+        1,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "shelf",
+      "pos": [
+        8,
+        1
+      ],
+      "solid": true
+    }
+  ]
+}

@@ -5,51 +5,160 @@
     "start": {
       "text": "A peddler sits on the tail of an empty cart, turning an empty pipe in his fingers. \"Wares? Hah. My wares are on the North Road under a bandit's boot. But browse, by all means, browse the air.\"",
       "choices": [
-        {"label": "What happened to your caravan?",
-         "condition": {"quest_state": {"id": "q_lost_caravan", "is": "inactive"}},
-         "next": "caravan"},
-        {"label": "Your crates, Ivo. All three, seals unbroken.",
-         "condition": {"quest_state": {"id": "q_lost_caravan", "is": "ready"}},
-         "events": [{"type": "turn_in_quest", "quest": "q_lost_caravan"},
-                    {"type": "set_flag", "flag": "ivo_stocked"},
-                    {"type": "reputation", "faction": "village", "amount": 5}],
-         "next": "restored"},
-        {"label": "Buy: Dagger (3 gold)",
-         "events": [{"type": "buy", "item": "dagger", "cost": 3}],
-         "next": "start"},
-        {"label": "Buy: Healing Potion (8 gold)",
-         "events": [{"type": "buy", "item": "potion_healing", "cost": 8}],
-         "next": "start"},
-        {"label": "Buy: Studded Leather, AC 12 (30 gold)",
-         "events": [{"type": "buy", "item": "studded_leather", "cost": 30}],
-         "next": "start"},
-        {"label": "Buy: Greataxe, 1d12 (40 gold)",
-         "condition": {"flag": "ivo_stocked"},
-         "events": [{"type": "buy", "item": "greataxe", "cost": 40}],
-         "next": "start"},
-        {"label": "Buy: Half Plate, AC 15 (90 gold)",
-         "condition": {"flag": "ivo_stocked", "gold_at_least": 90},
-         "events": [{"type": "buy", "item": "half_plate", "cost": 90}],
-         "next": "start"},
-        {"label": "Buy: Greater Healing Potion (20 gold)",
-         "condition": {"flag": "ivo_stocked"},
-         "events": [{"type": "buy", "item": "potion_greater", "cost": 20}],
-         "next": "start"},
-        {"label": "(Leave)", "next": null}
+        {
+          "label": "What happened to your caravan?",
+          "condition": {
+            "quest_state": {
+              "id": "q_lost_caravan",
+              "is": "inactive"
+            }
+          },
+          "next": "caravan"
+        },
+        {
+          "label": "Your crates, Ivo. All three, seals unbroken.",
+          "condition": {
+            "quest_state": {
+              "id": "q_lost_caravan",
+              "is": "ready"
+            }
+          },
+          "events": [
+            {
+              "type": "turn_in_quest",
+              "quest": "q_lost_caravan"
+            },
+            {
+              "type": "set_flag",
+              "flag": "ivo_stocked"
+            },
+            {
+              "type": "reputation",
+              "faction": "village",
+              "amount": 5
+            }
+          ],
+          "next": "restored"
+        },
+        {
+          "label": "Show me your basic wares.",
+          "events": [
+            {
+              "type": "open_shop",
+              "shop": "ivo_peddler"
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Buy: Dagger (3 gold)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "dagger",
+              "cost": 3
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Buy: Healing Potion (8 gold)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "potion_healing",
+              "cost": 8
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Buy: Studded Leather, AC 12 (30 gold)",
+          "events": [
+            {
+              "type": "buy",
+              "item": "studded_leather",
+              "cost": 30
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Buy: Greataxe, 1d12 (40 gold)",
+          "condition": {
+            "flag": "ivo_stocked"
+          },
+          "events": [
+            {
+              "type": "buy",
+              "item": "greataxe",
+              "cost": 40
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Buy: Half Plate, AC 15 (90 gold)",
+          "condition": {
+            "flag": "ivo_stocked",
+            "gold_at_least": 90
+          },
+          "events": [
+            {
+              "type": "buy",
+              "item": "half_plate",
+              "cost": 90
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Buy: Greater Healing Potion (20 gold)",
+          "condition": {
+            "flag": "ivo_stocked"
+          },
+          "events": [
+            {
+              "type": "buy",
+              "item": "potion_greater",
+              "cost": 20
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "(Leave)",
+          "next": null
+        }
       ]
     },
     "caravan": {
       "text": "\"Two days north of here, a man calling himself Redmaw Kessler relieved me of three sealed crates and my professional dignity. The crates matter - a season's stock, paid in advance. Bring them back and Bramblewick gets a proper shop, with my gratitude priced into everything.\"",
       "choices": [
-        {"label": "I'll walk the North Road and get your crates. (Accept quest)",
-         "events": [{"type": "start_quest", "quest": "q_lost_caravan"}],
-         "next": "start"},
-        {"label": "Bandits are your problem, peddler.", "next": "start"}
+        {
+          "label": "I'll walk the North Road and get your crates. (Accept quest)",
+          "events": [
+            {
+              "type": "start_quest",
+              "quest": "q_lost_caravan"
+            }
+          ],
+          "next": "start"
+        },
+        {
+          "label": "Bandits are your problem, peddler.",
+          "next": "start"
+        }
       ]
     },
     "restored": {
       "text": "He breaks a seal, looks inside, and for a moment can't speak. \"Seasons of work. You've bought a village its shop, friend - and yourself the good prices. Look at THESE wares.\"",
-      "choices": [{"label": "(Look at the wares)", "next": "start"}]
+      "choices": [
+        {
+          "label": "(Look at the wares)",
+          "next": "start"
+        }
+      ]
     }
   }
 }
