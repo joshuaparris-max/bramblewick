@@ -1,0 +1,19 @@
+{
+    "id": "amb_crafts1",
+    "nodes": {
+        "start": {
+            "text": [
+                "Borin's work is sloppy. Someday I'll have my own forge and show them all.",
+                "I could forge a better blade blindfolded.",
+                "They make me sweep the soot while true talent goes to waste.",
+                "Don't buy the ironwork here. Wait until I set up shop."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

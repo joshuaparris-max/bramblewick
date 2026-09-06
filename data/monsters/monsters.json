@@ -1,70 +1,318 @@
 [
-  {"id": "wolf", "name": "Darkwood Wolf", "glyph": "W", "icon": "wolf", "color": "8a7a62",
-   "hp": 11, "ac": 13, "attack_bonus": 4, "damage": "2d4", "initiative_bonus": 2,
-   "xp": 50, "gold": "1d4", "loot": [{"item": "wolf_pelt", "chance": 1.0}],
-   "traits": ["pack"], "behaviour": "aggressive",
-   "flavor": "It circles low, hackles raised."},
-  {"id": "dire_alpha", "name": "Greymaw", "glyph": "A", "icon": "wolf_alpha", "color": "6b6258",
-   "hp": 38, "ac": 14, "attack_bonus": 6, "damage": "2d6+2", "initiative_bonus": 3,
-   "xp": 250, "loot": [{"item": "alpha_pelt", "chance": 1.0}, {"item": "wolf_pelt", "chance": 1.0}],
-   "traits": ["pack", "alpha"], "behaviour": "territorial",
-   "flavor": "Grey as old ash and tall as a pony, with a jaw that never fully closes. The pack's silence tells you whose ground this is."},
-
-  {"id": "skeleton", "name": "Restless Skeleton", "glyph": "S", "icon": "skull", "color": "d8cbb3",
-   "hp": 13, "ac": 13, "attack_bonus": 4, "damage": "1d6+2", "initiative_bonus": 2,
-   "xp": 50, "gold": "2d4", "loot": [],
-   "traits": ["undead"], "behaviour": "territorial",
-   "flavor": "Old miner's bones, still clutching a rusted pick."},
-  {"id": "spider_matron", "name": "The Pale Matron", "glyph": "M", "icon": "spider", "color": "c4553d",
-   "hp": 32, "ac": 14, "attack_bonus": 5, "damage": "1d8+2", "initiative_bonus": 3,
-   "xp": 300, "gold": "2d10", "boss": true,
-   "loot": [{"item": "miners_locket", "chance": 1.0}],
-   "traits": ["boss", "poison"], "behaviour": "lair",
-   "flavor": "Eyes like wet coal fill the gallery. The web-strands hum. This is what silenced the mine."},
-
-  {"id": "bandit", "name": "Road Bandit", "glyph": "B", "icon": "bandit", "color": "b08a5a",
-   "hp": 12, "ac": 12, "attack_bonus": 3, "damage": "1d6+1", "initiative_bonus": 2,
-   "xp": 45, "gold": "2d4", "loot": [],
-   "traits": ["human"], "behaviour": "aggressive",
-   "flavor": "A kerchief over the face, a notched blade, and no interest in talking."},
-  {"id": "bandit_captain", "name": "Redmaw Kessler", "glyph": "K", "icon": "bandit", "color": "c47a3d",
-   "hp": 24, "ac": 14, "attack_bonus": 5, "damage": "1d8+2", "initiative_bonus": 3,
-   "xp": 120, "gold": "3d6",
-   "loot": [{"item": "trade_goods", "chance": 1.0}, {"item": "rapier", "chance": 0.5}],
-   "traits": ["human", "leader"], "behaviour": "aggressive",
-   "flavor": "He sits on a stolen crate, cleaning his teeth with a knife. \"Wrong road, hero.\""},
-
-  {"id": "marsh_wisp", "name": "Marsh Wisp", "glyph": "*", "icon": "flame", "color": "9fe8e0",
-   "hp": 9, "ac": 15, "attack_bonus": 4, "damage": "2d4", "initiative_bonus": 4,
-   "xp": 55, "loot": [{"item": "wisp_mote", "chance": 1.0}],
-   "traits": ["fey", "flicker"], "behaviour": "lure",
-   "flavor": "A cold blue light bobs closer, patient as the tide. It has led better swimmers than you into the deep water."},
-  {"id": "bog_shambler", "name": "Bog Shambler", "glyph": "H", "icon": "shambler", "color": "5a6b4a",
-   "hp": 26, "ac": 11, "attack_bonus": 4, "damage": "1d10+2", "initiative_bonus": 0,
-   "xp": 90, "gold": "1d6", "loot": [],
-   "traits": ["plant", "slow"], "behaviour": "territorial",
-   "flavor": "The fen stands up. Peat and root and something drowned a long time ago, all moving as one."},
-
-  {"id": "grave_warden", "name": "The Grave Warden", "glyph": "G", "icon": "skull_helm", "color": "8a94b8",
-   "hp": 30, "ac": 15, "attack_bonus": 5, "damage": "1d8+3", "initiative_bonus": 1,
-   "xp": 180, "gold": "2d8", "loot": [{"item": "tarnished_censer", "chance": 1.0}],
-   "traits": ["undead", "armoured"], "behaviour": "lair",
-   "flavor": "Rusted mail over yellow bone, swinging a censer that burns with no flame. It was set to guard this chapel. It still thinks it is."},
-
-  {"id": "deep_crawler", "name": "Pale Crawler", "glyph": "c", "icon": "spider", "color": "d8c8d0",
-   "hp": 10, "ac": 13, "attack_bonus": 5, "damage": "1d6+1", "initiative_bonus": 4,
-   "xp": 40, "loot": [],
-   "traits": ["spider", "swarm"], "behaviour": "aggressive",
-   "flavor": "One of the Matron's brood, grown fat in the dark. It remembers being fed."},
-  {"id": "barrow_wight", "name": "Barrow Wight", "glyph": "R", "icon": "ghost", "color": "b3c4d8",
-   "hp": 18, "ac": 14, "attack_bonus": 5, "damage": "1d8+2", "initiative_bonus": 2,
-   "xp": 85, "gold": "2d6", "loot": [],
-   "traits": ["undead", "cold"], "behaviour": "territorial",
-   "flavor": "It wears a king's man's rotted livery and draws a blade that drinks the lantern-light."},
-  {"id": "barrow_king", "name": "The Warden Below", "glyph": "X", "icon": "skull_crown", "color": "e8e0c0",
-   "hp": 55, "ac": 16, "attack_bonus": 7, "damage": "2d6+3", "initiative_bonus": 2,
-   "xp": 600, "gold": "4d10", "boss": true,
-   "loot": [{"item": "warden_blade", "chance": 1.0}, {"item": "wardens_crown", "chance": 1.0}],
-   "traits": ["boss", "undead", "ancient"], "behaviour": "lair",
-   "flavor": "On a throne of mine-props and grave-goods sits a tall corpse in a crown of black iron. The breathing you have heard through the earth stops. It opens its eyes."}
+  {
+    "id": "wolf",
+    "name": "Darkwood Wolf",
+    "glyph": "W",
+    "icon": "wolf",
+    "color": "8a7a62",
+    "hp": 11,
+    "ac": 13,
+    "attack_bonus": 4,
+    "damage": "2d4",
+    "initiative_bonus": 2,
+    "xp": 50,
+    "gold": "1d4",
+    "loot": [
+      {
+        "item": "wolf_pelt",
+        "chance": 1.0
+      }
+    ],
+    "traits": [
+      "pack"
+    ],
+    "behaviour": "aggressive",
+    "flavor": "It circles low, hackles raised."
+  },
+  {
+    "id": "dire_alpha",
+    "name": "Greymaw",
+    "glyph": "A",
+    "icon": "wolf_alpha",
+    "color": "6b6258",
+    "hp": 38,
+    "ac": 14,
+    "attack_bonus": 6,
+    "damage": "2d6+2",
+    "initiative_bonus": 3,
+    "xp": 250,
+    "loot": [
+      {
+        "item": "alpha_pelt",
+        "chance": 1.0
+      },
+      {
+        "item": "wolf_pelt",
+        "chance": 1.0
+      }
+    ],
+    "traits": [
+      "pack",
+      "alpha"
+    ],
+    "behaviour": "territorial",
+    "flavor": "Grey as old ash and tall as a pony, with a jaw that never fully closes. The pack's silence tells you whose ground this is."
+  },
+  {
+    "id": "skeleton",
+    "name": "Restless Skeleton",
+    "glyph": "S",
+    "icon": "skull",
+    "color": "d8cbb3",
+    "hp": 13,
+    "ac": 13,
+    "attack_bonus": 4,
+    "damage": "1d6+2",
+    "initiative_bonus": 2,
+    "xp": 50,
+    "gold": "2d4",
+    "loot": [],
+    "traits": [
+      "undead"
+    ],
+    "behaviour": "territorial",
+    "flavor": "Old miner's bones, still clutching a rusted pick."
+  },
+  {
+    "id": "spider_matron",
+    "name": "The Pale Matron",
+    "glyph": "M",
+    "icon": "spider",
+    "color": "c4553d",
+    "hp": 32,
+    "ac": 14,
+    "attack_bonus": 5,
+    "damage": "1d8+2",
+    "initiative_bonus": 3,
+    "xp": 300,
+    "gold": "2d10",
+    "boss": true,
+    "loot": [
+      {
+        "item": "miners_locket",
+        "chance": 1.0
+      }
+    ],
+    "traits": [
+      "boss",
+      "poison"
+    ],
+    "behaviour": "lair",
+    "flavor": "Eyes like wet coal fill the gallery. The web-strands hum. This is what silenced the mine."
+  },
+  {
+    "id": "bandit",
+    "name": "Road Bandit",
+    "glyph": "B",
+    "icon": "bandit",
+    "color": "b08a5a",
+    "hp": 12,
+    "ac": 12,
+    "attack_bonus": 3,
+    "damage": "1d6+1",
+    "initiative_bonus": 2,
+    "xp": 45,
+    "gold": "2d4",
+    "loot": [],
+    "traits": [
+      "human"
+    ],
+    "behaviour": "aggressive",
+    "flavor": "A kerchief over the face, a notched blade, and no interest in talking."
+  },
+  {
+    "id": "bandit_captain",
+    "name": "Redmaw Kessler",
+    "glyph": "K",
+    "icon": "bandit",
+    "color": "c47a3d",
+    "hp": 24,
+    "ac": 14,
+    "attack_bonus": 5,
+    "damage": "1d8+2",
+    "initiative_bonus": 3,
+    "xp": 120,
+    "gold": "3d6",
+    "loot": [
+      {
+        "item": "trade_goods",
+        "chance": 1.0
+      },
+      {
+        "item": "rapier",
+        "chance": 0.5
+      }
+    ],
+    "traits": [
+      "human",
+      "leader"
+    ],
+    "behaviour": "aggressive",
+    "flavor": "He sits on a stolen crate, cleaning his teeth with a knife. \"Wrong road, hero.\""
+  },
+  {
+    "id": "marsh_wisp",
+    "name": "Marsh Wisp",
+    "glyph": "*",
+    "icon": "flame",
+    "color": "9fe8e0",
+    "hp": 9,
+    "ac": 15,
+    "attack_bonus": 4,
+    "damage": "2d4",
+    "initiative_bonus": 4,
+    "xp": 55,
+    "loot": [
+      {
+        "item": "wisp_mote",
+        "chance": 1.0
+      }
+    ],
+    "traits": [
+      "fey",
+      "flicker"
+    ],
+    "behaviour": "lure",
+    "flavor": "A cold blue light bobs closer, patient as the tide. It has led better swimmers than you into the deep water."
+  },
+  {
+    "id": "bog_shambler",
+    "name": "Bog Shambler",
+    "glyph": "H",
+    "icon": "shambler",
+    "color": "5a6b4a",
+    "hp": 26,
+    "ac": 11,
+    "attack_bonus": 4,
+    "damage": "1d10+2",
+    "initiative_bonus": 0,
+    "xp": 90,
+    "gold": "1d6",
+    "loot": [],
+    "traits": [
+      "plant",
+      "slow"
+    ],
+    "behaviour": "territorial",
+    "flavor": "The fen stands up. Peat and root and something drowned a long time ago, all moving as one."
+  },
+  {
+    "id": "grave_warden",
+    "name": "The Grave Warden",
+    "glyph": "G",
+    "icon": "skull_helm",
+    "color": "8a94b8",
+    "hp": 30,
+    "ac": 15,
+    "attack_bonus": 5,
+    "damage": "1d8+3",
+    "initiative_bonus": 1,
+    "xp": 180,
+    "gold": "2d8",
+    "loot": [
+      {
+        "item": "tarnished_censer",
+        "chance": 1.0
+      }
+    ],
+    "traits": [
+      "undead",
+      "armoured"
+    ],
+    "behaviour": "lair",
+    "flavor": "Rusted mail over yellow bone, swinging a censer that burns with no flame. It was set to guard this chapel. It still thinks it is."
+  },
+  {
+    "id": "deep_crawler",
+    "name": "Pale Crawler",
+    "glyph": "c",
+    "icon": "spider",
+    "color": "d8c8d0",
+    "hp": 10,
+    "ac": 13,
+    "attack_bonus": 5,
+    "damage": "1d6+1",
+    "initiative_bonus": 4,
+    "xp": 40,
+    "loot": [],
+    "traits": [
+      "spider",
+      "swarm"
+    ],
+    "behaviour": "aggressive",
+    "flavor": "One of the Matron's brood, grown fat in the dark. It remembers being fed."
+  },
+  {
+    "id": "barrow_wight",
+    "name": "Barrow Wight",
+    "glyph": "R",
+    "icon": "ghost",
+    "color": "b3c4d8",
+    "hp": 18,
+    "ac": 14,
+    "attack_bonus": 5,
+    "damage": "1d8+2",
+    "initiative_bonus": 2,
+    "xp": 85,
+    "gold": "2d6",
+    "loot": [],
+    "traits": [
+      "undead",
+      "cold"
+    ],
+    "behaviour": "territorial",
+    "flavor": "It wears a king's man's rotted livery and draws a blade that drinks the lantern-light."
+  },
+  {
+    "id": "barrow_king",
+    "name": "The Warden Below",
+    "glyph": "X",
+    "icon": "skull_crown",
+    "color": "e8e0c0",
+    "hp": 55,
+    "ac": 16,
+    "attack_bonus": 7,
+    "damage": "2d6+3",
+    "initiative_bonus": 2,
+    "xp": 600,
+    "gold": "4d10",
+    "boss": true,
+    "loot": [
+      {
+        "item": "warden_blade",
+        "chance": 1.0
+      },
+      {
+        "item": "wardens_crown",
+        "chance": 1.0
+      }
+    ],
+    "traits": [
+      "boss",
+      "undead",
+      "ancient"
+    ],
+    "behaviour": "lair",
+    "flavor": "On a throne of mine-props and grave-goods sits a tall corpse in a crown of black iron. The breathing you have heard through the earth stops. It opens its eyes."
+  },
+  {
+    "id": "spider",
+    "name": "Mill Spider",
+    "glyph": "s",
+    "icon": "spider",
+    "color": "404040",
+    "hp": 5,
+    "ac": 11,
+    "attack_bonus": 2,
+    "damage": "1d4",
+    "initiative_bonus": 3,
+    "xp": 10,
+    "gold": "1",
+    "loot": [],
+    "traits": [
+      "spider"
+    ],
+    "behaviour": "aggressive",
+    "flavor": "A fat black spider that has made its home in the mill's shadow."
+  }
 ]

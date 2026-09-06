@@ -1,0 +1,66 @@
+{
+  "id": "b_old_house",
+  "name": "Old House",
+  "tint": "d8cba8",
+  "grid": [
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "####..####"
+  ],
+  "portals": [
+    {
+      "pos": [
+        4,
+        9
+      ],
+      "to_map": "village_old",
+      "to_pos": [
+        4,
+        3
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_old",
+      "to_pos": [
+        4,
+        3
+      ],
+      "label": "Exit"
+    }
+  ],
+  "chests": [],
+  "npcs": [
+    "olen"
+  ],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "bed",
+      "pos": [
+        1,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "table",
+      "pos": [
+        5,
+        5
+      ],
+      "solid": true
+    }
+  ]
+}

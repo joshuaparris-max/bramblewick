@@ -1,0 +1,19 @@
+{
+    "id": "amb_market1",
+    "nodes": {
+        "start": {
+            "text": [
+                "Keep your hands where I can see them.",
+                "Everyone's a thief until proven otherwise, that's my motto.",
+                "You break it, you buy it. And it'll cost you double.",
+                "I swear half my stock went missing before noon."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "b_general_store",
+  "name": "General Store",
+  "tint": "d8cba8",
+  "grid": [
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "####..####"
+  ],
+  "portals": [
+    {
+      "pos": [
+        4,
+        9
+      ],
+      "to_map": "village_market",
+      "to_pos": [
+        16,
+        3
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_market",
+      "to_pos": [
+        16,
+        3
+      ],
+      "label": "Exit"
+    }
+  ],
+  "chests": [],
+  "npcs": [
+    "kael"
+  ],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "counter",
+      "pos": [
+        4,
+        3
+      ],
+      "solid": true
+    },
+    {
+      "type": "counter",
+      "pos": [
+        5,
+        3
+      ],
+      "solid": true
+    },
+    {
+      "type": "shelf",
+      "pos": [
+        1,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "shelf",
+      "pos": [
+        2,
+        1
+      ],
+      "solid": true
+    },
+    {
+      "type": "crate",
+      "pos": [
+        8,
+        7
+      ],
+      "solid": true
+    }
+  ]
+}

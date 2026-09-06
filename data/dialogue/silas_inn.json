@@ -1,0 +1,33 @@
+{
+    "id": "silas_inn",
+    "nodes": {
+        "rested": {
+            "text": "You look better already.",
+            "choices": [
+                {
+                    "label": "Thanks.",
+                    "next": "root"
+                }
+            ]
+        },
+        "start": {
+            "text": "Welcome to the Bramble Inn. Fire's warm, ale's cold.",
+            "choices": [
+                {
+                    "label": "Rest and recover (5g)",
+                    "events": [
+                        {
+                            "type": "open_shop",
+                            "shop": "silas_inn"
+                        }
+                    ],
+                    "next": null
+                },
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

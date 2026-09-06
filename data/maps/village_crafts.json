@@ -1,0 +1,85 @@
+{
+    "id": "village_crafts",
+    "name": "Craftsmen's Row",
+    "tint": "f0ece6",
+    "grid": [
+        "####################",
+        "#........##........#",
+        "#..,,,,..##..,,,,..#",
+        "#..,..,..##..,..,..#",
+        "#..,..,,,,,,,,..,..#",
+        "#..................#",
+        "#..................#",
+        "#..,,,,,,,,,,,,,,..#",
+        "#........##.....,..#",
+        "#........##.....,..#",
+        "#...............,..#",
+        "####################"
+    ],
+    "portals": [
+        {
+            "pos": [
+                18,
+                5
+            ],
+            "to_map": "village_market",
+            "to_pos": [
+                2,
+                5
+            ],
+            "label": "Market Square"
+        },
+        {
+            "pos": [
+                4,
+                2
+            ],
+            "to_map": "b_blacksmith",
+            "to_pos": [
+                5,
+                8
+            ],
+            "label": "Blacksmith"
+        },
+        {
+            "pos": [
+                14,
+                2
+            ],
+            "to_map": "b_apothecary",
+            "to_pos": [
+                4,
+                7
+            ],
+            "label": "Apothecary"
+        },
+        {
+            "pos": [
+                8,
+                9
+            ],
+            "to_map": "b_carpenter",
+            "to_pos": [
+                5,
+                7
+            ],
+            "label": "Carpenter"
+        }
+    ],
+    "chests": [],
+    "npcs": [
+        "amb_crafts1",
+        "amb_crafts2"
+    ],
+    "monsters": [],
+    "decorations": [
+        {
+            "type": "sign",
+            "pos": [
+                5,
+                6
+            ],
+            "solid": true
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "id": "amb_civic2",
+    "nodes": {
+        "start": {
+            "text": [
+                "The mayor's taxes are steep... but a small donation to the guards might speed up your paperwork.",
+                "Justice is blind, but occasionally she peeks if the coin is shiny enough.",
+                "It's a tough job. A man's gotta eat, right?",
+                "If you want access to the archives, it's going to cost you a 'processing fee'."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

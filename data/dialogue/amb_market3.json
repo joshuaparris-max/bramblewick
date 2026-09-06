@@ -1,0 +1,19 @@
+{
+    "id": "amb_market3",
+    "nodes": {
+        "start": {
+            "text": [
+                "Don't touch that! Put it down right now!",
+                "I take my eyes off them for one second...",
+                "I'm too tired to haggle today. Just take the coin.",
+                "If you see a little boy with a wooden sword, tell him his mother is looking for him."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

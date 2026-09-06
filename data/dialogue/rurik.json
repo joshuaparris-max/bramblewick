@@ -1,0 +1,14 @@
+{
+    "id": "rurik",
+    "nodes": {
+        "start": {
+            "text": "Keep the peace, and we'll have no trouble.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

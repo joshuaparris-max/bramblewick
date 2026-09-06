@@ -1,0 +1,19 @@
+{
+    "id": "amb_old1",
+    "nodes": {
+        "start": {
+            "text": [
+                "Before the mine closed, this square was paved with silver...",
+                "The youth today have no respect for the old ways.",
+                "I remember when Bramblewick was just three huts and a pig.",
+                "They don't build houses like they used to."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

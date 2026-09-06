@@ -1,0 +1,43 @@
+﻿[
+  {
+    "id": "borin_blacksmith",
+    "npc": "smith",
+    "stock": [
+      {"item": "dagger", "cost": 2},
+      {"item": "mace", "cost": 5},
+      {"item": "longsword", "cost": 15},
+      {"item": "shield", "cost": 10},
+      {"item": "studded_leather", "cost": 30}
+    ]
+  },
+  {
+    "id": "kael_general_store",
+    "npc": "kael",
+    "stock": [
+      {"item": "leather_armour", "cost": 10},
+      {"item": "potion_healing", "cost": 8}
+    ]
+  },
+  {
+    "id": "nyssa_apothecary",
+    "npc": "nyssa",
+    "stock": [
+      {"item": "potion_healing", "cost": 8},
+      {"item": "potion_greater", "cost": 20}
+    ]
+  },
+  {
+    "id": "silas_inn",
+    "npc": "silas_inn",
+    "services": [
+      {"name": "Rest and Recover", "cost": 5, "event": "heal_full", "desc": "Fully restores HP."}
+    ]
+  },
+  {
+    "id": "ivo_peddler",
+    "npc": "ivo",
+    "stock": [
+      {"item": "dagger", "cost": 2}
+    ]
+  }
+]

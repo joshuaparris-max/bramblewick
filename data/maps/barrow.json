@@ -17,20 +17,92 @@
     "WWWWWWWWWWWWWWWWWWWWWW"
   ],
   "portals": [
-    {"pos": [1, 1], "to_map": "mine", "to_pos": [19, 10], "label": "The Black Door"}
+    {
+      "pos": [
+        1,
+        1
+      ],
+      "to_map": "mine",
+      "to_pos": [
+        19,
+        10
+      ],
+      "label": "The Black Door"
+    }
   ],
   "chests": [
-    {"pos": [19, 1], "items": {"potion_greater": 2}, "gold": 25},
-    {"pos": [11, 9], "items": {"miners_ledger": 1}}
+    {
+      "pos": [
+        19,
+        1
+      ],
+      "items": {
+        "potion_greater": 2
+      },
+      "gold": 25
+    },
+    {
+      "pos": [
+        11,
+        9
+      ],
+      "items": {
+        "miners_ledger": 1
+      }
+    }
   ],
-  "npcs": ["foreman"],
+  "npcs": [
+    "foreman"
+  ],
   "monsters": [
-    {"id": "deep_crawler", "pos": [10, 1]},
-    {"id": "deep_crawler", "pos": [18, 3]},
-    {"id": "deep_crawler", "pos": [2, 7]},
-    {"id": "barrow_wight", "pos": [6, 3]},
-    {"id": "barrow_wight", "pos": [16, 7]},
-    {"id": "barrow_wight", "pos": [5, 10]},
-    {"id": "barrow_king", "pos": [19, 9]}
+    {
+      "id": "deep_crawler",
+      "pos": [
+        10,
+        1
+      ]
+    },
+    {
+      "id": "deep_crawler",
+      "pos": [
+        18,
+        3
+      ]
+    },
+    {
+      "id": "deep_crawler",
+      "pos": [
+        2,
+        7
+      ]
+    },
+    {
+      "id": "barrow_wight",
+      "pos": [
+        6,
+        3
+      ]
+    },
+    {
+      "id": "barrow_wight",
+      "pos": [
+        16,
+        7
+      ]
+    },
+    {
+      "id": "barrow_wight",
+      "pos": [
+        5,
+        10
+      ]
+    },
+    {
+      "id": "barrow_king",
+      "pos": [
+        19,
+        9
+      ]
+    }
   ]
 }

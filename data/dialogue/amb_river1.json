@@ -1,0 +1,19 @@
+{
+    "id": "amb_river1",
+    "nodes": {
+        "start": {
+            "text": [
+                "Shh. You'll scare the fish.",
+                "I've been sitting here since dawn and haven't had a single bite.",
+                "If I close my eyes, I'm technically still fishing.",
+                "Maybe the fish are sleeping too."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "id": "yanni",
+    "nodes": {
+        "start": {
+            "text": "Good wood is hard to find since the wolves got bold.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

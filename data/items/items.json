@@ -1,44 +1,220 @@
 [
-  {"id": "dagger", "name": "Dagger", "type": "weapon", "slot": "weapon",
-   "damage": "1d4", "stat": "DEX", "bonus": 0, "value": 2},
-  {"id": "longsword", "name": "Longsword", "type": "weapon", "slot": "weapon",
-   "damage": "1d8", "stat": "STR", "bonus": 0, "value": 15},
-  {"id": "rapier", "name": "Rapier", "type": "weapon", "slot": "weapon",
-   "damage": "1d8", "stat": "DEX", "bonus": 0, "value": 25},
-  {"id": "mace", "name": "Mace", "type": "weapon", "slot": "weapon",
-   "damage": "1d6", "stat": "STR", "bonus": 0, "value": 5},
-  {"id": "greataxe", "name": "Greataxe", "type": "weapon", "slot": "weapon",
-   "damage": "1d12", "stat": "STR", "bonus": 0, "value": 40},
-  {"id": "fine_longsword", "name": "Fine Longsword", "type": "weapon", "slot": "weapon",
-   "damage": "1d8", "stat": "STR", "bonus": 1, "value": 60},
-  {"id": "silvered_blade", "name": "Silvered Longsword", "type": "weapon", "slot": "weapon",
-   "damage": "1d8", "stat": "STR", "bonus": 2, "value": 140},
-  {"id": "warden_blade", "name": "Barrow-Iron Blade", "type": "weapon", "slot": "weapon",
-   "damage": "1d10", "stat": "STR", "bonus": 2, "value": 250},
-
-  {"id": "leather_armour", "name": "Leather Armour", "type": "armour", "slot": "armour",
-   "ac": 11, "dex_cap": true, "max_dex": 10, "value": 10},
-  {"id": "studded_leather", "name": "Studded Leather", "type": "armour", "slot": "armour",
-   "ac": 12, "dex_cap": true, "max_dex": 10, "value": 30},
-  {"id": "scale_mail", "name": "Scale Mail", "type": "armour", "slot": "armour",
-   "ac": 14, "dex_cap": true, "max_dex": 2, "value": 50},
-  {"id": "half_plate", "name": "Half Plate", "type": "armour", "slot": "armour",
-   "ac": 15, "dex_cap": true, "max_dex": 2, "value": 90},
-  {"id": "chain_mail", "name": "Chain Mail", "type": "armour", "slot": "armour",
-   "ac": 16, "dex_cap": false, "value": 75},
-  {"id": "shield", "name": "Shield", "type": "armour", "slot": "shield", "value": 10},
-
-  {"id": "potion_healing", "name": "Healing Potion", "type": "consumable",
-   "effect": "heal", "amount": "2d4+2", "value": 8},
-  {"id": "potion_greater", "name": "Greater Healing Potion", "type": "consumable",
-   "effect": "heal", "amount": "4d4+4", "value": 20},
-
-  {"id": "wolf_pelt", "name": "Wolf Pelt", "type": "quest", "value": 5},
-  {"id": "alpha_pelt", "name": "Greymaw's Pelt", "type": "quest", "value": 40},
-  {"id": "miners_locket", "name": "Miner's Locket", "type": "quest", "value": 0},
-  {"id": "trade_goods", "name": "Sealed Trade Crate", "type": "quest", "value": 10},
-  {"id": "wisp_mote", "name": "Cold Wisp-Mote", "type": "quest", "value": 3},
-  {"id": "tarnished_censer", "name": "Tarnished Censer", "type": "quest", "value": 15},
-  {"id": "miners_ledger", "name": "Foreman's Ledger", "type": "quest", "value": 0},
-  {"id": "wardens_crown", "name": "Crown of the Warden Below", "type": "quest", "value": 0}
+  {
+    "id": "dagger",
+    "name": "Dagger",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d4",
+    "stat": "DEX",
+    "bonus": 0,
+    "value": 2
+  },
+  {
+    "id": "longsword",
+    "name": "Longsword",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d8",
+    "stat": "STR",
+    "bonus": 0,
+    "value": 15
+  },
+  {
+    "id": "rapier",
+    "name": "Rapier",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d8",
+    "stat": "DEX",
+    "bonus": 0,
+    "value": 25
+  },
+  {
+    "id": "mace",
+    "name": "Mace",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d6",
+    "stat": "STR",
+    "bonus": 0,
+    "value": 5
+  },
+  {
+    "id": "greataxe",
+    "name": "Greataxe",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d12",
+    "stat": "STR",
+    "bonus": 0,
+    "value": 40
+  },
+  {
+    "id": "fine_longsword",
+    "name": "Fine Longsword",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d8",
+    "stat": "STR",
+    "bonus": 1,
+    "value": 60
+  },
+  {
+    "id": "silvered_blade",
+    "name": "Silvered Longsword",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d8",
+    "stat": "STR",
+    "bonus": 2,
+    "value": 140
+  },
+  {
+    "id": "warden_blade",
+    "name": "Barrow-Iron Blade",
+    "type": "weapon",
+    "slot": "weapon",
+    "damage": "1d10",
+    "stat": "STR",
+    "bonus": 2,
+    "value": 250
+  },
+  {
+    "id": "leather_armour",
+    "name": "Leather Armour",
+    "type": "armour",
+    "slot": "armour",
+    "ac": 11,
+    "dex_cap": true,
+    "max_dex": 10,
+    "value": 10
+  },
+  {
+    "id": "studded_leather",
+    "name": "Studded Leather",
+    "type": "armour",
+    "slot": "armour",
+    "ac": 12,
+    "dex_cap": true,
+    "max_dex": 10,
+    "value": 30
+  },
+  {
+    "id": "scale_mail",
+    "name": "Scale Mail",
+    "type": "armour",
+    "slot": "armour",
+    "ac": 14,
+    "dex_cap": true,
+    "max_dex": 2,
+    "value": 50
+  },
+  {
+    "id": "half_plate",
+    "name": "Half Plate",
+    "type": "armour",
+    "slot": "armour",
+    "ac": 15,
+    "dex_cap": true,
+    "max_dex": 2,
+    "value": 90
+  },
+  {
+    "id": "chain_mail",
+    "name": "Chain Mail",
+    "type": "armour",
+    "slot": "armour",
+    "ac": 16,
+    "dex_cap": false,
+    "value": 75
+  },
+  {
+    "id": "shield",
+    "name": "Shield",
+    "type": "armour",
+    "slot": "shield",
+    "value": 10
+  },
+  {
+    "id": "potion_healing",
+    "name": "Healing Potion",
+    "type": "consumable",
+    "effect": "heal",
+    "amount": "2d4+2",
+    "value": 8
+  },
+  {
+    "id": "potion_greater",
+    "name": "Greater Healing Potion",
+    "type": "consumable",
+    "effect": "heal",
+    "amount": "4d4+4",
+    "value": 20
+  },
+  {
+    "id": "wolf_pelt",
+    "name": "Wolf Pelt",
+    "type": "quest",
+    "value": 5
+  },
+  {
+    "id": "alpha_pelt",
+    "name": "Greymaw's Pelt",
+    "type": "quest",
+    "value": 40
+  },
+  {
+    "id": "miners_locket",
+    "name": "Miner's Locket",
+    "type": "quest",
+    "value": 0
+  },
+  {
+    "id": "trade_goods",
+    "name": "Sealed Trade Crate",
+    "type": "quest",
+    "value": 10
+  },
+  {
+    "id": "wisp_mote",
+    "name": "Cold Wisp-Mote",
+    "type": "quest",
+    "value": 3
+  },
+  {
+    "id": "tarnished_censer",
+    "name": "Tarnished Censer",
+    "type": "quest",
+    "value": 15
+  },
+  {
+    "id": "miners_ledger",
+    "name": "Foreman's Ledger",
+    "type": "quest",
+    "value": 0
+  },
+  {
+    "id": "wardens_crown",
+    "name": "Crown of the Warden Below",
+    "type": "quest",
+    "value": 0
+  },
+  {
+    "id": "kael_package",
+    "name": "Kael's Package",
+    "type": "quest",
+    "value": 0
+  },
+  {
+    "id": "marsh_root",
+    "name": "Marsh Root",
+    "type": "quest",
+    "value": 0
+  },
+  {
+    "id": "rest_token",
+    "name": "A good night's rest",
+    "type": "quest",
+    "value": 0
+  }
 ]

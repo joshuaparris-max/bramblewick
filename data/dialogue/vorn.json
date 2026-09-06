@@ -1,0 +1,36 @@
+{
+    "id": "vorn",
+    "nodes": {
+        "q1": {
+            "text": "Just looking for a quiet place to sleep. Please don't tell the guard.",
+            "choices": [
+                {
+                    "events": [
+                        {
+                            "type": "quest_event",
+                            "event": "found_vorn"
+                        }
+                    ],
+                    "label": "I'll let them know you're harmless.",
+                    "next": null
+                }
+            ]
+        },
+        "start": {
+            "text": "...",
+            "choices": [
+                {
+                    "condition": {
+                        "has_objective": "q_empty_house:investigate"
+                    },
+                    "label": "What are you doing here?",
+                    "next": "q1"
+                },
+                {
+                    "label": "Leave.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

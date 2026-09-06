@@ -1,0 +1,14 @@
+{
+    "id": "clem",
+    "nodes": {
+        "start": {
+            "text": "Crops need rain, but not too much. It's a delicate balance.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

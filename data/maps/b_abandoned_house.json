@@ -1,0 +1,66 @@
+{
+  "id": "b_abandoned_house",
+  "name": "Abandoned House",
+  "tint": "d8cba8",
+  "grid": [
+    "##########",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "#........#",
+    "####..####"
+  ],
+  "portals": [
+    {
+      "pos": [
+        4,
+        9
+      ],
+      "to_map": "village_old",
+      "to_pos": [
+        15,
+        4
+      ],
+      "label": "Exit"
+    },
+    {
+      "pos": [
+        5,
+        9
+      ],
+      "to_map": "village_old",
+      "to_pos": [
+        15,
+        4
+      ],
+      "label": "Exit"
+    }
+  ],
+  "chests": [],
+  "npcs": [
+    "vorn"
+  ],
+  "monsters": [],
+  "decorations": [
+    {
+      "type": "crate",
+      "pos": [
+        2,
+        2
+      ],
+      "solid": true
+    },
+    {
+      "type": "barrel",
+      "pos": [
+        7,
+        7
+      ],
+      "solid": true
+    }
+  ]
+}

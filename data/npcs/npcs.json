@@ -1,29 +1,630 @@
 [
-  {"id": "elder", "name": "Elder Maren", "icon": "bust_bun", "map": "village", "pos": [5, 3],
-   "dialogue": "elder", "faction": "village", "schedule": "static",
-   "color": "e8b45a", "quest_hooks": ["q_silent_mine"]},
-  {"id": "smith", "name": "Borin the Smith", "icon": "bust", "map": "village", "pos": [14, 3],
-   "dialogue": "smith", "faction": "village", "schedule": "static",
-   "color": "6f8fc4", "quest_hooks": ["q_wolf_pelts", "q_greymaw"]},
-  {"id": "ivo", "name": "Peddler Ivo", "icon": "bust_cap", "map": "village", "pos": [13, 8],
-   "dialogue": "ivo", "faction": "village", "schedule": "static",
-   "color": "c47a3d", "quest_hooks": ["q_lost_caravan"]},
-  {"id": "aldith", "name": "Sister Aldith", "icon": "cleric", "map": "village", "pos": [16, 1],
-   "dialogue": "aldith", "faction": "village", "schedule": "static",
-   "color": "d8d0e8", "quest_hooks": ["q_quiet_light", "q_the_fourteen"]},
-  {"id": "hobb", "name": "Miller Hobb", "icon": "bust_cap", "map": "village", "pos": [4, 9],
-   "dialogue": "hobb", "faction": "village", "schedule": "static",
-   "color": "9a8a6a", "quest_hooks": []},
-  {"id": "hermit", "name": "Wren the Hermit", "icon": "bust_hood", "map": "wilderness", "pos": [4, 8],
-   "dialogue": "hermit", "faction": "none", "schedule": "static",
-   "color": "7fa05a", "quest_hooks": []},
-  {"id": "sal", "name": "Old Sal", "icon": "bust_hood", "map": "marsh", "pos": [8, 10],
-   "dialogue": "sal", "faction": "none", "schedule": "static",
-   "color": "7a9a8a", "quest_hooks": ["q_marsh_lights"]},
-  {"id": "tommen", "name": "Tommen", "icon": "bust", "map": "mine", "pos": [20, 9],
-   "dialogue": "tommen", "faction": "village", "schedule": "static",
-   "color": "d8cbb3", "quest_hooks": ["q_warden_below"]},
-  {"id": "foreman", "name": "The Foreman's Shade", "icon": "ghost", "map": "barrow", "pos": [12, 4],
-   "dialogue": "foreman", "faction": "none", "schedule": "static",
-   "color": "a8c4d8", "quest_hooks": ["q_the_fourteen"]}
+    {
+        "id": "elder",
+        "name": "Elder Maren",
+        "icon": "bust_bun",
+        "map": "village_market",
+        "pos": [
+            4,
+            1
+        ],
+        "dialogue": "elder",
+        "faction": "village",
+        "schedule": "static",
+        "color": "e8b45a",
+        "quest_hooks": [
+            "q_silent_mine"
+        ]
+    },
+    {
+        "id": "smith",
+        "name": "Borin the Smith",
+        "icon": "bust",
+        "map": "village_crafts",
+        "pos": [
+            4,
+            2
+        ],
+        "dialogue": "smith",
+        "faction": "village",
+        "schedule": "static",
+        "color": "6f8fc4",
+        "quest_hooks": [
+            "q_wolf_pelts",
+            "q_greymaw"
+        ]
+    },
+    {
+        "id": "ivo",
+        "name": "Peddler Ivo",
+        "icon": "bust_cap",
+        "map": "village_market",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "ivo",
+        "faction": "village",
+        "schedule": "static",
+        "color": "c47a3d",
+        "quest_hooks": [
+            "q_lost_caravan"
+        ]
+    },
+    {
+        "id": "aldith",
+        "name": "Sister Aldith",
+        "icon": "cleric",
+        "map": "village_civic",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "aldith",
+        "faction": "village",
+        "schedule": "static",
+        "color": "d8d0e8",
+        "quest_hooks": [
+            "q_quiet_light",
+            "q_the_fourteen"
+        ]
+    },
+    {
+        "id": "hobb",
+        "name": "Miller Hobb",
+        "icon": "bust_cap",
+        "map": "village_river",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "hobb",
+        "faction": "village",
+        "schedule": "static",
+        "color": "9a8a6a",
+        "quest_hooks": []
+    },
+    {
+        "id": "hermit",
+        "name": "Wren the Hermit",
+        "icon": "bust_hood",
+        "map": "wilderness",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "hermit",
+        "faction": "none",
+        "schedule": "static",
+        "color": "7fa05a",
+        "quest_hooks": []
+    },
+    {
+        "id": "sal",
+        "name": "Old Sal",
+        "icon": "bust_hood",
+        "map": "marsh",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "sal",
+        "faction": "none",
+        "schedule": "static",
+        "color": "7a9a8a",
+        "quest_hooks": [
+            "q_marsh_lights"
+        ]
+    },
+    {
+        "id": "tommen",
+        "name": "Tommen",
+        "icon": "bust",
+        "map": "mine",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "tommen",
+        "faction": "village",
+        "schedule": "static",
+        "color": "d8cbb3",
+        "quest_hooks": [
+            "q_warden_below"
+        ]
+    },
+    {
+        "id": "foreman",
+        "name": "The Foreman's Shade",
+        "icon": "ghost",
+        "map": "barrow",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "foreman",
+        "faction": "none",
+        "schedule": "static",
+        "color": "a8c4d8",
+        "quest_hooks": [
+            "q_the_fourteen"
+        ]
+    },
+    {
+        "id": "pip",
+        "name": "Pip",
+        "icon": "bust",
+        "map": "village_market",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "pip",
+        "faction": "village",
+        "schedule": "static",
+        "color": "a8c4d8",
+        "quest_hooks": []
+    },
+    {
+        "id": "garret",
+        "name": "Apprentice Garret",
+        "icon": "bust",
+        "map": "village_crafts",
+        "pos": [
+            2,
+            7
+        ],
+        "dialogue": "garret",
+        "faction": "village",
+        "schedule": "static",
+        "color": "e8d8b3",
+        "quest_hooks": []
+    },
+    {
+        "id": "nyssa",
+        "name": "Apothecary Nyssa",
+        "icon": "bust_hood",
+        "map": "village_crafts",
+        "pos": [
+            4,
+            2
+        ],
+        "dialogue": "nyssa",
+        "faction": "village",
+        "schedule": "static",
+        "color": "7fa05a",
+        "quest_hooks": [
+            "q_marsh_roots"
+        ]
+    },
+    {
+        "id": "yanni",
+        "name": "Carpenter Yanni",
+        "icon": "bust_cap",
+        "map": "village_crafts",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "yanni",
+        "faction": "village",
+        "schedule": "static",
+        "color": "c47a3d",
+        "quest_hooks": []
+    },
+    {
+        "id": "olen",
+        "name": "Worried Olen",
+        "icon": "bust",
+        "map": "village_old",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "olen",
+        "faction": "village",
+        "schedule": "static",
+        "color": "9a8a6a",
+        "quest_hooks": [
+            "q_empty_house"
+        ]
+    },
+    {
+        "id": "silas_adv",
+        "name": "Retired Silas",
+        "icon": "knight",
+        "map": "village_old",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "silas_adv",
+        "faction": "village",
+        "schedule": "static",
+        "color": "e8c878",
+        "quest_hooks": []
+    },
+    {
+        "id": "vorn",
+        "name": "Stranger Vorn",
+        "icon": "bust_hood",
+        "map": "village_old",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "vorn",
+        "faction": "none",
+        "schedule": "static",
+        "color": "a86a6a",
+        "quest_hooks": []
+    },
+    {
+        "id": "bran",
+        "name": "Fisher Bran",
+        "icon": "bust_cap",
+        "map": "village_river",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "bran",
+        "faction": "village",
+        "schedule": "static",
+        "color": "a8c4d8",
+        "quest_hooks": []
+    },
+    {
+        "id": "barl",
+        "name": "Barl",
+        "icon": "bust",
+        "map": "village_river",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "barl",
+        "faction": "village",
+        "schedule": "static",
+        "color": "d8cbb3",
+        "quest_hooks": []
+    },
+    {
+        "id": "vane",
+        "name": "Scholar Vane",
+        "icon": "bust",
+        "map": "village_civic",
+        "pos": [
+            7,
+            3
+        ],
+        "dialogue": "vane",
+        "faction": "village",
+        "schedule": "static",
+        "color": "c4b3d8",
+        "quest_hooks": []
+    },
+    {
+        "id": "rurik",
+        "name": "Guard Rurik",
+        "icon": "knight",
+        "map": "village_civic",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "rurik",
+        "faction": "village",
+        "schedule": "static",
+        "color": "a8c4d8",
+        "quest_hooks": []
+    },
+    {
+        "id": "fenn",
+        "name": "Guard Fenn",
+        "icon": "knight",
+        "map": "village_outskirts",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "fenn",
+        "faction": "village",
+        "schedule": "static",
+        "color": "a8c4d8",
+        "quest_hooks": []
+    },
+    {
+        "id": "tor",
+        "name": "Stablemaster Tor",
+        "icon": "bust_cap",
+        "map": "village_outskirts",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "tor",
+        "faction": "village",
+        "schedule": "static",
+        "color": "c47a3d",
+        "quest_hooks": []
+    },
+    {
+        "id": "clem",
+        "name": "Farmer Clem",
+        "icon": "bust",
+        "map": "village_outskirts",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "clem",
+        "faction": "village",
+        "schedule": "static",
+        "color": "9a8a6a",
+        "quest_hooks": []
+    },
+    {
+        "id": "kade",
+        "name": "Captain Kade",
+        "icon": "knight",
+        "map": "village_outskirts",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "kade",
+        "faction": "village",
+        "schedule": "static",
+        "color": "e8c878",
+        "quest_hooks": []
+    },
+    {
+        "id": "silas_inn",
+        "name": "Innkeeper Silas",
+        "icon": "bust",
+        "map": "b_inn",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "silas_inn",
+        "faction": "village",
+        "schedule": "static",
+        "color": "e8d8b3",
+        "quest_hooks": []
+    },
+    {
+        "id": "elara",
+        "name": "Elara",
+        "icon": "bust",
+        "map": "b_inn",
+        "pos": [
+            6,
+            2
+        ],
+        "dialogue": "elara",
+        "faction": "village",
+        "schedule": "static",
+        "color": "c4b3d8",
+        "quest_hooks": []
+    },
+    {
+        "id": "kael",
+        "name": "Merchant Kael",
+        "icon": "bust_cap",
+        "map": "b_general_store",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "kael",
+        "faction": "village",
+        "schedule": "static",
+        "color": "c47a3d",
+        "quest_hooks": [
+            "q_lost_delivery"
+        ]
+    },
+    {
+        "id": "liora",
+        "name": "Baker Liora",
+        "icon": "bust",
+        "map": "b_bakery",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "liora",
+        "faction": "village",
+        "schedule": "static",
+        "color": "d8cbb3",
+        "quest_hooks": []
+    },
+    {
+        "id": "amb_market1",
+        "name": "Shopper",
+        "icon": "bust",
+        "map": "village_market",
+        "pos": [
+            5,
+            2
+        ],
+        "dialogue": "amb_market1",
+        "ambient": true,
+        "wander_radius": 3
+    },
+    {
+        "id": "amb_market2",
+        "name": "Merchant",
+        "icon": "bust_cap",
+        "map": "village_market",
+        "pos": [
+            6,
+            2
+        ],
+        "dialogue": "amb_market2",
+        "ambient": true,
+        "wander_radius": 2
+    },
+    {
+        "id": "amb_market3",
+        "name": "Child",
+        "icon": "bust",
+        "map": "village_market",
+        "pos": [
+            7,
+            2
+        ],
+        "dialogue": "amb_market3",
+        "ambient": true,
+        "wander_radius": 4
+    },
+    {
+        "id": "amb_crafts1",
+        "name": "Laborer",
+        "icon": "bust",
+        "map": "village_crafts",
+        "pos": [
+            2,
+            2
+        ],
+        "dialogue": "amb_crafts1",
+        "ambient": true,
+        "wander_radius": 3
+    },
+    {
+        "id": "amb_crafts2",
+        "name": "Apprentice",
+        "icon": "bust",
+        "map": "village_crafts",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "amb_crafts2",
+        "ambient": true,
+        "wander_radius": 2
+    },
+    {
+        "id": "amb_old1",
+        "name": "Pilgrim",
+        "icon": "bust_hood",
+        "map": "village_old",
+        "pos": [
+            3,
+            2
+        ],
+        "dialogue": "amb_old1",
+        "ambient": true,
+        "wander_radius": 3
+    },
+    {
+        "id": "amb_old2",
+        "name": "Beggar",
+        "icon": "bust",
+        "map": "village_old",
+        "pos": [
+            5,
+            2
+        ],
+        "dialogue": "amb_old2",
+        "ambient": true,
+        "wander_radius": 1
+    },
+    {
+        "id": "amb_river1",
+        "name": "Fisher",
+        "icon": "bust_cap",
+        "map": "village_river",
+        "pos": [
+            4,
+            2
+        ],
+        "dialogue": "amb_river1",
+        "ambient": true,
+        "wander_radius": 2
+    },
+    {
+        "id": "amb_river2",
+        "name": "Docker",
+        "icon": "bust",
+        "map": "village_river",
+        "pos": [
+            5,
+            2
+        ],
+        "dialogue": "amb_river2",
+        "ambient": true,
+        "wander_radius": 4
+    },
+    {
+        "id": "amb_civic1",
+        "name": "Patrol",
+        "icon": "knight",
+        "map": "village_civic",
+        "pos": [
+            4,
+            2
+        ],
+        "dialogue": "amb_civic1",
+        "ambient": true,
+        "patrol": [
+            [
+                10,
+                4
+            ],
+            [
+                14,
+                4
+            ],
+            [
+                14,
+                8
+            ],
+            [
+                10,
+                8
+            ]
+        ]
+    },
+    {
+        "id": "amb_civic2",
+        "name": "Acolyte",
+        "icon": "bust_hood",
+        "map": "village_civic",
+        "pos": [
+            6,
+            2
+        ],
+        "dialogue": "amb_civic2",
+        "ambient": true,
+        "wander_radius": 2
+    },
+    {
+        "id": "amb_outskirts1",
+        "name": "Farmer",
+        "icon": "bust_cap",
+        "map": "village_outskirts",
+        "pos": [
+            5,
+            2
+        ],
+        "dialogue": "amb_outskirts1",
+        "ambient": true,
+        "wander_radius": 3
+    },
+    {
+        "id": "amb_outskirts2",
+        "name": "Traveler",
+        "icon": "bust",
+        "map": "village_outskirts",
+        "pos": [
+            6,
+            2
+        ],
+        "dialogue": "amb_outskirts2",
+        "ambient": true,
+        "wander_radius": 4
+    }
 ]

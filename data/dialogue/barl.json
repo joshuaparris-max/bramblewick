@@ -1,0 +1,14 @@
+{
+    "id": "barl",
+    "nodes": {
+        "start": {
+            "text": "I heard the marsh is glowing again at night.",
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}

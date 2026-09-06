@@ -1,0 +1,19 @@
+{
+    "id": "amb_river2",
+    "nodes": {
+        "start": {
+            "text": [
+                "Look how the light catches the ripples...",
+                "There's something deeply poetic about the river's endless journey.",
+                "I come here to think. It's so peaceful.",
+                "I wrote a sonnet about that duck over there."
+            ],
+            "choices": [
+                {
+                    "label": "Goodbye.",
+                    "next": null
+                }
+            ]
+        }
+    }
+}
