@@ -26,5 +26,23 @@ func _ready() -> void:
 	AudioManager.play_music(GameState.current_map)
 	EventBus.map_loaded.emit(GameState.current_map)
 	EventBus.toast.emit(map_data.get("name", GameState.current_map))
+	if not GameState.get_flag("tutorial_seen"):
+		_run_tutorial()
+
+## Short first-time-only hint sequence covering the four basics (roadmap:
+## "Add a short playable tutorial for movement, interaction, combat,
+## inventory"). Reuses the existing toast system rather than a dedicated
+## overlay/scene - gated by a normal save flag so it never repeats.
+func _run_tutorial() -> void:
+	GameState.set_flag("tutorial_seen")
+	var tips := [
+		"Move with WASD or the Arrow Keys.",
+		"Press E to interact with people, chests, and portals.",
+		"Press I to open your inventory.",
+		"In combat, choose an action each turn - enemies fight back, so watch your HP.",
+	]
+	for i in tips.size():
+		get_tree().create_timer(1.5 + i * 3.0).timeout.connect(
+			func(): EventBus.toast.emit(tips[i]))
 
 
