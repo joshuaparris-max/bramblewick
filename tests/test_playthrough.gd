@@ -52,16 +52,44 @@ func _run_test():
 	var players = get_tree().get_nodes_in_group("player")
 	require(players.size() > 0, 4, "Player spawned in exploration scene")
 	var p = players[0]
-	
+
+	# Wandering monsters can path into the player and trigger a real encounter
+	# mid-test, freeing this scene out from under us. That's correct gameplay
+	# (verified separately), but makes a basic movement/collision check flaky -
+	# pause monster movement for this check only, same mechanism combat itself
+	# already uses (EventBus.combat_started/ended).
+	# Disable monster wander/collision AND portals for this basic movement/
+	# collision check only - the living-town expansion put a portal close
+	# enough to spawn that a long move_left walks onto it instead of the wall
+	# the test intends to check. Both are re-enabled right after.
+	for m in get_tree().get_nodes_in_group("monster"):
+		if "_move_timer" in m and m._move_timer:
+			m._move_timer.paused = true
+		if m is Area2D:
+			m.monitoring = false
+	var test_portals := get_tree().get_nodes_in_group("portal")
+	for portal in test_portals:
+		if portal is Area2D:
+			portal.monitoring = false
+
 	var start_pos = p.position
 	await push_action("move_right", 0.5)
 	require(p.position.x > start_pos.x, 5, "Player movement works (moved right via input)")
-	
+
 	# Move left into the wall at x=0
-	await push_action("move_left", 3.0) 
+	await push_action("move_left", 3.0)
 	var pos1 = p.position
 	await push_action("move_left", 0.5)
 	require(abs(p.position.x - pos1.x) < 2.0, 6, "Collision behaves sensibly (blocked from moving further left)")
+
+	for m in get_tree().get_nodes_in_group("monster"):
+		if "_move_timer" in m and m._move_timer:
+			m._move_timer.paused = false
+		if m is Area2D:
+			m.monitoring = true
+	for portal in test_portals:
+		if portal is Area2D:
+			portal.monitoring = true
 	
 	var portals = get_tree().get_nodes_in_group("portal")
 	require(portals.size() > 0, 7, "Map has portals to test")
