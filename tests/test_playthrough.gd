@@ -89,26 +89,28 @@ func _run_test():
 	var diag = scene.get_node_or_null("DialogueUI")
 	require(diag != null and diag.visible, 8, "NPC interacted via input, UI opened")
 	
+	var initial_dialogue_text: String = diag._text_lbl.text
 	await push_action("interact", 0.1)
 	await wait_seconds(0.2)
+	require(diag.visible and diag._text_lbl.text != initial_dialogue_text, 9, "Interact advances the focused dialogue choice")
 	diag._close()
 	await wait_seconds(0.2)
-	require(not diag.visible, 9, "Dialogue closed")
+	require(not diag.visible, 10, "Dialogue closed")
 	
-	# 10. Quest
+	# 11. Quest
 	QuestManager.start_quest("q_silent_mine")
-	require(QuestManager.state_of("q_silent_mine") == "active", 10, "QUEST-STATE INTEGRATION TESTS - Quest accepted")
+	require(QuestManager.state_of("q_silent_mine") == "active", 11, "QUEST-STATE INTEGRATION TESTS - Quest accepted")
 	
-	# 11. Quest objective
+	# 12. Quest objective
 	EventBus.monster_killed.emit("spider_matron")
-	require(QuestManager.state_of("q_silent_mine") == "ready", 11, "QUEST-STATE INTEGRATION TESTS - Quest objective progressed to ready")
+	require(QuestManager.state_of("q_silent_mine") == "ready", 12, "QUEST-STATE INTEGRATION TESTS - Quest objective progressed to ready")
 	
-	# 12. Combat
+	# 13. Combat
 	GameState.pending_encounter = {"monster_id": "wolf", "spawn_key": ""}
 	SceneRouter.goto("combat")
 	await wait_seconds(1.0)
 	scene = get_tree().current_scene
-	require(scene.name == "Combat", 12, "Combat entered")
+	require(scene.name == "Combat", 13, "Combat entered")
 	
 	var initial_enemy_hp = scene.m_hp
 	var initial_player_hp = GameState.player.hp
@@ -118,11 +120,11 @@ func _run_test():
 			scene._attack()
 		await wait_seconds(1.0)
 		hit_safety -= 1
-	require(scene.m_hp < initial_enemy_hp, 13, "COMBAT-LOGIC INTEGRATION TESTS - Enemy HP reduced")
+	require(scene.m_hp < initial_enemy_hp, 14, "COMBAT-LOGIC INTEGRATION TESTS - Enemy HP reduced")
 	
 	await wait_seconds(2.0)
 	if is_instance_valid(scene):
-		require(scene._round > 1 or scene.m_hp == 0, 14, "Enemy turn/Damage states function")
+		require(scene._round > 1 or scene.m_hp == 0, 15, "Enemy turn/Damage states function")
 	
 	# keep attacking until dead
 	var safety = 20
@@ -133,29 +135,29 @@ func _run_test():
 		await wait_seconds(0.5)
 	
 	if is_instance_valid(scene):
-		require(scene.m_hp <= 0, 15, "Enemy HP reaches zero through combat processing")
+		require(scene.m_hp <= 0, 16, "Enemy HP reaches zero through combat processing")
 	await wait_seconds(2.5) 
 	scene = get_tree().current_scene
-	require(scene.name == "Exploration", 15, "Combat victory returns to intended scene")
+	require(scene.name == "Exploration", 16, "Combat victory returns to intended scene")
 	
 	QuestManager.turn_in("q_silent_mine")
-	require(QuestManager.state_of("q_silent_mine") == "done", 16, "Quest completed successfully")
-	require(Inventory.gold >= 50, 17, "Vertical slice completion reward is granted (50 gold)")
+	require(QuestManager.state_of("q_silent_mine") == "done", 17, "Quest completed successfully")
+	require(Inventory.gold >= 50, 18, "Vertical slice completion reward is granted (50 gold)")
 	
 	GameState.player.name = "SaveTest"
 	GameState.current_map = "village"
 	SaveManager.save_game()
-	require(FileAccess.file_exists("user://save.json"), 18, "Saving works")
+	require(FileAccess.file_exists("user://save.json"), 19, "Saving works")
 	
 	GameState.player.name = "Empty"
 	GameState.current_map = "none"
 	SaveManager.load_game()
-	require(GameState.player.name == "SaveTest" and GameState.current_map == "village", 21, "Loading restores saved state")
+	require(GameState.player.name == "SaveTest" and GameState.current_map == "village", 22, "Loading restores saved state")
 	
 	SceneRouter.goto("title")
 	await wait_seconds(0.5)
 	scene = get_tree().current_scene
-	require(scene.name == "TitleScreen", 22, "Restart behaviour works")
+	require(scene.name == "TitleScreen", 23, "Restart behaviour works")
 	
 	print("ALL PLAYTHROUGH STAGES PASSED.")
 	get_tree().quit(0)

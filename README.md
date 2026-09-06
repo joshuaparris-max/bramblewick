@@ -35,7 +35,11 @@ To build the Windows PCK fallback export, run:
 `Godot_v4.7-stable_win64_console.exe --headless --export-pack "Windows Desktop" dist\windows\bramblewick.pck`
 (Then copy your Godot 4.7 executable to `dist\windows\bramblewick.exe` to serve as the launcher).
 
+## Development Roadmap
+The improvement plan is documented in [DEVELOPMENT_ROADMAP.md](DEVELOPMENT_ROADMAP.md). The next milestone is a polished village-to-mine slice: a guided opening, clearer interaction feedback, one memorable combat encounter, and a complete physical-input playtest.
+
 ## Read next
 - ARCHITECTURE.md - module map, data formats, build order
 - VIBE_CODER_MODULE_GUIDE.md - where to add content safely
+- DEVELOPMENT_ROADMAP.md - prioritized gameplay, presentation, and reliability improvements
 

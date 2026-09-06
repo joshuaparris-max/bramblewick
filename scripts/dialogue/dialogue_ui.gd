@@ -32,6 +32,18 @@ func _ready() -> void:
 	visible = false
 	EventBus.dialogue_requested.connect(start)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not visible:
+		return
+	if event.is_action_pressed("ui_cancel"):
+		_close()
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("interact"):
+		var focused := get_viewport().gui_get_focus_owner()
+		if focused is Button and focused.get_parent() == _choices_box:
+			focused.emit_signal("pressed")
+		get_viewport().set_input_as_handled()
+
 func start(dialogue_id: String, npc_id: String) -> void:
 	_tree_def = Db.get_dialogue(dialogue_id)
 	if _tree_def.is_empty():
@@ -69,6 +81,8 @@ func _show_node(key: Variant) -> void:
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		btn.pressed.connect(_on_choice.bind(c))
 		_choices_box.add_child(btn)
+		if _choices_box.get_child_count() == 1:
+			btn.grab_focus()
 
 func _on_choice(c: Dictionary) -> void:
 	for ev in c.get("events", []):
