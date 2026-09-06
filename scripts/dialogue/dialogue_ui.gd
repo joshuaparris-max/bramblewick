@@ -25,6 +25,7 @@ var _text_lbl: RichTextLabel
 var _choices_box: VBoxContainer
 var _tree_def: Dictionary
 var _npc_id: String
+var _ignore_interact_until_released := false
 
 func _ready() -> void:
 	layer = 10
@@ -32,17 +33,29 @@ func _ready() -> void:
 	visible = false
 	EventBus.dialogue_requested.connect(start)
 
-func _unhandled_input(event: InputEvent) -> void:
+func _process(_delta: float) -> void:
+	if visible and _ignore_interact_until_released and not Input.is_action_pressed("interact"):
+		_ignore_interact_until_released = false
+
+func _input(event: InputEvent) -> void:
 	if not visible:
 		return
 	if event.is_action_pressed("ui_cancel"):
 		_close()
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("interact"):
-		var focused := get_viewport().gui_get_focus_owner()
-		if focused is Button and focused.get_parent() == _choices_box:
-			focused.emit_signal("pressed")
 		get_viewport().set_input_as_handled()
+		if _ignore_interact_until_released:
+			return
+		_activate_choice()
+
+func _activate_choice() -> void:
+	var focused := get_viewport().gui_get_focus_owner()
+	var choice: Button = focused if focused is Button and focused.get_parent() == _choices_box else null
+	if choice == null and _choices_box.get_child_count() > 0:
+		choice = _choices_box.get_child(0) as Button
+	if choice != null:
+		choice.emit_signal("pressed")
 
 func start(dialogue_id: String, npc_id: String) -> void:
 	_tree_def = Db.get_dialogue(dialogue_id)
@@ -51,6 +64,7 @@ func start(dialogue_id: String, npc_id: String) -> void:
 		return
 	_npc_id = npc_id
 	visible = true
+	_ignore_interact_until_released = Input.is_action_pressed("interact")
 	EventBus.dialogue_started.emit(npc_id)
 	_show_node(_tree_def.get("start", "start"))
 

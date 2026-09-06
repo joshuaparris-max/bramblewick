@@ -11,15 +11,40 @@ extends CanvasLayer
 
 var _status: Label
 var _toasts: VBoxContainer
+var _interaction_prompt: Label
 var _panel: PanelContainer
 var _panel_body: VBoxContainer
+var _dialogue_open := false
 
 func _ready() -> void:
 	layer = 5
 	_build_ui()
 	EventBus.state_changed.connect(_refresh)
 	EventBus.toast.connect(_toast)
+	EventBus.dialogue_started.connect(func(_npc_id): _dialogue_open = true)
+	EventBus.dialogue_finished.connect(func(_npc_id): _dialogue_open = false)
 	_refresh()
+	set_process(true)
+
+func _process(_delta: float) -> void:
+	if _interaction_prompt == null:
+		return
+	if _dialogue_open or _panel.visible:
+		_interaction_prompt.visible = false
+		return
+	var players := get_tree().get_nodes_in_group("player")
+	if players.is_empty():
+		_interaction_prompt.visible = false
+		return
+	var player: Node2D = players[0]
+	var nearest: Node = null
+	var nearest_distance := 56.0
+	for node in get_tree().get_nodes_in_group("interactable"):
+		var distance := player.global_position.distance_to(node.global_position)
+		if distance < nearest_distance:
+			nearest_distance = distance
+			nearest = node
+	_interaction_prompt.visible = nearest != null
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_inventory"):
@@ -144,6 +169,16 @@ func _build_ui() -> void:
 	_toasts.set_anchors_preset(Control.PRESET_CENTER_TOP)
 	_toasts.offset_top = 44.0
 	add_child(_toasts)
+	_interaction_prompt = Label.new()
+	_interaction_prompt.text = "[E]  Interact"
+	_interaction_prompt.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_interaction_prompt.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+	_interaction_prompt.offset_top = -72.0
+	_interaction_prompt.offset_bottom = -40.0
+	_interaction_prompt.add_theme_font_size_override("font_size", 18)
+	_interaction_prompt.add_theme_color_override("font_color", Color("e8b45a"))
+	_interaction_prompt.visible = false
+	add_child(_interaction_prompt)
 	_panel = PanelContainer.new()
 	_panel.set_anchors_preset(Control.PRESET_CENTER)
 	_panel.custom_minimum_size = Vector2(560, 380)

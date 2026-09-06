@@ -7,7 +7,7 @@ This roadmap turns the current vertical slice into a stronger playable RPG. Work
 Make the opening ten minutes feel intentional and easy to understand.
 
 - Add a short playable tutorial for movement, interaction, combat, and inventory.
-- Add a clear interaction prompt when the player is close enough to an NPC, chest, or other interactable.
+- [x] Add a clear interaction prompt when the player is close enough to an NPC, chest, or other interactable.
 - Give the opening a strong mystery or choice before the player accepts the mine quest.
 - Improve the village, Darkwood, and mine with distinct landmarks and visual identities.
 - Add one polished combat encounter with readable enemy intent, hit feedback, sound, and a satisfying victory result.

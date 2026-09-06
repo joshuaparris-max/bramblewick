@@ -89,10 +89,13 @@ func _run_test():
 	var diag = scene.get_node_or_null("DialogueUI")
 	require(diag != null and diag.visible, 8, "NPC interacted via input, UI opened")
 	
-	var initial_dialogue_text: String = diag._text_lbl.text
+	# Choice buttons are always rebuilt (freed + recreated) by _show_node when a
+	# choice fires, even if it loops back to the same node (e.g. shop menus) -
+	# so comparing instance ids is robust regardless of which NPC/dialogue this is.
+	var initial_choice_id: int = diag._choices_box.get_child(0).get_instance_id()
 	await push_action("interact", 0.1)
 	await wait_seconds(0.2)
-	require(diag.visible and diag._text_lbl.text != initial_dialogue_text, 9, "Interact advances the focused dialogue choice")
+	require(not diag.visible or diag._choices_box.get_child(0).get_instance_id() != initial_choice_id, 9, "Interact activates the focused dialogue choice")
 	diag._close()
 	await wait_seconds(0.2)
 	require(not diag.visible, 10, "Dialogue closed")
