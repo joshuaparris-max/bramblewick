@@ -166,9 +166,17 @@ func _run_test():
 	
 	if is_instance_valid(scene):
 		require(scene.m_hp <= 0, 16, "Enemy HP reaches zero through combat processing")
-	await wait_seconds(2.5) 
+	# Poll rather than a fixed sleep - combat duration/RNG and scene load time
+	# both vary, so a fixed wait here was intermittently too short.
+	var victory_safety = 20
 	scene = get_tree().current_scene
-	require(scene.name == "Exploration", 16, "Combat victory returns to intended scene")
+	while scene == null or scene.name != "Exploration":
+		if victory_safety <= 0:
+			break
+		victory_safety -= 1
+		await wait_seconds(0.5)
+		scene = get_tree().current_scene
+	require(scene != null and scene.name == "Exploration", 16, "Combat victory returns to intended scene")
 	
 	QuestManager.turn_in("q_silent_mine")
 	require(QuestManager.state_of("q_silent_mine") == "done", 17, "Quest completed successfully")
